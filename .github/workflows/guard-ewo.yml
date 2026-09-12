@@ -1,0 +1,30 @@
+# Workflow de guarda de marca — Ewó (proibição de dourado/ouro/amarelo)
+# Roda em todo push/PR e FALHA o deploy se detectar dourado/âmbar em texto OU pixels.
+name: guard-ewo
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  guard-ewo:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Instala Pillow (auditoria de pixels)
+        run: pip install pillow
+
+      - name: Guarda de Ewó — proíbe dourado/ouro/amarelo
+        run: python guard/guard_ewo.py --public public/
+
+      - name: Self-check do guard (valida o próprio detector)
+        run: python guard/guard_ewo.py --self-check
