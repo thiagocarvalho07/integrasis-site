@@ -15,7 +15,8 @@
     /* Hero de imersão — marrom com texto claro (o "momento premium" pontual) */
     .hero{background:var(--marrom);color:var(--creme);padding:120px var(--pad-x) 96px;position:relative;overflow:hidden;text-align:center}
     .hero .container{position:relative;z-index:2}
-    .hero h1{color:var(--creme);font-size:clamp(2.4rem,5.5vw,3.6rem);margin-bottom:20px}
+    .hero h1{color:var(--creme);font-size:clamp(2.4rem,5.5vw,3.6rem);margin-bottom:20px;text-wrap:balance}
+    .hero .eyebrow{color:#eaa87f;justify-content:center;display:block}
     .hero p.lead{color:rgba(245,240,232,.85);font-size:clamp(1.1rem,2.2vw,1.35rem);max-width:640px;margin:0 auto 36px;font-weight:300}
     .hero .btn-hero{display:inline-flex;gap:14px;flex-wrap:wrap;justify-content:center}
     .hero .btn-secondary{box-shadow:inset 0 0 0 1.5px var(--creme);color:var(--creme)}
@@ -67,7 +68,7 @@
     <!-- Escrituras 1: hero (revela o propósito) -->
     <section class="hero">
       <div class="container">
-        <span class="eyebrow reveal" style="color:var(--terracota);justify-content:center;display:block">Constelação Sistêmica</span>
+        <span class="eyebrow reveal">Constelação Sistêmica</span>
         <h1 class="reveal reveal-delay-1">Desfaça os padrões que se repetem na sua família</h1>
         <p class="lead reveal reveal-delay-2">Um caminho de reflexão e autoconhecimento para dinheiro, relacionamentos e saúde — entendendo a origem dos padrões antes de tentar mudá-los.</p>
         <div class="btn-hero reveal reveal-delay-3">
