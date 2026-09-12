@@ -41,6 +41,6 @@ npx -y @google/design.md lint DESIGN.md
 2. **Motion:** scroll-trigger (nunca scroll-jacking), uma revelação por vez,
    lento (600–900ms), GPU-friendly, `prefers-reduced-motion` respeitado.
 3. **Respiro:** muito espaço em branco (compreensão +20%).
-4. **Tipografia:** Cormorant Garamond (títulos) + Inter (corpo/UI).
+4. **Tipografia:** Cormorant Garamond (títulos) + Lora (corpo) + Inter (UI).
 5. **CTA quieto:** discreto, nunca "COMPRE AGORA!". 1 botão primário por sessão.
 6. **Responsividade:** 3 breakpoints (900 / 620 / 360) — testar no celular.

@@ -22,7 +22,8 @@
 
   /* Tipografia (famílias) */
   --font-display:'Cormorant Garamond', Georgia, 'Times New Roman', serif;
-  --font-body:'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-body:'Lora', Georgia, 'Times New Roman', serif; /* corpo = serif literário (consenso frota) */
+  --font-ui:'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
 
   /* Raio */
   --r-sm:6px; --r-md:10px; --r-lg:16px; --r-pill:999px;
@@ -51,7 +52,7 @@ body{
   color:var(--ink);
   background:var(--creme);
   line-height:1.65;
-  font-size:1rem;
+  font-size:1.125rem; /* corpo 18px — conforto leitura longa (consenso frota) */
   -webkit-font-smoothing:antialiased;
   text-rendering:optimizeLegibility;
 }
@@ -66,12 +67,12 @@ h1,.h1{font-family:var(--font-display);font-size:3rem;font-weight:600;line-heigh
 h2,.h2{font-family:var(--font-display);font-size:2.25rem;font-weight:600;line-height:1.1;letter-spacing:-.01em;color:var(--marrom)}
 h3,.h3{font-family:var(--font-display);font-size:1.6rem;font-weight:600;line-height:1.15;color:var(--marrom)}
 .eyebrow{
-  font-family:var(--font-body);font-size:.8rem;font-weight:600;
+  font-family:var(--font-ui);font-size:.8rem;font-weight:600;
   letter-spacing:.08em;text-transform:uppercase;color:var(--terracota-deep);
   margin-bottom:12px;
 }
-.body-lg{font-size:1.125rem;line-height:1.65}
-.caption{font-size:.85rem;color:var(--ink-muted);letter-spacing:.01em}
+.body-lg{font-family:var(--font-body);font-size:1.25rem;line-height:1.65;font-weight:400}
+.caption{font-family:var(--font-ui);font-size:.85rem;color:var(--ink-muted);letter-spacing:.01em}
 
 /* --- 4. LAYOUT --- */
 .container{max-width:var(--container);margin:0 auto;padding:0 var(--pad-x)}
@@ -86,7 +87,7 @@ h3,.h3{font-family:var(--font-display);font-size:1.6rem;font-weight:600;line-hei
 /* Botões */
 .btn{
   display:inline-flex;align-items:center;justify-content:center;gap:.5rem;
-  font-family:var(--font-body);font-size:.95rem;font-weight:500;letter-spacing:.02em;
+  font-family:var(--font-ui);font-size:.95rem;font-weight:500;letter-spacing:.02em;
   padding:14px 28px;border-radius:var(--r-pill);line-height:1;
   transition:background-color var(--dur-fast) var(--ease-out),
              color var(--dur-fast) var(--ease-out);
@@ -117,7 +118,7 @@ h3,.h3{font-family:var(--font-display);font-size:1.6rem;font-weight:600;line-hei
   border-bottom:1px solid var(--creme-deep);
 }
 .nav{display:flex;align-items:center;gap:var(--sp-lg)}
-.nav a{font-weight:500;color:var(--marrom);font-size:.95rem}
+.nav a{font-family:var(--font-ui);font-weight:500;color:var(--marrom);font-size:.95rem}
 .nav a:hover{color:var(--terracota-deep);opacity:1}
 
 /* --- 6. MOVIMENTO (scroll-trigger — NUNCA scroll-jacking) --- */

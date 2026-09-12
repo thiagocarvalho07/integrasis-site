@@ -36,15 +36,15 @@ typography:
     lineHeight: 1.4
     letterSpacing: "0.08em"
   body-lg:
-    fontFamily: "Inter"
-    fontSize: 1.125rem
+    fontFamily: "Lora"
+    fontSize: 1.25rem
     fontWeight: 400
     lineHeight: 1.65
   body:
-    fontFamily: "Inter"
-    fontSize: 1rem
+    fontFamily: "Lora"
+    fontSize: 1.125rem
     fontWeight: 400
-    lineHeight: 1.65
+    lineHeight: 1.7
   button:
     fontFamily: "Inter"
     fontSize: 0.95rem
@@ -161,19 +161,23 @@ ou validar qualquer imagem com pixels dourados/amarelos.
 
 - **Display (títulos e marca):** *Cormorant Garamond* — serifada emocional,
   elegante, transmite profundidade e ancestralidade. Usada em títulos de impacto.
-- **Corpo/UI (leitura e interface):** *Inter* — sans humanista, limpa, grande
-  legibilidade. Usada para corpo, botões, navegação, captions, labels.
+- **Corpo (parágrafos/leitura longa):** *Lora* — serif humanista otimizada para
+  tela, literária e acolhedora. Reduz fadiga em leitura sustentada e unifica a voz
+  "livro" com o PDF/e-mail da marca. Definida por consenso de 10 especialistas.
+- **UI (botões, navegação, labels, captions):** *Inter* — sans limpa para
+  legibilidade de interface e clareza de ação.
 - **Eyebrow (labels de seção):** Inter 600, 0.8rem, uppercase, tracking largo —
   sinaliza o "capítulo" de cada seção narrativa.
 
 Google Fonts:
 ```html
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Lora:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 ```
 
 Hierarquia de escala (display grande → captions), com line-heights apertados em
-títulos (1.05–1.1) e confortáveis em corpo (1.65). O contraste serif-elegante +
-sans-legível é o que "veste" a marca.
+títulos (1.05–1.1) e confortáveis em corpo (1.65–1.7 em Lora). O contraste
+serif-elegante (títulos) + serif-literário (corpo) + sans (UI) é o que "veste" a
+marca como um livro integral.
 
 ## Layout & Espaço
 
@@ -230,7 +234,7 @@ a lado — primário + secundário).
 
 ### Card (`card`)
 Superfície branca, raio 16px, padding 32px, espaço generoso. Hover: creme.
-Títulos do card em Cormorant, corpo em Inter. **Sem borda** (limpo), sombra
+Títulos do card em Cormorant, corpo em Lora. **Sem borda** (limpo), sombra
 sutil só em elevação real.
 
 ### Navegação (`nav-link`)
@@ -244,7 +248,7 @@ marca → sempre terracota.
 
 ## Do's
 
-- Use Cormorant Garamond para títulos e Inter para corpo/UI.
+- Use Cormorant Garamond para títulos, Lora para o corpo e Inter para UI.
 - Respeite o Ewó: nunca uma cor dourada/ouro/amarela em nenhum pixel.
 - Motion com propósito e lento; scroll-trigger (não scroll-jacking).
 - Respeite `prefers-reduced-motion`; paralaxe ≤20% do viewport.
