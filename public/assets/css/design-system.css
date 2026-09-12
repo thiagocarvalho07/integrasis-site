@@ -117,6 +117,9 @@ h3,.h3{font-family:var(--font-display);font-size:1.6rem;font-weight:600;line-hei
   -webkit-backdrop-filter:saturate(150%) blur(12px);
   border-bottom:1px solid var(--creme-deep);
 }
+.logo{display:inline-flex;align-items:center;gap:10px;text-decoration:none}
+.logo img{width:40px;height:40px;border-radius:50%;object-fit:cover;flex-shrink:0}
+.logo span{font-family:var(--font-display);font-weight:600;font-size:1.3rem;color:var(--marrom);line-height:1}
 .nav{display:flex;align-items:center;gap:var(--sp-lg)}
 .nav a{font-family:var(--font-ui);font-weight:500;color:var(--marrom);font-size:.95rem}
 .nav a:hover{color:var(--terracota-deep);opacity:1}
