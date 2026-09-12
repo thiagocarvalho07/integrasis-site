@@ -167,5 +167,13 @@ h3,.h3{font-family:var(--font-display);font-size:1.6rem;font-weight:600;line-hei
 .footer-col a:hover{color:#fff;opacity:1}
 .footer-bottom{max-width:var(--container);margin:40px auto 0;padding-top:24px;border-top:1px solid rgba(245,240,232,.12);font-family:var(--font-ui);font-size:.82rem;color:rgba(245,240,232,.6);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
 .footer-bottom a{color:rgba(245,240,232,.8)}
-@media(max-width:900px){.footer-grid{grid-template-columns:1fr 1fr}}
-@media(max-width:560px){.footer-grid{grid-template-columns:1fr;gap:28px}}
+@media(max-width:900px){.footer-grid{grid-template-columns:1fr 1fr;gap:28px}}
+@media(max-width:620px){
+  .site-footer{padding:40px var(--pad-x) 24px}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:24px 20px}
+  .footer-brand{grid-column:1/-1}
+  .footer-brand p{display:none} /* esconde a descrição longa no mobile p/ encurtar */
+  .footer-col h4{margin-bottom:10px}
+  .footer-col a{margin-bottom:8px;font-size:.9rem}
+  .footer-bottom{margin-top:24px;padding-top:16px;flex-direction:column;gap:6px;font-size:.75rem}
+}
