@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 420" role="img" aria-labelledby="b2title b2desc" preserveAspectRatio="xMidYMid meet">
+  <title id="b2title">Transformação</title>
+  <desc id="b2desc">Triptych de três painéis com a mesma árvore em ciclo de renovação: dormência nua, brotando com primeiros brotos, e copa plena reverdecida. Um único fio terracota contínuo atravessa os três momentos como elemento de fluxo unificador.</desc>
+  <defs>
+    <!-- Fundo homogêneo sálvia-cinza médio para os três painéis -->
+    <linearGradient id="panelBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0"   stop-color="#75836F"/>
+      <stop offset="1"   stop-color="#6C7B67"/>
+    </linearGradient>
+    <!-- Verdes-sálvia exclusivos da marca para o ciclo de broto/reverdecimento -->
+    <radialGradient id="foliage" cx="0.4" cy="0.38" r="0.75">
+      <stop offset="0"   stop-color="#A9B89A"/>
+      <stop offset="0.55" stop-color="#7A8B6F"/>
+      <stop offset="1"   stop-color="#5C6B52"/>
+    </radialGradient>
+    <!-- Silhueta de tronco e galhos reutilizada (mesma composição nos 3 quadros) -->
+    <g id="tree">
+      <g stroke-linecap="round" fill="none">
+        <path d="M0 350 C -4 302 -12 264 -18 230" stroke="#6E5F52" stroke-width="12"/>
+        <path d="M-10 286 C -28 262 -40 252 -52 238" stroke="#6E5F52" stroke-width="6.5"/>
+        <path d="M-14 258 C -30 238 -42 228 -54 214" stroke="#6E5F52" stroke-width="6"/>
+        <path d="M-6 266 C 6 250 14 244 22 235" stroke="#6E5F52" stroke-width="5"/>
+        <path d="M-52 238 L -63 226" stroke="#6E5F52" stroke-width="3.5"/>
+        <path d="M-54 214 L -66 202" stroke="#6E5F52" stroke-width="3.5"/>
+        <path d="M-18 230 L -28 212" stroke="#6E5F52" stroke-width="3.5"/>
+        <path d="M22 235 L 33 226" stroke="#6E5F52" stroke-width="3"/>
+      </g>
+    </g>
+  </defs>
+
+  <!-- Moldura: três painéis unificados em fundo sálvia-cinza médio -->
+  <rect x="30"  y="40" width="280" height="328" rx="10" fill="url(#panelBg)"/>
+  <rect x="340" y="40" width="280" height="328" rx="10" fill="url(#panelBg)"/>
+  <rect x="650" y="40" width="280" height="328" rx="10" fill="url(#panelBg)"/>
+  <path d="M310 44 V364" stroke="#5C6B52" stroke-opacity="0.5" stroke-width="2"/>
+  <path d="M620 44 V364" stroke="#5C6B52" stroke-opacity="0.5" stroke-width="2"/>
+
+  <!-- MOMENTO 1 — Dormência: árvore nua, sem copa -->
+  <g opacity="0.9">
+    <use href="#tree" transform="translate(170,0)"/>
+    <!-- Galhos secos finos no topo (copa vazia) -->
+    <g stroke="#5A4B3F" stroke-width="2.5" fill="none" stroke-linecap="round" opacity="0.75">
+      <path d="M170 192 C 156 184 148 174 146 162"/>
+      <path d="M170 192 C 184 184 196 176 204 166"/>
+      <path d="M164 202 C 152 196 142 192 132 190"/>
+    </g>
+  </g>
+
+  <!-- MOMENTO 2 — Brotando: primeiros brotos verde-sálvia na copa e ponta do tronco -->
+  <g>
+    <use href="#tree" transform="translate(480,0)"/>
+    <!-- Galhos secos residuais + brotos -->
+    <g stroke="#5A4B3F" stroke-width="2.5" fill="none" stroke-linecap="round" opacity="0.6">
+      <path d="M480 192 C 466 184 458 174 456 162"/>
+      <path d="M480 192 C 494 184 506 176 514 166"/>
+    </g>
+    <g fill="#A9B89A">
+      <circle cx="456" cy="160" r="6"/>
+      <circle cx="514" cy="164" r="5"/>
+      <circle cx="466" cy="206" r="5"/>
+      <circle cx="494" cy="208" r="4.5"/>
+      <circle cx="432" cy="176" r="4"/>
+      <circle cx="528" cy="178" r="4"/>
+    </g>
+    <g fill="#7A8B6F">
+      <circle cx="474" cy="212" r="4"/>
+      <circle cx="442" cy="190" r="3.5"/>
+      <circle cx="520" cy="190" r="3.5"/>
+      <circle cx="488" cy="234" r="4"/>
+    </g>
+  </g>
+
+  <!-- MOMENTO 3 — Reverdecida: copa plena em verde-sálvia vivo -->
+  <g>
+    <use href="#tree" transform="translate(790,0)"/>
+    <!-- Folhagem densa -->
+    <g fill="url(#foliage)">
+      <circle cx="770" cy="150" r="42"/>
+      <circle cx="800" cy="132" r="40"/>
+      <circle cx="828" cy="150" r="36"/>
+      <circle cx="756" cy="176" r="30"/>
+      <circle cx="792" cy="180" r="36"/>
+      <circle cx="824" cy="182" r="26"/>
+      <circle cx="742" cy="196" r="20"/>
+      <circle cx="790" cy="200" r="18"/>
+      <circle cx="830" cy="204" r="16"/>
+    </g>
+    <!-- Realce sutil de luz na folhagem -->
+    <g fill="#C9D5B8" opacity="0.4">
+      <circle cx="782" cy="136" r="14"/>
+      <circle cx="814" cy="142" r="10"/>
+    </g>
+  </g>
+
+  <!-- Fio terracota contínuo: atravessa os três painéis como elemento de fluxo unificado -->
+  <path d="M2 150 C 60 138 130 160 200 148 C 260 138 330 152 400 146 C 470 140 540 156 610 146 C 680 136 760 154 830 148 C 880 144 920 150 958 146"
+        fill="none" stroke="#C67B5C" stroke-width="4" stroke-linecap="round"/>
+  <path d="M2 150 C 60 138 130 160 200 148"
+        fill="none" stroke="#D99A7E" stroke-width="1.8" stroke-linecap="round" opacity="0.65"/>
+
+  <!-- Solo sutil sob as árvores nos três painéis -->
+  <g>
+    <rect x="30"  y="360" width="280" height="8" fill="#5C6B52"/>
+    <rect x="340" y="360" width="280" height="8" fill="#5C6B52"/>
+    <rect x="650" y="360" width="280" height="8" fill="#5C6B52"/>
+  </g>
+</svg>

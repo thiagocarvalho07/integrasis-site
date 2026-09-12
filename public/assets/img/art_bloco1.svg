@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520" role="img" aria-labelledby="b1title b1desc" preserveAspectRatio="xMidYMid meet">
+  <title id="b1title">Raiz invisível</title>
+  <desc id="b1desc">Árvore reclinada de perfil sobre solo em degrade de creme a sálvia. As raízes expostas descem em rede profunda abaixo da superfície, atravessadas por um único fio terracota que termina num ponto de luz sálvia clara.</desc>
+  <defs>
+    <!-- Fundo da marca -->
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0"   stop-color="#F5F0E8"/>
+      <stop offset="0.55" stop-color="#F5F0E8"/>
+      <stop offset="0.66" stop-color="#B4BEa8"/>
+      <stop offset="0.78" stop-color="#7A8B6F"/>
+      <stop offset="1"   stop-color="#5C6B52"/>
+    </linearGradient>
+    <!-- Luz do ponto final do fio -->
+    <radialGradient id="lightGlow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0"   stop-color="#E4EBDD" stop-opacity="0.95"/>
+      <stop offset="0.45" stop-color="#C3CFB4" stop-opacity="0.55"/>
+      <stop offset="1"   stop-color="#C3CFB4" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="soilGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#6C7B61"/>
+      <stop offset="1" stop-color="#4C5A44"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Solo -->
+  <rect x="0" y="0" width="800" height="520" fill="url(#bgGrad)"/>
+
+  <!-- Textura de papel/linho sutil na faixa creme -->
+  <g stroke="#7A8B6F" stroke-opacity="0.08" fill="none" stroke-width="1">
+    <path d="M0 70 H800"/>
+    <path d="M0 118 H800"/>
+    <path d="M0 166 H800"/>
+    <path d="M0 214 H800"/>
+    <path d="M0 262 H800"/>
+    <path d="M96 20 V330"/>
+    <path d="M264 20 V330"/>
+    <path d="M432 20 V330"/>
+    <path d="M600 20 V330"/>
+    <path d="M768 20 V330"/>
+  </g>
+
+  <!-- Grade sistêmica na zona das raízes (grid sutil) -->
+  <g stroke="#4C5A44" stroke-opacity="0.35" stroke-width="1">
+    <path d="M0 440 H800"/>
+    <path d="M0 474 H800"/>
+    <path d="M0 508 H800"/>
+    <path d="M0 352 H800"/>
+  </g>
+  <g stroke="#4C5A44" stroke-opacity="0.18" stroke-width="1">
+    <path d="M60 352 V520"/>
+    <path d="M180 430 V520"/>
+    <path d="M300 410 V520"/>
+    <path d="M420 400 V520"/>
+    <path d="M540 410 V520"/>
+    <path d="M660 430 V520"/>
+    <path d="M740 352 V520"/>
+  </g>
+
+  <!-- Camada de solo profundo sob a raiz -->
+  <path d="M0 470 Q160 478 340 472 Q520 464 800 470 V520 H0 Z" fill="url(#soilGrad)" opacity="0.55"/>
+
+  <!-- Copa discreta (protagonista é a raiz): cluster orgânico, tom baixo -->
+  <g fill="#7A6A5B" opacity="0.55">
+    <circle cx="128" cy="196" r="34"/>
+    <circle cx="166" cy="180" r="28"/>
+    <circle cx="96"  cy="208" r="26"/>
+    <circle cx="150" cy="216" r="22"/>
+    <circle cx="200" cy="206" r="20"/>
+  </g>
+  <g stroke="#6E5F52" fill="none" stroke-linecap="round" stroke-width="4" opacity="0.6">
+    <path d="M196 238 C 178 224 168 212 162 196"/>
+    <path d="M208 244 C 192 236 182 230 172 226"/>
+  </g>
+
+  <!-- Tronco reclinado, marrom-sápia da marca -->
+  <g stroke-linecap="round" fill="none">
+    <path d="M361 470 C 330 428 301 358 286 300 C 279 274 273 256 262 238" stroke="#6E5F52" stroke-width="16"/>
+    <path d="M286 300 C 266 262 236 235 204 220" stroke="#6E5F52" stroke-width="11"/>
+    <path d="M245 265 C 214 252 190 248 168 246" stroke="#6E5F52" stroke-width="9"/>
+    <path d="M262 238 L 250 213" stroke="#6E5F52" stroke-width="6"/>
+  </g>
+
+  <!-- Raízes profundas em rede: descem e se entrelaçam -->
+  <g stroke-linecap="round" fill="none">
+    <path d="M340 470 C 318 488 300 500 258 512" stroke="#8A7968" stroke-width="5"/>
+    <path d="M258 512 C 236 516 210 518 176 518" stroke="#8A7968" stroke-width="3"/>
+    <path d="M300 500 C 282 506 266 512 250 516" stroke="#7A6A5B" stroke-width="2.5"/>
+    <path d="M258 512 C 276 516 294 520 314 520" stroke="#8A7968" stroke-width="2.5"/>
+
+    <path d="M356 472 C 350 494 348 504 340 515" stroke="#8A7968" stroke-width="5"/>
+    <path d="M340 515 C 326 518 308 519 288 520" stroke="#8A7968" stroke-width="3"/>
+    <path d="M352 492 C 334 498 318 506 304 514" stroke="#7A6A5B" stroke-width="2.5"/>
+
+    <path d="M373 470 C 390 490 412 500 452 510" stroke="#7A6A5B" stroke-width="5"/>
+    <path d="M452 510 C 478 516 510 518 546 519" stroke="#7A6A5B" stroke-width="3"/>
+    <path d="M452 510 C 438 516 424 519 408 520" stroke="#8A7968" stroke-width="2.5"/>
+
+    <path d="M388 468 C 420 486 452 496 494 505" stroke="#8A7968" stroke-width="5"/>
+    <path d="M494 505 C 524 511 560 515 600 516" stroke="#8A7968" stroke-width="3"/>
+    <path d="M494 505 C 480 512 466 517 450 520" stroke="#7A6A5B" stroke-width="2.5"/>
+    <path d="M412 480 C 424 484 436 489 448 495" stroke="#6E5F52" stroke-width="1.8"/>
+
+    <path d="M400 466 C 436 478 470 486 512 492" stroke="#8A7968" stroke-width="3.5"/>
+    <path d="M512 492 C 552 498 596 504 648 507" stroke="#8A7968" stroke-width="2.5"/>
+    <path d="M512 492 C 500 500 486 508 468 514" stroke="#6E5F52" stroke-width="1.8"/>
+  </g>
+
+  <!-- Fio terracota contínuo: canal que percorre as raízes e termina em ponto de luz sálvia -->
+  <path d="M252 438 C 286 442 316 456 344 450 C 372 444 384 470 410 480 C 434 489 452 484 478 501 C 502 517 522 505 550 516"
+        fill="none" stroke="#C67B5C" stroke-width="3.5" stroke-linecap="round"/>
+  <circle cx="550" cy="516" r="13" fill="url(#lightGlow)"/>
+  <circle cx="550" cy="516" r="4.5" fill="#C3CFB4"/>
+
+  <!-- Realce orgânico leve no fio -->
+  <path d="M252 438 C 286 442 316 456 344 450" fill="none" stroke="#D99A7E" stroke-width="1.6" stroke-linecap="round" opacity="0.7"/>
+</svg>
