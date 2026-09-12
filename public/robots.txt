@@ -1,0 +1,6 @@
+# Integra Sistêmica — robots.txt
+# Site estático servido por Cloudflare Pages (integrasistemica.com.br)
+User-agent: *
+Allow: /
+
+Sitemap: https://integrasistemica.com.br/sitemap.xml
