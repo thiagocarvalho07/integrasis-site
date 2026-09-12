@@ -41,15 +41,71 @@
       <a href="/constelacao-organizacional/">Organizacional</a>
       <a href="/retiros/">Retiros</a>
       <a href="/eventos/">Eventos</a>
-      <a href="/ebook/" class="btn btn-primary" style="padding:10px 20px">E-book</a>
+      <a href="https://ebook.integrasistemica.com.br/" class="btn btn-primary" style="padding:10px 20px">Começar por aqui</a>
     </nav>
   </div>
 </header>
 <main class="section container">
-  <span class="eyebrow reveal">Retiros & Vivências</span>
-  <h1 class="reveal">Constelar em grupo, no seu ritmo</h1>
-  <p class="body-lg reveal reveal-delay-1" style="color:var(--ink-muted);max-width:640px">Em breve — retiros e vivências presencias para aprofundar a jornada em grupo.</p>
+  <span class="eyebrow reveal">Retiros &amp; Encontros — em construção, com calma</span>
+  <h1 class="reveal">Uma sala para viver o que você leu.</h1>
+  <p class="body-lg reveal reveal-delay-1" style="color:var(--ink-muted);max-width:640px">
+    Os retiros e eventos IntegraSis nascem sem pressa: grupos pequenos, presença real, honestidade acima do espetáculo.
+    Quando a primeira data estiver pronta, você será a primeira a saber.
+  </p>
+  <div class="waitlist reveal reveal-delay-2" style="max-width:520px;margin-top:40px;background:var(--surface);border:1px solid var(--creme-deep);border-radius:var(--r-lg);padding:32px;box-shadow:var(--shadow-card)">
+    <p style="font-family:var(--font-ui);font-size:.85rem;color:var(--ink-muted);margin-bottom:16px">
+      Sem spam. Um e-mail quando abrirmos a vaga. Você decide depois.
+    </p>
+    <form id="waitlist-form" novalidate>
+      <label for="email" style="font-family:var(--font-ui);font-weight:600;color:var(--marrom);font-size:.9rem;display:block;margin-bottom:6px">Seu e-mail</label>
+      <input type="email" id="email" name="email" required placeholder="voce@email.com" autocomplete="email" inputmode="email"
+        style="width:100%;padding:13px 16px;border:1px solid var(--creme-deep);border-radius:var(--r-md);font-size:16px;font-family:var(--font-ui);color:var(--ink);background:#fff;margin-bottom:16px">
+      <button type="submit" class="btn btn-terracota" id="waitlist-btn" style="width:100%">Avisar-me</button>
+    </form>
+    <div id="waitlist-msg" class="caption" style="margin-top:14px;color:var(--salvia-deep);display:none"></div>
+    <p class="caption" style="margin-top:16px;color:var(--ink-muted);line-height:1.5;font-size:.85rem">
+      Ao informar, você concorda com a nossa <a href="/politica-de-privacidade/">Política de Privacidade</a>. Nós guardamos apenas o seu e-mail para avisar quando houver vaga.
+    </p>
+  </div>
+  <p class="caption reveal reveal-delay-2" style="margin-top:28px;color:var(--ink-muted);max-width:640px;line-height:1.6">
+    Enquanto isso, você pode <a href="https://ebook.integrasistemica.com.br/">começar pelo guia das 7 perguntas</a>, de graça.
+  </p>
 </main>
+
+<script>
+  (function(){
+    var form = document.getElementById('waitlist-form');
+    var email = document.getElementById('email');
+    var msg = document.getElementById('waitlist-msg');
+    var btn = document.getElementById('waitlist-btn');
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      var v = email.value.trim();
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)) {
+        msg.style.display='block'; msg.textContent='Digite um e-mail válido.'; msg.style.color='var(--terracota-deep)';
+        return;
+      }
+      btn.disabled = true; btn.textContent = 'Enviando...';
+      fetch('https://rxuntxclstgtdzguknod.supabase.co' + '/rest/v1/leads', {
+        method: 'POST',
+        headers: { 'Content-Type':'application/json', 'apikey': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJ4dW50eGNsc3RndGR6Z3Vrbm9kIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODg0NTUwNzgsImV4cCI6MjEwNDAzMTA3OH0.5QB2YzOJU4jG_2__-_7peG7zevUwAeEhVq6JtKV2Af8', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJ4dW50eGNsc3RndGR6Z3Vrbm9kIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODg0NTUwNzgsImV4cCI6MjEwNDAzMTA3OH0.5QB2YzOJU4jG_2__-_7peG7zevUwAeEhVq6JtKV2Af8', 'Prefer': 'return=minimal' },
+        body: JSON.stringify({ email: v, origem: 'waitlist-retiro' })
+      })
+      .then(function(res){
+        // 200/201/409 (409 = ja inscrito) sao sucesso do ponto de vista do visitante
+        msg.style.display='block'; msg.textContent='Recebido. Quando as datas abrirem, você será a primeira a saber.';
+        msg.style.color='var(--salvia-deep)';
+        form.style.display='none';
+      })
+      .catch(function(){
+        msg.style.display='block'; msg.textContent='Não foi possível registrar agora. Tente novamente em instantes.';
+        msg.style.color='var(--terracota-deep)';
+        btn.disabled = false; btn.textContent = 'Avisar-me';
+      });
+    });
+  })();
+</script>
+
 <footer class="site-footer" style="background:var(--marrom);color:rgba(245,240,232,.85)">
   <div class="footer-grid">
     <div class="footer-brand">
@@ -59,6 +115,7 @@
     <div class="footer-col">
       <h4>Explorar</h4>
       <a href="/blog/">Blog</a>
+      <a href="https://ebook.integrasistemica.com.br/">Guia das 7 Perguntas</a>
       <a href="/constelacao-organizacional/">Constelação Organizacional</a>
       <a href="/retiros/">Retiros</a>
       <a href="/eventos/">Eventos</a>
