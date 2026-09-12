@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Teste A/B · Tipografia — Integra Sistêmica</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#F5F0E8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/design-system.css">
+<style>
+  .test-wrap{max-width:980px;margin:0 auto;padding:40px var(--pad-x)}
+  .test-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:24px}
+  @media(max-width:760px){.test-grid{grid-template-columns:1fr}}
+  .col{background:var(--surface);border-radius:var(--r-lg);padding:32px;box-shadow:var(--shadow-card)}
+  .col h2{margin-bottom:16px}
+  .col .label{font-size:.8rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--terracota-deep);margin-bottom:20px}
+  .sample{margin-top:8px}
+  p+p{margin-top:16px}
+  .col-a body-sample *{/* herda Inter do design-system */}
+  .col-b .body-sample{font-family:'Lora',Georgia,serif;font-size:1.05rem;line-height:1.7}
+  .col-b .body-sample p{font-family:inherit}
+  .tagline{font-size:.9rem;color:var(--ink-muted);margin-top:8px}
+  a.note{font-size:.85rem;color:var(--terracota-deep)}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="container header-inner" style="display:flex;align-items:center;justify-content:space-between;padding:16px 0">
+    <a class="logo" href="/" style="font-family:var(--font-display);font-weight:600;font-size:1.4rem;color:var(--marrom)">Integra Sistêmica</a>
+    <nav class="nav"><a href="/blog/">Blog</a><a href="/ebook/"><span class="btn btn-primary" style="padding:10px 20px">E-book</span></a></nav>
+  </div>
+</header>
+
+<main class="test-wrap">
+  <span class="eyebrow reveal">Teste A/B · Tipografia de corpo</span>
+  <h1 class="reveal">Inter vs Lora — onde fica mais confortável ler?</h1>
+  <p class="body-lg reveal reveal-delay-1" style="color:var(--ink-muted);max-width:720px">
+    Leia o mesmo trecho longo (estilo artigo de blog) nas duas colunas. Note qual delas você lê por mais tempo
+    sem cansar — é essa que devemos usar nos parágrafos do blog. Títulos seguem em Cormorant nos dois casos.
+  </p>
+
+  <div class="test-grid">
+    <!-- Opção A: Cormorant títulos + Inter corpo -->
+    <section class="col reveal">
+      <div class="label">Opção A — Inter (corpo/UI atual)</div>
+      <h2>Quando a lealdade fica invisível</h2>
+      <div class="body-sample sample">
+        <p>Há padrões que se repetem como se obedecessem a um roteiro antigo. Talvez você já tenha notado: escolhe um tipo de parceiro parecido com seu pai, repete a mesma dificuldade financeira da mãe ou carrega uma inquietação que não consegue nomear.</p>
+        <p>Na perspectiva sistêmica, esses movimentos não nascem de um defeito seu. Eles apontam para uma lealdade — muitas vezes silenciosa — a alguém que veio antes. Pertencer é uma necessidade profunda: aceitamos repetir um padrão para não ficarmos de fora do nosso lugar de origem.</p>
+        <p>A boa notícia é que ver essa lealdade é o primeiro passo para desfazê-la. Não se trata de culpar ninguém, mas de devolver a cada um o que pertence a ele, tomando para si a própria força. O reconhecimento não muda o passado, mas reorganiza o presente.</p>
+      </div>
+      <p class="tagline">Inter · sans alta x-height · o padrão atual do site</p>
+    </section>
+
+    <!-- Opção B: Cormorant títulos + Lora corpo -->
+    <section class="col reveal reveal-delay-1">
+      <div class="label">Opção B — Lora (serif de leitura longa)</div>
+      <h2>Quando a lealdade fica invisível</h2>
+      <div class="body-sample sample col-b">
+        <p>Há padrões que se repetem como se obedecessem a um roteiro antigo. Talvez você já tenha notado: escolhe um tipo de parceiro parecido com seu pai, repete a mesma dificuldade financeira da mãe ou carrega uma inquietação que não consegue nomear.</p>
+        <p>Na perspectiva sistêmica, esses movimentos não nascem de um defeito seu. Eles apontam para uma lealdade — muitas vezes silenciosa — a alguém que veio antes. Pertencer é uma necessidade profunda: aceitamos repetir um padrão para não ficarmos de fora do nosso lugar de origem.</p>
+        <p>A boa notícia é que ver essa lealdade é o primeiro passo para desfazê-la. Não se trata de culpar ninguém, mas de devolver a cada um o que pertence a ele, tomando para si a própria força. O reconhecimento não muda o passado, mas reorganiza o presente.</p>
+      </div>
+      <p class="tagline">Lora · serif otimizada para tela · mais "acolhedora" em leitura longa</p>
+    </section>
+  </div>
+
+  <p class="reveal" style="margin-top:36px"><a class="note" href="/blog/">← Voltar ao blog</a></p>
+</main>
+
+<footer class="site-footer" style="background:var(--marrom);color:rgba(245,240,232,.7);text-align:center;padding:32px var(--pad-x)">
+  <div class="container"><p style="font-size:.85rem">&copy; 2026 Integra Sistêmica — teste interno de tipografia</p></div>
+</footer>
+
+<script src="/assets/js/motion.js"></script>
+</body>
+</html>
