@@ -24,14 +24,14 @@
 </head>
 <body>
 <header class="site-header">
-  <div class="container header-inner" style="display:flex;align-items:center;justify-content:space-between;padding:16px 0">
+  <div class="container header-inner" style="display:flex;align-items:center;justify-content:space-between;padding:16px 0;flex-wrap:wrap;gap:10px">
     <a class="logo" href="/"><img src="/assets/img/logo-symbol.webp" alt="" width="40" height="40"> <span>Integra Sistêmica</span></a>
-    <nav class="nav">
+    <nav class="nav" aria-label="Navegação principal">
       <a href="/blog/">Blog</a>
       <a href="/constelacao-organizacional/">Organizacional</a>
       <a href="/retiros/">Retiros</a>
       <a href="/eventos/">Eventos</a>
-      <a href="/ebook/"><span class="btn btn-primary" style="padding:10px 20px">E-book</span></a>
+      <a href="/ebook/" class="btn btn-primary" style="padding:10px 20px">E-book</a>
     </nav>
   </div>
 </header>
@@ -40,8 +40,34 @@
   <h1 class="reveal">Constelar em grupo, no seu ritmo</h1>
   <p class="body-lg reveal reveal-delay-1" style="color:var(--ink-muted);max-width:640px">Em breve — retiros e vivências presencias para aprofundar a jornada em grupo.</p>
 </main>
-<footer class="site-footer" style="background:var(--marrom);color:rgba(245,240,232,.7);text-align:center;padding:32px var(--pad-x)">
-  <div class="container"><p style="font-size:.85rem">&copy; 2026 Integra Sistêmica</p></div>
+<footer class="site-footer" style="background:var(--marrom);color:rgba(245,240,232,.85)">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a class="logo" href="/" style="display:inline-flex;align-items:center;gap:10px"><img src="/assets/img/logo-symbol.webp" alt="" width="40" height="40"><span style="font-family:var(--font-display);font-weight:600;font-size:1.3rem;color:#fff">Integra Sistêmica</span></a>
+      <p>Conteúdo de reflexão, educação e autoconhecimento sobre constelação familiar e sistêmica. Uma forma de olhar para os padrões que se repetem.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Explorar</h4>
+      <a href="/blog/">Blog</a>
+      <a href="/constelacao-organizacional/">Constelação Organizacional</a>
+      <a href="/retiros/">Retiros</a>
+      <a href="/eventos/">Eventos</a>
+      <a href="/ebook/">E-book & Bônus</a>
+    </div>
+    <div class="footer-col">
+      <h4>Legal</h4>
+      <a href="/termos-de-uso/">Termos de Uso</a>
+      <a href="/politica-de-privacidade/">Política de Privacidade</a>
+    </div>
+    <div class="footer-col">
+      <h4>Contato</h4>
+      <a href="mailto:contato@integrasistemica.com.br">contato@integrasistemica.com.br</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 Integra Sistêmica — Todos os direitos reservados.</span>
+    <span>Conteúdo de reflexão. Não substitui acompanhamento profissional.</span>
+  </div>
 </footer>
 <script src="/assets/js/motion.js"></script>
 </body>
