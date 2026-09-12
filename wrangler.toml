@@ -1,6 +1,0 @@
-name = "integrasis-site"
-pages_build_output_dir = "public"
-
-# Configuração de assets estáticos servidos pelo Cloudflare Pages
-[assets]
-binding = "ASSETS"

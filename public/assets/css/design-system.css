@@ -1,0 +1,155 @@
+/* ============================================================
+   INTEGRASIS — Design System Base (Playbook)
+   "Luxo sistémico": disciplina de motion + linguagem calma/editorial.
+   Importe este arquivo em TODA página do site (qualquer subpasta).
+   Nunca crie tokens avulsos fora daqui — ver design/DESIGN.md.
+   ============================================================ */
+
+/* --- 1. TOKENS (fonte única — espelha design/DESIGN.md) --- */
+:root{
+  /* Cores */
+  --marrom:#2E3B2E;
+  --salvia:#7A8B6F;
+  --salvia-deep:#5C6B52;
+  --terracota:#C67B5C;
+  --terracota-deep:#A85F43;
+  --creme:#F5F0E8;
+  --creme-deep:#E9E2D5;
+  --ink:#3A3A38;
+  --ink-muted:#6B6B66;
+  --surface:#FFFFFF;
+  --focus:oklch(0.55 0.08 240);
+
+  /* Tipografia (famílias) */
+  --font-display:'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --font-body:'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+
+  /* Raio */
+  --r-sm:6px; --r-md:10px; --r-lg:16px; --r-pill:999px;
+
+  /* Espaçamento */
+  --sp-xs:4px; --sp-sm:8px; --sp-md:16px; --sp-lg:24px;
+  --sp-xl:40px; --sp-xxl:64px; --sp-section:96px;
+
+  /* Contêiner e layout */
+  --container:1140px;
+  --pad-x:24px;
+
+  /* Movimento (posture) */
+  --ease-out:cubic-bezier(0.22,1,0.36,1);
+  --dur-fast:300ms; --dur-base:500ms; --dur-slow:800ms;
+
+  /* Sombras (raras e suaves) */
+  --shadow-card:0 8px 30px rgba(46,59,46,0.08);
+}
+
+/* --- 2. RESET & BASE --- */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  font-family:var(--font-body);
+  color:var(--ink);
+  background:var(--creme);
+  line-height:1.65;
+  font-size:1rem;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+img,svg{display:block;max-width:100%}
+a{color:var(--terracota-deep);text-decoration:none;transition:opacity .25s var(--ease-out)}
+a:hover{opacity:.82}
+button{font-family:inherit;cursor:pointer}
+:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
+
+/* --- 3. TIPOGRAFIA (hierarquia) --- */
+h1,.h1{font-family:var(--font-display);font-size:3rem;font-weight:600;line-height:1.05;letter-spacing:-.015em;color:var(--marrom)}
+h2,.h2{font-family:var(--font-display);font-size:2.25rem;font-weight:600;line-height:1.1;letter-spacing:-.01em;color:var(--marrom)}
+h3,.h3{font-family:var(--font-display);font-size:1.6rem;font-weight:600;line-height:1.15;color:var(--marrom)}
+.eyebrow{
+  font-family:var(--font-body);font-size:.8rem;font-weight:600;
+  letter-spacing:.08em;text-transform:uppercase;color:var(--terracota-deep);
+  margin-bottom:12px;
+}
+.body-lg{font-size:1.125rem;line-height:1.65}
+.caption{font-size:.85rem;color:var(--ink-muted);letter-spacing:.01em}
+
+/* --- 4. LAYOUT --- */
+.container{max-width:var(--container);margin:0 auto;padding:0 var(--pad-x)}
+.section{padding:var(--sp-section) var(--pad-x)}
+.section-alt{background:var(--surface)}
+.grid{display:grid;gap:var(--sp-lg)}
+.grid-2{grid-template-columns:repeat(2,1fr)}
+.grid-3{grid-template-columns:repeat(3,1fr)}
+.grid-4{grid-template-columns:repeat(4,1fr)}
+
+/* --- 5. COMPONENTES --- */
+/* Botões */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.5rem;
+  font-family:var(--font-body);font-size:.95rem;font-weight:500;letter-spacing:.02em;
+  padding:14px 28px;border-radius:var(--r-pill);line-height:1;
+  transition:background-color var(--dur-fast) var(--ease-out),
+             color var(--dur-fast) var(--ease-out);
+  min-height:44px;text-decoration:none;
+}
+.btn-primary{background:var(--marrom);color:var(--surface)}
+.btn-primary:hover{background:var(--salvia-deep);color:var(--surface);opacity:1}
+.btn-secondary{background:transparent;color:var(--marrom);box-shadow:inset 0 0 0 1.5px var(--marrom)}
+.btn-secondary:hover{background:var(--creme-deep);opacity:1}
+.btn-terracota{background:var(--terracota);color:var(--surface)}
+.btn-terracota:hover{background:var(--terracota-deep);color:var(--surface);opacity:1}
+
+/* Cards */
+.card{
+  background:var(--surface);border-radius:var(--r-lg);padding:32px;
+  box-shadow:var(--shadow-card);transition:transform .4s var(--ease-out),
+             background-color .3s var(--ease-out);
+}
+.card:hover{background:var(--creme);transform:translateY(-4px)}
+.card h3{margin-bottom:10px}
+
+/* Navegação (glass flutuante) */
+.site-header{
+  position:sticky;top:0;z-index:50;
+  background:rgba(245,240,232,.82);
+  backdrop-filter:saturate(150%) blur(12px);
+  -webkit-backdrop-filter:saturate(150%) blur(12px);
+  border-bottom:1px solid var(--creme-deep);
+}
+.nav{display:flex;align-items:center;gap:var(--sp-lg)}
+.nav a{font-weight:500;color:var(--marrom);font-size:.95rem}
+.nav a:hover{color:var(--terracota-deep);opacity:1}
+
+/* --- 6. MOVIMENTO (scroll-trigger — NUNCA scroll-jacking) --- */
+/* Elementos entram ao alcançar o viewport; usuário controla o ritmo. */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s var(--ease-out),transform .7s var(--ease-out)}
+.reveal.in-view{opacity:1;transform:none}
+.reveal-delay-1{transition-delay:.1s}
+.reveal-delay-2{transition-delay:.2s}
+.reveal-delay-3{transition-delay:.3s}
+
+/* Acessibilidade: reduz todo motion se preferido reduzido */
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  .reveal{opacity:1;transform:none}
+  html{scroll-behavior:auto}
+}
+
+/* --- 7. RESPONSIVIDADE (breakpoints) --- */
+@media (max-width:900px){
+  .grid-3,.grid-4{grid-template-columns:repeat(2,1fr)}
+  h1{font-size:2.4rem}
+  h2{font-size:1.9rem}
+  .section{padding:64px var(--pad-x)}
+}
+@media (max-width:620px){
+  .grid-2,.grid-3,.grid-4{grid-template-columns:1fr}
+  h1{font-size:2rem}
+  .section{padding:48px var(--pad-x)}
+  .nav{flex-wrap:wrap;gap:14px}
+  .btn{width:100%}
+}
+@media (max-width:360px){
+  h1{font-size:1.75rem}
+  .container{padding:0 18px}
+}

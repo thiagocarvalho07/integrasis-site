@@ -5,62 +5,141 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Integra Sistêmica — Constelação Familiar, Organizacional e Retiros</title>
   <meta name="description" content="Integra Sistêmica: constelação familiar e organizacional, retiros em grupo e eventos — reflexão, autoconhecimento e transformação de padrões que se repetem.">
-  <link rel="stylesheet" href="/assets/css/estilos.css">
+  <meta name="theme-color" content="#F5F0E8">
   <link rel="canonical" href="https://integrasistemica.com.br/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/design-system.css">
+  <style>
+    /* Hero de imersão — marrom com texto claro (o "momento premium" pontual) */
+    .hero{background:var(--marrom);color:var(--creme);padding:120px var(--pad-x) 96px;position:relative;overflow:hidden;text-align:center}
+    .hero .container{position:relative;z-index:2}
+    .hero h1{color:var(--creme);font-size:clamp(2.4rem,5.5vw,3.6rem);margin-bottom:20px}
+    .hero p.lead{color:rgba(245,240,232,.85);font-size:clamp(1.1rem,2.2vw,1.35rem);max-width:640px;margin:0 auto 36px;font-weight:300}
+    .hero .btn-hero{display:inline-flex;gap:14px;flex-wrap:wrap;justify-content:center}
+    .hero .btn-secondary{box-shadow:inset 0 0 0 1.5px var(--creme);color:var(--creme)}
+    .hero .btn-secondary:hover{background:rgba(245,240,232,.12);opacity:1}
+    /* Fio sutil (eco do 'fio de Ifá') como linha decorativa */
+    .hero::after{content:'';position:absolute;left:0;right:0;bottom:0;height:1px;background:linear-gradient(90deg,transparent,var(--terracota),transparent)}
+
+    /* Sessões em camadas — cada uma revela um capítulo da jornada */
+    .chapter{padding:var(--sp-xxl) var(--pad-x)}
+    .chapter-inner{max-width:var(--container);margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:var(--sp-xxl);align-items:center}
+    .chapter:nth-child(even) .chapter-inner{grid-template-columns:1fr 1fr}
+    @media(max-width:900px){.chapter-inner,.chapter:nth-child(even) .chapter-inner{grid-template-columns:1fr}}
+
+    .vertentes{background:var(--surface);padding:var(--sp-xxl) var(--pad-x)}
+    .vert-inner{max-width:var(--container);margin:0 auto}
+    .vert-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:var(--sp-lg);margin-top:32px}
+    .tag{display:inline-block;font-size:.75rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--terracota-deep);margin-bottom:8px}
+
+    .cta-final{background:var(--creme-deep);text-align:center;padding:var(--sp-xxl) var(--pad-x)}
+    .cta-final h2{margin-bottom:20px}
+    .cta-final p{max-width:560px;margin:0 auto 32px;color:var(--ink-muted)}
+  </style>
 </head>
 <body>
   <header class="site-header">
-    <div class="container header-inner">
-      <a class="logo" href="/">Integra Sistêmica</a>
+    <div class="container header-inner" style="display:flex;align-items:center;justify-content:space-between;padding:16px 0">
+      <a class="logo" href="/" style="font-family:var(--font-display);font-weight:600;font-size:1.4rem;color:var(--marrom)">Integra Sistêmica</a>
       <nav class="nav">
         <a href="/blog/">Blog</a>
         <a href="/constelacao-organizacional/">Organizacional</a>
         <a href="/retiros/">Retiros</a>
         <a href="/eventos/">Eventos</a>
-        <a href="/ebook/" class="btn">E-book</a>
+        <a href="/ebook/" class="btn btn-primary" style="padding:10px 20px">E-book</a>
       </nav>
     </div>
   </header>
 
   <main>
+    <!-- Escrituras 1: hero (revela o propósito) -->
     <section class="hero">
       <div class="container">
-        <h1>Desfaça os padrões que se repetem na sua família</h1>
-        <p class="lead">Constelação Sistêmica para dinheiro, relacionamentos e saúde — um caminho de reflexão e autoconhecimento.</p>
-        <div class="hero-actions">
+        <span class="eyebrow reveal" style="color:var(--terracota);justify-content:center;display:block">Constelação Sistêmica</span>
+        <h1 class="reveal reveal-delay-1">Desfaça os padrões que se repetem na sua família</h1>
+        <p class="lead reveal reveal-delay-2">Um caminho de reflexão e autoconhecimento para dinheiro, relacionamentos e saúde — entendendo a origem dos padrões antes de tentar mudá-los.</p>
+        <div class="btn-hero reveal reveal-delay-3">
           <a class="btn btn-primary" href="/ebook/">Conhecer o livro</a>
-          <a class="btn" href="/blog/">Ler os conteúdos</a>
+          <a class="btn btn-secondary" href="/blog/">Ler os conteúdos</a>
         </div>
       </div>
     </section>
 
-    <section class="secoes container">
-      <h2>Como queremos caminhar</h2>
-      <div class="grid">
-        <a class="card" href="/blog/">
-          <h3>Blog</h3>
-          <p>Conteúdo de constelação, reflexões e histórias de transformação.</p>
-        </a>
-        <a class="card" href="/constelacao-organizacional/">
-          <h3>Constelação Organizacional</h3>
-          <p>Olhar sistêmico para empresas, equipes e relações de trabalho.</p>
-        </a>
-        <a class="card" href="/retiros/">
-          <h3>Retiros</h3>
-          <p>Constelação em grupos e retiros presenciais para aprofundar a jornada.</p>
-        </a>
-        <a class="card" href="/eventos/">
-          <h3>Eventos</h3>
-          <p>Encontros, vivências e formações ao redor do tema.</p>
-        </a>
+    <!-- Escrituras: a jornada sistêmica em camadas -->
+    <section class="chapter">
+      <div class="chapter-inner">
+        <div class="reveal">
+          <span class="tag">Compreensão</span>
+          <h2>Os padrões têm uma origem</h2>
+          <p class="body-lg" style="color:var(--ink-muted)">Nem todo peso que você carrega é seu. As lealdades invisíveis que você herdou se repetem até serem vistas — este é o primeiro passo para desfazê-las.</p>
+        </div>
+        <div class="reveal reveal-delay-1" style="background:var(--salvia-deep);border-radius:var(--r-lg);height:260px;display:grid;place-items:center">
+          <span style="color:var(--creme);font-family:var(--font-display);font-size:1.3rem;padding:20px;text-align:center">(espaço para imagem/visual<br>da jornada sistêmica)</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="chapter section-alt">
+      <div class="chapter-inner">
+        <div class="reveal" style="background:var(--creme);border-radius:var(--r-lg);height:260px;display:grid;place-items:center">
+          <span style="color:var(--marrom);font-family:var(--font-display);font-size:1.3rem;padding:20px;text-align:center">(espaço para recurso visual)<br>scroll-trigger: revela camada por camada</span>
+        </div>
+        <div class="reveal reveal-delay-1">
+          <span class="tag">Transformação</span>
+          <h2>Cada seção é uma camada que se desvela</h2>
+          <p class="body-lg" style="color:var(--ink-muted)">Como numa constelação, a experiência se revela conforme você avança — sem pressa, no seu ritmo.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Vertentes -->
+    <section class="vertentes">
+      <div class="vert-inner">
+        <span class="tag reveal">Caminhos</span>
+        <h2 class="reveal">Como podemos caminhar juntos</h2>
+        <div class="vert-grid">
+          <div class="card reveal">
+            <h3>Blog</h3>
+            <p>Conteúdo de constelação, reflexões e histórias de transformação.</p>
+            <p><a href="/blog/" style="margin-top:16px;display:inline-block">Explorar →</a></p>
+          </div>
+          <div class="card reveal reveal-delay-1">
+            <h3>Constelação Organizacional</h3>
+            <p>Olhar sistêmico para empresas, equipes e relações de trabalho.</p>
+            <p><a href="/constelacao-organizacional/" style="margin-top:16px;display:inline-block">Em breve →</a></p>
+          </div>
+          <div class="card reveal reveal-delay-2">
+            <h3>Retiros</h3>
+            <p>Constelação em grupos e retiros presenciais para aprofundar a jornada.</p>
+            <p><a href="/retiros/" style="margin-top:16px;display:inline-block">Em breve →</a></p>
+          </div>
+          <div class="card reveal reveal-delay-3">
+            <h3>Eventos</h3>
+            <p>Encontros, vivências e formações ao redor do tema.</p>
+            <p><a href="/eventos/" style="margin-top:16px;display:inline-block">Em breve →</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA final (discreto, quieto) -->
+    <section class="cta-final">
+      <div class="reveal">
+        <h2>Pronto para começar?</h2>
+        <p>O caminho começa por entender. O livro é o primeiro passo — sem promessas de cura instantânea, apenas clareza.</p>
+        <a class="btn btn-primary" href="/ebook/">Conhecer o livro</a>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
+  <footer class="site-footer" style="background:var(--marrom);color:rgba(245,240,232,.7);text-align:center;padding:32px var(--pad-x)">
     <div class="container">
-      <p>&copy; 2026 Integra Sistêmica — contente de reflexão e autoconhecimento.</p>
+      <p style="font-size:.85rem">&copy; 2026 Integra Sistêmica — conteúdo de reflexão e autoconhecimento. Não substitui avaliação ou acompanhamento profissional.</p>
     </div>
   </footer>
+
+  <script src="/assets/js/motion.js"></script>
 </body>
 </html>
