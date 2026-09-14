@@ -486,12 +486,12 @@
       }
 
       try {
-        // Envia captura para a API / Edge Function em segundo plano
-        fetch(SUPABASE_URL + '/functions/v1/captura-guia', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ email, consent_marketing: optin, fonte: 'ebook-slug' })
-        }).catch(() => {});
+        // Grava o lead no banco Supabase (REST direto + Edge Function)
+        const leadPayload = JSON.stringify({ email: email, consent_marketing: optin, fonte: 'ebook-slug', created_at: new Date().toISOString() });
+        const headers = { 'Content-Type': 'application/json', 'apikey': 'eyJhbG...2Af8', 'Authorization': 'Bearer eyJhbG...2Af8', 'Prefer': 'return=minimal' };
+        
+        fetch(SUPABASE_URL + '/rest/v1/leads', { method: 'POST', headers: headers, body: leadPayload }).catch(() => {});
+        fetch(SUPABASE_URL + '/functions/v1/captura-guia', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: leadPayload }).catch(() => {});
 
         // Libera imediatamente os links de download direto na tela
         msg.className = 'msg ok';
