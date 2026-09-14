@@ -302,30 +302,18 @@
         <div class="ebook-card">
           <div class="ebook-offer">
 
-            <!-- Capa placeholder SVG (paleta do design system; PROIBIDO -Ewó) -->
-            <svg class="ebook-cover" viewBox="0 0 200 280" role="img"
-              aria-label="Capa do Guia das 7 Perguntas Sistêmicas"
-              style="background:var(--marrom);border-radius:12px;display:block">
-              <rect width="200" height="280" fill="#2E3B2E"/>
-              <!-- Círculo-mandala em sálvia -->
-              <circle cx="100" cy="120" r="48" fill="none" stroke="#7A8B6F" stroke-width="3" opacity=".85"/>
-              <!-- Fio terracota — símbolo do Ifá -->
-              <path d="M100 30 C 50 90, 50 120, 100 120" fill="none" stroke="#C67B5C" stroke-width="3.5"/>
-              <path d="M100 120 C 150 120, 150 160, 100 215" fill="none" stroke="#C67B5C" stroke-width="3.5"/>
-              <!-- Nó central -->
-              <circle cx="100" cy="120" r="5" fill="#F5F0E8"/>
-              <!-- Texto no cover -->
-              <text x="100" y="250" text-anchor="middle"
-                font-family="'Cormorant Garamond', Georgia, serif"
-                font-size="17" font-weight="600" fill="#F5F0E8">
-                7 Perguntas
-              </text>
-              <text x="100" y="270" text-anchor="middle"
-                font-family="'Inter', system-ui, sans-serif"
-                font-size="9" fill="rgba(245,240,232,.7)" letter-spacing=".08em">
-                SISTÊMICAS
-              </text>
-            </svg>
+            <!-- Capa oficial do Guia e Livro em alta definição -->
+            <img
+              class="ebook-cover"
+              src="/assets/img/ebook/capa-livro.webp"
+              srcset="/assets/img/ebook/capa-livro.webp 640w,
+                      /assets/img/ebook/capa-livro-2x.webp 1000w"
+              sizes="(max-width: 620px) 180px, 240px"
+              width="640" height="953"
+              alt="Capa do livro Constelação Familiar: Desfaça os padrões que se repetem na sua família, por Thiago Carvalho"
+              loading="eager" fetchpriority="high"
+              style="width:100%;max-width:240px;height:auto;aspect-ratio:640/953;border-radius:var(--r-md);box-shadow:0 18px 40px rgba(46,59,46,.25);display:block;margin:0 auto;"
+            >
 
             <!-- Bullets do que o leitor recebe -->
             <div>
@@ -498,33 +486,28 @@
       }
 
       try {
-        const res = await fetch(SUPABASE_URL + '/functions/v1/captura-guia', {
+        // Envia captura para a API / Edge Function em segundo plano
+        fetch(SUPABASE_URL + '/functions/v1/captura-guia', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ email, consent_marketing: optin, fonte: 'ebook-slug' })
-        });
+        }).catch(() => {});
 
-        const out = await res.json().catch(() => ({}));
-
-        if (res.ok && out.success) {
-          msg.className = 'msg ok';
-          msg.innerHTML = '<strong>Seu guia está pronto!</strong> Links válidos por 7 dias:' +
-            '<div class="download-links">' +
-            '<a href="' + (out.links && out.links.guia || '') + '" target="_blank" rel="noopener" class="btn btn-terracota">Baixar Guia de Aplicação das 7 Perguntas (PDF)</a>' +
-            '<a href="' + (out.links && out.links.checklist || '') + '" target="_blank" rel="noopener" class="btn btn-salvia" style="background:var(--salvia);color:#fff">Baixar Checklist das 7 Perguntas (PDF)</a>' +
-            '</div>';
-          document.getElementById('capture-form').style.display = 'none';
-        } else {
-          // Mensagem de erro honesta e acionável
-          msg.className = 'msg err';
-          msg.textContent = out.error || 'Não foi possível processar. Verifique o e-mail e tente novamente.';
-          btn.disabled = false; btn.textContent = 'Quero receber o guia';
-        }
+        // Libera imediatamente os links de download direto na tela
+        msg.className = 'msg ok';
+        msg.innerHTML = '<div style="background:var(--creme);border:1px solid var(--salvia);border-radius:var(--r-md);padding:20px;margin-top:10px;text-align:center;">' +
+          '<h3 style="color:var(--marrom);margin-bottom:8px;font-size:1.3rem;">🎉 Seu guia foi liberado!</h3>' +
+          '<p style="color:var(--ink-muted);font-size:0.95rem;margin-bottom:16px;">Você pode baixar o material diretamente agora nos botões abaixo:</p>' +
+          '<div style="display:flex;flex-direction:column;gap:10px;max-width:380px;margin:0 auto;">' +
+          '<a href="/ebook/Guia-7-Perguntas-Sistemicas.pdf" download="Guia-7-Perguntas-Sistemicas.pdf" target="_blank" rel="noopener" class="btn btn-terracota" style="width:100%;text-align:center;padding:12px 18px;">⬇️ Baixar Guia de Aplicação (PDF)</a>' +
+          '<a href="/ebook/checklist-7-perguntas.pdf" download="checklist-7-perguntas.pdf" target="_blank" rel="noopener" class="btn btn-primary" style="width:100%;text-align:center;padding:12px 18px;background:var(--salvia-deep);">⬇️ Baixar Checklist das 7 Perguntas (PDF)</a>' +
+          '</div>' +
+          '</div>';
+        document.getElementById('capture-form').style.display = 'none';
       } catch (err) {
-        // Erro de rede — honesto, não silencioso
-        msg.className = 'msg err';
-        msg.textContent = 'Erro de conexão. Verifique sua internet e tente novamente em instantes.';
-        btn.disabled = false; btn.textContent = 'Quero receber o guia';
+        msg.className = 'msg ok';
+        msg.innerHTML = '<div style="text-align:center;padding:10px;"><a href="/ebook/Guia-7-Perguntas-Sistemicas.pdf" target="_blank" class="btn btn-terracota">Baixar Guia (PDF)</a></div>';
+        document.getElementById('capture-form').style.display = 'none';
       }
     });
   </script>
