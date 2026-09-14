@@ -1,5 +1,10 @@
 # Cache local do Wrangler (nunca subir)
 .wrangler/
 
+# Worktrees e rascunhos de assets
+.worktrees/
+_assets_src/
+
 # macOS
 .DS_Store
+

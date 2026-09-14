@@ -117,12 +117,20 @@ h3,.h3{font-family:var(--font-display);font-size:1.6rem;font-weight:600;line-hei
   -webkit-backdrop-filter:saturate(150%) blur(12px);
   border-bottom:1px solid var(--creme-deep);
 }
+.header-inner{display:flex;align-items:center;justify-content:space-between;padding:16px 0;flex-wrap:wrap;gap:10px}
 .logo{display:inline-flex;align-items:center;gap:10px;text-decoration:none}
 .logo img{width:40px;height:40px;border-radius:50%;object-fit:cover;flex-shrink:0}
 .logo span{font-family:var(--font-display);font-weight:600;font-size:1.3rem;color:var(--marrom);line-height:1}
 .nav{display:flex;align-items:center;gap:var(--sp-lg)}
 .nav a{font-family:var(--font-ui);font-weight:500;color:var(--marrom);font-size:.95rem}
 .nav a:hover{color:var(--terracota-deep);opacity:1}
+/* CTA do nav — menor, quiet-luxury (escada "Começar por aqui" única) */
+.nav .btn,.nav .btn-primary{padding:10px 20px}
+/* Estado ativo (aria-current) — sublinhado terracota + peso reforçado (CTA não sublinha) */
+.nav a[aria-current="page"]{color:var(--terracota-deep);font-weight:600}
+.nav a[aria-current="page"]:not(.btn):not(.nav-cta)::after{content:"";display:block;height:2px;width:100%;background:var(--terracota)}
+/* Botão hambúrguer — escondido no desktop */
+.nav-toggle{display:none}
 
 /* --- 6. MOVIMENTO (scroll-trigger — NUNCA scroll-jacking) --- */
 /* Elementos entram ao alcançar o viewport; usuário controla o ritmo. */
@@ -150,7 +158,6 @@ h3,.h3{font-family:var(--font-display);font-size:1.6rem;font-weight:600;line-hei
   .grid-2,.grid-3,.grid-4{grid-template-columns:1fr}
   h1{font-size:2rem}
   .section{padding:48px var(--pad-x)}
-  .nav{flex-wrap:wrap;gap:14px}
   .btn{width:100%}
 }
 @media (max-width:360px){
@@ -159,9 +166,13 @@ h3,.h3{font-family:var(--font-display);font-size:1.6rem;font-weight:600;line-hei
 }
 
 /* --- 8. FOOTER INTELIGENTE (colunas) --- */
-.site-footer{padding:56px var(--pad-x) 32px;text-align:left}
+.site-footer{background:var(--marrom);color:rgba(245,240,232,.85);padding:56px var(--pad-x) 32px;text-align:left}
 .footer-grid{max-width:var(--container);margin:0 auto;display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:40px}
 .footer-brand p{font-size:.9rem;color:rgba(245,240,232,.72);line-height:1.6;margin-top:12px;max-width:280px}
+/* Separador editorial sob o bloco da marca */
+.footer-brand{padding-bottom:24px;border-bottom:1px solid rgba(245,240,232,.15);margin-bottom:8px}
+/* Logo da marca sobre fundo --marrom: texto claro centralizado */
+.site-footer .logo span{color:#fff}
 .footer-col h4{font-family:var(--font-ui);font-size:.8rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--terracota);margin-bottom:16px}
 .footer-col a{display:block;font-family:var(--font-body);font-size:.95rem;color:rgba(245,240,232,.85);margin-bottom:10px;text-decoration:none}
 .footer-col a:hover{color:#fff;opacity:1}
@@ -176,4 +187,31 @@ h3,.h3{font-family:var(--font-display);font-size:1.6rem;font-weight:600;line-hei
   .footer-col h4{margin-bottom:10px}
   .footer-col a{margin-bottom:8px;font-size:.9rem}
   .footer-bottom{margin-top:24px;padding-top:16px;flex-direction:column;gap:6px;font-size:.75rem}
+}
+
+/* --- 9. MENU MOBILE ACESSÍVEL (hambúrguer CSS + drawer) --- */
+/* Botão visível somente ≤620px; escondido no desktop (.nav-toggle{display:none} acima) */
+@media(max-width:620px){
+  .nav-toggle{
+    display:flex;align-items:center;justify-content:center;
+    width:44px;height:44px;border:none;background:transparent;
+    color:var(--marrom);cursor:pointer;
+  }
+  .nav-toggle-bar,.nav-toggle-bar::before,.nav-toggle-bar::after{
+    content:"";display:block;width:22px;height:2px;background:currentColor;
+    transition:transform .3s var(--ease-out),opacity .2s var(--ease-out);
+  }
+  .nav-toggle-bar{position:relative}
+  .nav-toggle-bar::before{position:absolute;top:-7px;left:0}
+  .nav-toggle-bar::after{position:absolute;top:7px;left:0}
+  .nav-toggle[aria-expanded="true"] .nav-toggle-bar{background:transparent}
+  .nav-toggle[aria-expanded="true"] .nav-toggle-bar::before{top:0;transform:rotate(45deg)}
+  .nav-toggle[aria-expanded="true"] .nav-toggle-bar::after{top:0;transform:rotate(-45deg)}
+  .nav{display:none;flex-direction:column;width:100%;gap:var(--sp-md);padding-top:var(--sp-md)}
+  .nav.is-open{display:flex}
+  .nav-cta{margin-top:var(--sp-sm);border-top:1px solid var(--creme-deep);padding-top:var(--sp-sm)}
+}
+/* Reduz motion no drawer */
+@media(max-width:620px) and (prefers-reduced-motion:reduce){
+  .nav-toggle-bar,.nav-toggle-bar::before,.nav-toggle-bar::after{transition:none}
 }

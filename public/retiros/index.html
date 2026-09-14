@@ -33,15 +33,21 @@
 <script type="application/ld+json">[{"@type": "Organization", "@id": "https://integrasistemica.com.br/#organization", "name": "Integra Sistêmica", "url": "https://integrasistemica.com.br/", "logo": "https://integrasistemica.com.br/assets/img/logo-symbol.webp", "email": "contato@integrasistemica.com.br", "sameAs": []}, {"@type": "WebSite", "@id": "https://integrasistemica.com.br/#website", "url": "https://integrasistemica.com.br/", "name": "Integra Sistêmica", "publisher": {"@id": "https://integrasistemica.com.br/#organization"}, "inLanguage": "pt-BR"}, {"@type": "WebPage", "@id": "https://integrasistemica.com.br/retiros/index.html#webpage", "url": "https://integrasistemica.com.br/retiros/index.html", "name": "Retiros — Integra Sistêmica", "isPartOf": {"@id": "https://integrasistemica.com.br/#website"}, "about": {"@id": "https://integrasistemica.com.br/#organization"}, "inLanguage": "pt-BR"}]</script>
 </head>
 <body>
-<header class="site-header">
-  <div class="container header-inner" style="display:flex;align-items:center;justify-content:space-between;padding:16px 0;flex-wrap:wrap;gap:10px">
-    <a class="logo" href="/"><img src="/assets/img/logo-symbol.webp" alt="" width="40" height="40"> <span>Integra Sistêmica</span></a>
-    <nav class="nav" aria-label="Navegação principal">
-      <a href="/blog/">Blog</a>
-      <a href="/constelacao-organizacional/">Organizacional</a>
-      <a href="/retiros/">Retiros</a>
-      <a href="/eventos/">Eventos</a>
-      <a href="https://ebook.integrasistemica.com.br/" class="btn btn-primary" style="padding:10px 20px">Começar por aqui</a>
+<header class="site-header" data-shell>
+  <div class="container header-inner">
+    <a class="logo" href="/" aria-label="Integra Sistêmica — início">
+      <img src="/assets/img/logo-symbol.webp" alt="" width="40" height="40">
+      <span>Integra Sistêmica</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="main-nav">
+      <span class="nav-toggle-bar" aria-hidden="true"></span>
+    </button>
+    <nav id="main-nav" class="nav" aria-label="Navegação principal">
+      <a href="/blog/" data-active-if="/blog/">Blog</a>
+      <a href="/constelacao-organizacional/" data-active-if="/constelacao-organizacional/">Organizacional</a>
+      <a href="/retiros/" aria-current="page" data-active-if="/retiros/">Retiros</a>
+      <a href="/eventos/" data-active-if="/eventos/">Eventos</a>
+      <a class="nav-cta btn btn-primary" href="/ebook/" data-active-if="/ebook/">Começar por aqui</a>
     </nav>
   </div>
 </header>
@@ -68,7 +74,7 @@
     </p>
   </div>
   <p class="caption reveal reveal-delay-2" style="margin-top:28px;color:var(--ink-muted);max-width:640px;line-height:1.6">
-    Enquanto isso, você pode <a href="https://ebook.integrasistemica.com.br/">começar pelo guia das 7 perguntas</a>, de graça.
+    Enquanto isso, você pode <a href="/ebook/">começar pelo guia das 7 perguntas</a>, de graça.
   </p>
 </main>
 
@@ -106,29 +112,32 @@
   })();
 </script>
 
-<footer class="site-footer" style="background:var(--marrom);color:rgba(245,240,232,.85)">
+<footer class="site-footer" data-shell role="contentinfo">
   <div class="footer-grid">
     <div class="footer-brand">
-      <a class="logo" href="/" style="display:inline-flex;align-items:center;gap:10px"><img src="/assets/img/logo-symbol.webp" alt="" width="40" height="40"><span style="font-family:var(--font-display);font-weight:600;font-size:1.3rem;color:#fff">Integra Sistêmica</span></a>
+      <a class="logo" href="/" aria-label="Integra Sistêmica — início">
+        <img src="/assets/img/logo-symbol.webp" alt="" width="40" height="40">
+        <span>Integra Sistêmica</span>
+      </a>
       <p>Conteúdo de reflexão, educação e autoconhecimento sobre constelação familiar e sistêmica. Uma forma de olhar para os padrões que se repetem.</p>
     </div>
-    <div class="footer-col">
+    <div class="footer-col" aria-label="Navegação">
       <h4>Explorar</h4>
       <a href="/blog/">Blog</a>
-      <a href="https://ebook.integrasistemica.com.br/">Guia das 7 Perguntas</a>
       <a href="/constelacao-organizacional/">Constelação Organizacional</a>
       <a href="/retiros/">Retiros</a>
       <a href="/eventos/">Eventos</a>
-      <a href="/ebook/">E-book & Bônus</a>
+      <a href="/ebook/">Guia das 7 Perguntas</a>
     </div>
-    <div class="footer-col">
+    <div class="footer-col" aria-label="Institucional">
+      <h4>Institucional</h4>
+      <a href="mailto:contato@integrasistemica.com.br">contato@integrasistemica.com.br</a>
+      <a href="/ebook/">E-book &amp; Bônus</a>
+    </div>
+    <div class="footer-col" aria-label="Legal">
       <h4>Legal</h4>
       <a href="/termos-de-uso/">Termos de Uso</a>
       <a href="/politica-de-privacidade/">Política de Privacidade</a>
-    </div>
-    <div class="footer-col">
-      <h4>Contato</h4>
-      <a href="mailto:contato@integrasistemica.com.br">contato@integrasistemica.com.br</a>
     </div>
   </div>
   <div class="footer-bottom">
@@ -137,5 +146,6 @@
   </div>
 </footer>
 <script src="/assets/js/motion.js"></script>
+  <script src="/assets/js/shell.js"></script>
 </body>
 </html>

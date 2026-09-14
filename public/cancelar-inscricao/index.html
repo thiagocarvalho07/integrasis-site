@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cancelar inscrição — Integra Sistêmica</title>
+<meta name="description" content="Cancele sua inscrição na lista de e-mails da Integra Sistêmica. Simples, sem complicação.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#F5F0E8">
+<link rel="canonical" href="https://integrasistemica.com.br/cancelar-inscricao/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="font" type="font/woff2" crossorigin href="https://fonts.gstatic.com/s/cormorantgaramond/v21/co3bmX5slCNuHLi8bLeY9MK7whWMhyjYqXtKky2F7g.woff2">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Lora:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/design-system.css">
+<link rel="icon" type="image/png" sizes="192x192" href="/assets/img/favicon-192.png">
+<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://integrasistemica.com.br/cancelar-inscricao/">
+<meta property="og:site_name" content="Integra Sistêmica">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Cancelar inscrição — Integra Sistêmica">
+<meta property="og:description" content="Cancele sua inscrição na lista de e-mails da Integra Sistêmica.">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Cancelar inscrição — Integra Sistêmica">
+<meta name="twitter:description" content="Cancele sua inscrição na lista de e-mails da Integra Sistêmica.">
+<style>
+  .unsub{max-width:540px;margin:0 auto;padding:64px var(--pad-x) 40px}
+  .unsub-card{background:var(--surface);border-radius:var(--r-lg);box-shadow:var(--shadow-card);padding:40px 35px;text-align:center}
+  .unsub-card .logo-sym{width:72px;height:72px;border-radius:50%;object-fit:cover;margin:0 auto 20px;display:block}
+  .unsub-card h1{font-family:var(--font-display);font-size:2rem;line-height:1.15;color:var(--marrom);margin-bottom:12px;font-weight:600}
+  .unsub-card .sub{font-family:var(--font-body);font-size:1.05rem;line-height:1.65;color:var(--ink-muted);margin-bottom:24px}
+  .email-box{background:var(--creme);border:1px solid var(--creme-deep);border-radius:var(--r-md);padding:14px 18px;font-family:var(--font-ui);font-size:1rem;color:var(--marrom);margin-bottom:20px;word-break:break-all}
+  .motivo{text-align:left;margin-bottom:24px}
+  .motivo label{display:block;font-family:var(--font-ui);font-size:0.9rem;color:var(--ink);margin-bottom:8px}
+  .motivo select{width:100%;padding:12px 14px;border:1px solid var(--creme-deep);border-radius:var(--r-md);font-family:var(--font-ui);font-size:0.95rem;color:var(--ink);background:var(--surface)}
+  .btn{width:100%;justify-content:center}
+  .msg{margin-top:20px;font-family:var(--font-body);font-size:1rem;line-height:1.6;display:none}
+  .msg.ok{color:#4a7a4a}
+  .msg.err{color:#a04040}
+  .btn:disabled{background:var(--creme-deep);color:var(--ink-muted);cursor:not-allowed}
+  .unsub-foot{margin:28px auto 0;max-width:540px;text-align:center;font-family:var(--font-ui);font-size:0.82rem;color:var(--ink-muted);line-height:1.6}
+</style>
+</head>
+<body>
+<header class="site-header" data-shell>
+  <div class="container header-inner">
+    <a class="logo" href="/" aria-label="Integra Sistêmica — início">
+      <img src="/assets/img/logo-symbol.webp" alt="" width="40" height="40">
+      <span>Integra Sistêmica</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="main-nav">
+      <span class="nav-toggle-bar" aria-hidden="true"></span>
+    </button>
+    <nav id="main-nav" class="nav" aria-label="Navegação principal">
+      <a href="/blog/" data-active-if="/blog/">Blog</a>
+      <a href="/constelacao-organizacional/" data-active-if="/constelacao-organizacional/">Organizacional</a>
+      <a href="/retiros/" data-active-if="/retiros/">Retiros</a>
+      <a href="/eventos/" data-active-if="/eventos/">Eventos</a>
+      <a class="nav-cta btn btn-primary" href="/ebook/" data-active-if="/ebook/">Começar por aqui</a>
+    </nav>
+  </div>
+</header>
+
+<main class="unsub">
+  <div class="unsub-card">
+    <img src="/assets/img/logo-symbol.webp" alt="Integra Sistêmica" class="logo-sym">
+    <h1>Cancelar inscrição</h1>
+    <p class="sub">Você pode deixar nossa lista de e-mails a qualquer momento, sem complicação — e voltar quando quiser.</p>
+    <div class="email-box" id="emailBox" role="status" aria-live="polite">Carregando…</div>
+    <div class="motivo">
+      <label for="motivo">Motivo (opcional)</label>
+      <select id="motivo" name="motivo">
+        <option value="">Selecione um motivo…</option>
+        <option value="nao-interessado">Não tenho mais interesse no tema</option>
+        <option value="muitos-emails">Estou recebendo e-mails demais</option>
+        <option value="nao-solicitei">Não me lembro de ter me inscrito</option>
+        <option value="conteudo">O conteúdo não é para mim</option>
+        <option value="outro">Outro motivo</option>
+      </select>
+    </div>
+    <button class="btn btn-primary" id="btnCancelar" type="button">Confirmar cancelamento</button>
+    <div class="msg" id="msg" role="alert"></div>
+  </div>
+  <div class="unsub-foot">
+    Integra Sistêmica · Conteúdo de reflexão e autoconhecimento<br>Você pode se reinscrever a qualquer momento.
+  </div>
+</main>
+
+<footer class="site-footer" data-shell role="contentinfo">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a class="logo" href="/" aria-label="Integra Sistêmica — início">
+        <img src="/assets/img/logo-symbol.webp" alt="" width="40" height="40">
+        <span>Integra Sistêmica</span>
+      </a>
+      <p>Conteúdo de reflexão, educação e autoconhecimento sobre constelação familiar e sistêmica. Uma forma de olhar para os padrões que se repetem.</p>
+    </div>
+    <div class="footer-col" aria-label="Navegação">
+      <h4>Explorar</h4>
+      <a href="/blog/">Blog</a>
+      <a href="/constelacao-organizacional/">Constelação Organizacional</a>
+      <a href="/retiros/">Retiros</a>
+      <a href="/eventos/">Eventos</a>
+      <a href="/ebook/">Guia das 7 Perguntas</a>
+    </div>
+    <div class="footer-col" aria-label="Institucional">
+      <h4>Institucional</h4>
+      <a href="mailto:contato@integrasistemica.com.br">contato@integrasistemica.com.br</a>
+      <a href="/ebook/">E-book &amp; Bônus</a>
+    </div>
+    <div class="footer-col" aria-label="Legal">
+      <h4>Legal</h4>
+      <a href="/termos-de-uso/">Termos de Uso</a>
+      <a href="/politica-de-privacidade/">Política de Privacidade</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 Integra Sistêmica — Todos os direitos reservados.</span>
+    <span>Conteúdo de reflexão. Não substitui acompanhamento profissional.</span>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var params = new URLSearchParams(window.location.search);
+    var email = (params.get('email') || '').trim();
+    var emailBox = document.getElementById('emailBox');
+    var btn = document.getElementById('btnCancelar');
+    var msg = document.getElementById('msg');
+
+    if (email && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      emailBox.textContent = email;
+    } else {
+      emailBox.textContent = 'E-mail não identificado.';
+      btn.disabled = true;
+    }
+
+    function showMsg(cls, text){
+      msg.className = 'msg ' + cls;
+      msg.style.display = 'block';
+      msg.textContent = text;
+    }
+
+    window.cancelar = function(){
+      if (!email) return;
+      btn.disabled = true;
+      btn.textContent = 'Processando…';
+      var motivo = document.getElementById('motivo').value;
+
+      var payload = { email: email, motivo: motivo || null };
+      fetch('https://rxuntxclstgtdzguknod.supabase.co/rest/v1/email_suppressions', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'apikey': 'eyJhbG...2Af8',
+          'Authorization': 'Bearer eyJhbG...2Af8',
+          'Prefer': 'return=minimal'
+        },
+        body: JSON.stringify(payload)
+      })
+      .then(function(res){
+        if (res.ok || res.status === 409) {
+          showMsg('ok', 'Inscrição cancelada. Você não receberá mais nossos e-mails.');
+          btn.style.display = 'none';
+          emailBox.setAttribute('aria-busy', 'false');
+        } else {
+          throw new Error('HTTP ' + res.status);
+        }
+      })
+      .catch(function(err){
+        showMsg('err', 'Ocorreu um erro ao cancelar. Tente novamente em instantes.');
+        btn.disabled = false;
+        btn.textContent = 'Confirmar cancelamento';
+      });
+    };
+
+    btn.addEventListener('click', window.cancelar);
+  })();
+</script>
+<script src="/assets/js/motion.js" defer></script>
+  <script src="/assets/js/shell.js"></script>
+</body>
+</html>

@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>As 7 perguntas que desfazem os padrões repetidos na sua família — Guia gratuito | Integra Sistêmica</title>
+  <meta name="description" content="Baixe gratuitamente o Guia de Aplicação das 7 Perguntas Sistêmicas + checklist. Um roteiro de reflexão sobre a sua história familiar. Sem promessas, com honestidade.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://integrasistemica.com.br/ebook/">
+
+  <!-- OG / social -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://integrasistemica.com.br/ebook/">
+  <meta property="og:site_name" content="Integra Sistêmica">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:title" content="As 7 perguntas que desfazem os padrões repetidos na sua família">
+  <meta property="og:description" content="Guia gratuito de reflexão e autoconhecimento para olhar a sua história familiar com clareza. PDF + checklist.">
+  <meta property="og:image" content="https://integrasistemica.com.br/assets/img/og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="As 7 perguntas que desfazem os padrões repetidos na sua família">
+  <meta name="twitter:description" content="Guia gratuito de reflexão e autoconhecimento para olhar a sua história familiar com clareza.">
+  <meta name="twitter:url" content="https://integrasistemica.com.br/ebook/">
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/img/favicon-512.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/img/favicon-192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16.png">
+  <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+
+  <!-- Fontes (pré-conectar primeiro, depois carregar) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="https://fonts.gstatic.com/s/cormorantgaramond/v21/co3bmX5slCNuHLi8bLeY9MK7whWMhyjYqXtKky2F7g.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Design system centralizado (herdado por toda pasta) -->
+  <link rel="stylesheet" href="/assets/css/design-system.css">
+
+  <!-- Estilos locais da landing /ebook/ — extends do design-system; nenhum hex solto /amarelo/âmbar -->
+  <style>
+    /* --- Contêiner estreito para landing de captura --- */
+    .ebook-container { max-width: 760px; margin: 0 auto; padding: 0 var(--pad-x); }
+
+    /* --- Hero de captura --- */
+    .ebook-hero {
+      background: var(--marrom);
+      color: var(--creme);
+      padding: 72px var(--pad-x);
+    }
+    .ebook-hero .container { max-width: 760px; }
+    .ebook-hero h1 { color: var(--creme); max-width: 680px; margin: 0 auto 18px; font-size: clamp(2rem, 4.5vw, 2.9rem); }
+    .ebook-hero .eyebrow { color: var(--terracota); margin-bottom: 16px; }
+    .ebook-hero .body-lg { color: rgba(245,240,232,.9); max-width: 600px; margin: 0 auto 8px; }
+
+    /* --- Card de oferta + formulário --- */
+    .ebook-card {
+      background: var(--surface);
+      border: 1px solid rgba(46,59,46,0.12);
+      border-radius: var(--r-lg);
+      box-shadow: var(--shadow-card);
+      padding: 40px;
+      margin-top: 16px;
+    }
+    .ebook-offer {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 32px;
+      align-items: start;
+    }
+    .ebook-cover {
+      width: 200px;
+      border-radius: var(--r-md);
+      box-shadow: var(--shadow-card);
+      flex-shrink: 0;
+    }
+    .bullets {
+      list-style: none;
+      margin-top: 16px;
+      display: grid;
+      gap: 10px;
+    }
+    .bullets li {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      font-size: 1.02rem;
+    }
+    .bullets li::before {
+      content: "";
+      flex-shrink: 0;
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--terracota);
+      margin-top: 9px;
+    }
+
+    /* --- Formulário --- */
+    .ebook-form { margin-top: 32px; }
+    .ebook-form label {
+      display: block;
+      font-family: var(--font-ui);
+      font-weight: 600;
+      color: var(--marrom);
+      margin-bottom: 6px;
+      font-size: .9rem;
+    }
+    .ebook-form input[type="email"] {
+      width: 100%;
+      padding: 14px 16px;
+      border: 1px solid rgba(46,59,46,0.12);
+      border-radius: var(--r-md);
+      font-size: 16px;
+      font-family: var(--font-ui);
+      color: var(--ink);
+      background: #fff;
+      margin-bottom: 16px;
+      transition: border-color var(--dur-fast) var(--ease-out);
+    }
+    .ebook-form input[type="email"]:focus { outline: none; border-color: var(--salvia); }
+    .ebook-checkbox {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 8px;
+      font-size: .95rem;
+      color: var(--ink);
+    }
+    .ebook-checkbox input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      margin-top: 3px;
+      accent-color: var(--terracota);
+      flex-shrink: 0;
+    }
+
+    .msg { margin-top: 18px; font-size: .98rem; padding: 14px 16px; border-radius: var(--r-md); display: none; }
+    .msg.ok { display: block; background: rgba(122,139,111,.12); color: var(--salvia-deep); border: 1px solid rgba(122,139,111,.3); }
+    .msg.err { display: block; background: rgba(192,123,92,.12); color: var(--terracota-deep); border: 1px solid rgba(192,123,92,.3); }
+    .download-links { display: flex; flex-direction: column; gap: 10px; margin-top: 14px; }
+
+    .terms {
+      font-family: var(--font-ui);
+      font-size: .85rem;
+      color: var(--ink-muted);
+      margin-top: 22px;
+      line-height: 1.55;
+    }
+    .terms a { color: var(--salvia-deep); }
+    .disclaimer {
+      font-family: var(--font-ui);
+      font-size: .85rem;
+      color: var(--ink-muted);
+      margin-top: 24px;
+      line-height: 1.55;
+      border-top: 1px solid rgba(46,59,46,0.12);
+      padding-top: 16px;
+    }
+
+    /* --- Seção honestidade --- */
+    .honest-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .honest-item {
+      background: var(--creme-deep);
+      border-radius: var(--r-lg);
+      padding: 24px;
+      border: 1px solid rgba(46,59,46,0.12);
+    }
+    .honest-item h3 { font-size: 1.15rem; margin-bottom: 6px; }
+    .honest-item p { font-size: .95rem; }
+
+    /* --- CTA livro --- */
+    .book-cta {
+      text-align: center;
+      background: var(--surface);
+      border: 1px solid rgba(46,59,46,0.12);
+      border-radius: var(--r-lg);
+      padding: 32px;
+      box-shadow: var(--shadow-card);
+    }
+    .book-cta-inner {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 36px;
+      align-items: center;
+      text-align: left;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .book-cta-cover {
+      width: 100%;
+      height: auto;
+      max-width: 260px;
+      border-radius: var(--r-md);
+      box-shadow: var(--shadow-card);
+    }
+    .book-cta-copy { display: flex; flex-direction: column; }
+    .book-price {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      color: var(--marrom);
+      margin: 6px 0;
+    }
+
+    /* --- Responsivo --- */
+    @media (max-width: 720px) {
+      .ebook-hero { padding: 56px var(--pad-x); }
+      .ebook-card { padding: 28px 20px; }
+      .ebook-offer { grid-template-columns: 1fr; }
+      .ebook-cover { width: 170px; margin: 0 auto; }
+      .honest-grid { grid-template-columns: 1fr; }
+      .book-cta-inner { grid-template-columns: 1fr; justify-items: center; text-align: center; gap: 20px; }
+      .book-cta-cover { max-width: 220px; }
+      .book-cta-copy { align-items: center; text-align: center; }
+      .book-cta-copy h2, .book-cta-copy p { text-align: center !important; }
+    }
+
+    /* Seção genérica com padding --- */
+    .ebook-section { padding: 64px 0; }
+    @media (max-width: 720px) { .ebook-section { padding: 48px 0; } }
+  </style>
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">[
+    {
+      "@type": "Organization",
+      "@id": "https://integrasistemica.com.br/#organization",
+      "name": "Integra Sistêmica",
+      "url": "https://integrasistemica.com.br/",
+      "logo": "https://integrasistemica.com.br/assets/img/logo-symbol.webp",
+      "email": "contato@integrasistemica.com.br"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://integrasistemica.com.br/ebook/#webpage",
+      "url": "https://integrasistemica.com.br/ebook/",
+      "name": "As 7 perguntas — Guia gratuito | Integra Sistêmica",
+      "isPartOf": { "@id": "https://integrasistemica.com.br/#website" },
+      "about": { "@id": "https://integrasistemica.com.br/#organization" },
+      "inLanguage": "pt-BR"
+    },
+    {
+      "@type": "Book",
+      "@id": "https://integrasistemica.com.br/ebook/#book",
+      "url": "https://integrasistemica.com.br/ebook/",
+      "name": "Guia de Aplicação das 7 Perguntas Sistêmicas",
+      "description": "Um roteiro gratuito de reflexão e autoconhecimento para olhar a sua história familiar com clareza — sem promessas de cura, como um convite à observação.",
+      "inLanguage": "pt-BR",
+      "author": { "@type": "Organization", "@id": "https://integrasistemica.com.br/#organization" },
+      "publisher": { "@type": "Organization", "@id": "https://integrasistemica.com.br/#organization" },
+      "isAccessibleForFree": true,
+      "image": "https://integrasistemica.com.br/assets/img/og-image.jpg",
+      "offers": {
+        "@type": "Offer",
+        "url": "https://integrasistemica.com.br/ebook/",
+        "price": "0",
+        "priceCurrency": "BRL",
+        "availability": "https://schema.org/InStock"
+      }
+    }
+  ]</script>
+</head>
+<body>
+
+  <!-- ===== HEADER (mesmo da home — consistência de marca) ===== -->
+  <header class="site-header">
+    <div class="container header-inner" style="display:flex;align-items:center;justify-content:space-between;padding:16px 0;flex-wrap:wrap;gap:10px">
+      <a class="logo" href="/">
+        <img src="/assets/img/logo-symbol.webp" alt="" width="40" height="40">
+        <span>Integra Sistêmica</span>
+      </a>
+      <nav class="nav" aria-label="Navegação principal">
+        <a href="/blog/">Blog</a>
+        <a href="/constelacao-organizacional/">Organizacional</a>
+        <a href="/retiros/">Retiros</a>
+        <a href="/eventos/">Eventos</a>
+        <a href="/ebook/" class="btn btn-primary" style="padding:10px 20px" aria-current="page">Começar por aqui</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== HERO DE CAPTURA ===== -->
+  <header class="ebook-hero">
+    <div class="container" style="max-width:760px;text-align:center">
+      <p class="eyebrow">Guia gratuito · 7 perguntas sistêmicas</p>
+      <h1>As 7 perguntas que desfazem os padrões repetidos na sua família</h1>
+      <p class="body-lg" style="color:rgba(245,240,232,.9);max-width:600px;margin:0 auto">
+        Um roteiro de reflexão e autoconhecimento para olhar a sua história familiar com clareza — sem promessas, com honestidade.
+      </p>
+    </div>
+  </header>
+
+  <!-- ===== OFERTA + FORMULÁRIO ===== -->
+  <main>
+    <section class="ebook-section">
+      <div class="ebook-container">
+        <div class="ebook-card">
+          <div class="ebook-offer">
+
+            <!-- Capa placeholder SVG (paleta do design system; PROIBIDO -Ewó) -->
+            <svg class="ebook-cover" viewBox="0 0 200 280" role="img"
+              aria-label="Capa do Guia das 7 Perguntas Sistêmicas"
+              style="background:var(--marrom);border-radius:12px;display:block">
+              <rect width="200" height="280" fill="#2E3B2E"/>
+              <!-- Círculo-mandala em sálvia -->
+              <circle cx="100" cy="120" r="48" fill="none" stroke="#7A8B6F" stroke-width="3" opacity=".85"/>
+              <!-- Fio terracota — símbolo do Ifá -->
+              <path d="M100 30 C 50 90, 50 120, 100 120" fill="none" stroke="#C67B5C" stroke-width="3.5"/>
+              <path d="M100 120 C 150 120, 150 160, 100 215" fill="none" stroke="#C67B5C" stroke-width="3.5"/>
+              <!-- Nó central -->
+              <circle cx="100" cy="120" r="5" fill="#F5F0E8"/>
+              <!-- Texto no cover -->
+              <text x="100" y="250" text-anchor="middle"
+                font-family="'Cormorant Garamond', Georgia, serif"
+                font-size="17" font-weight="600" fill="#F5F0E8">
+                7 Perguntas
+              </text>
+              <text x="100" y="270" text-anchor="middle"
+                font-family="'Inter', system-ui, sans-serif"
+                font-size="9" fill="rgba(245,240,232,.7)" letter-spacing=".08em">
+                SISTÊMICAS
+              </text>
+            </svg>
+
+            <!-- Bullets do que o leitor recebe -->
+            <div>
+              <h2>O que você recebe ao baixar</h2>
+              <ul class="bullets">
+                <li>O roteiro das <strong>7 perguntas</strong> e a porta de entrada sistêmica para começarmos juntos.</li>
+                <li>Feito para quem, entre 35 e 55 anos, nota dinheiro, relacionamentos ou saúde <em>se repetindo</em> de forma parecida.</li>
+                <li>É um caminho de reflexão para a sua árvore familiar — não substitui terapia e não promete cura.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- ===== FORMULÁRIO DE CAPTURA ===== -->
+          <form id="capture-form" class="ebook-form" novalidate>
+            <label for="email">Seu e-mail</label>
+            <input
+              type="email" id="email" name="email"
+              required placeholder="voce@email.com"
+              autocomplete="email" inputmode="email"
+            >
+
+            <div class="ebook-checkbox">
+              <input type="checkbox" id="optin" name="optin" value="true">
+              <label for="optin" style="font-weight:400;margin:0;display:inline;font-family:var(--font-body)">
+                Quero receber conteúdos e novidades da Integra Sistêmica por e-mail. Opt-in opcional — você pode cancelar a qualquer momento. Ele não é exigido para baixar o guia.
+              </label>
+            </div>
+
+            <button type="submit" class="btn btn-terracota" id="submit-btn"
+              style="width:100%;font-size:1rem;padding:16px 28px;margin-top:8px">
+              Quero receber o guia
+            </button>
+          </form>
+
+          <!-- Mensagem de resposta (acessível) -->
+          <div id="msg" class="msg" role="status" aria-live="polite"></div>
+
+          <!-- Consentimento e termos LGPD -->
+          <div class="terms">
+            Ao enviar, você concorda com a nossa
+            <a href="/politica-de-privacidade/" target="_blank" rel="noopener">Política de Privacidade</a>.
+            Coletamos apenas o seu e-mail (minimização de dados, LGPD) para entregar o guia.
+            Os <strong>links de download</strong> são liberados logo abaixo e ficam disponíveis por 7 dias.
+            O consentimento de marketing é separado e começa <strong>desmarcado</strong>.
+          </div>
+
+          <!-- Aviso honesto -->
+          <div class="disclaimer">
+            <strong>Aviso honesto:</strong> este material é uma ferramenta de
+            <strong>reflexão, educação e autoconhecimento</strong>.
+            Não substitui tratamento médico, psicológico ou psiquiátrico.
+            Não promete cura, não realiza diagnóstico e não trata transtornos.
+            Constelação familiar não é prática reconhecida pela ciência nem pelo Conselho Federal de Psicologia.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PARA COMEÇAR COM CLAREZA (honestidade) ===== -->
+    <section class="ebook-section section-alt">
+      <div class="ebook-container">
+        <h2 class="reveal" style="margin-bottom:24px">Para começar com clareza</h2>
+        <div class="honest-grid">
+          <div class="honest-item reveal">
+            <h3>O que é</h3>
+            <p>Um roteiro de reflexão que te ajuda a olhar o próprio padrão com mais consciência e menos julgamento.</p>
+          </div>
+          <div class="honest-item reveal reveal-delay-1">
+            <h3>O que não é</h3>
+            <p>Não é terapia, não substitui acompanhamento profissional e não promete resultado garantido.</p>
+          </div>
+          <div class="honest-item reveal reveal-delay-2">
+            <h3>Para quem</h3>
+            <p>Para quem sente que certos padrões se repetem na própria história e quer começar perguntando.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CTA LIVRO (após a oferta do guia) ===== -->
+    <section class="ebook-section">
+      <div class="ebook-container">
+        <div class="book-cta reveal">
+          <div class="book-cta-inner">
+            <img
+              class="book-cta-cover"
+              src="/assets/img/ebook/capa-livro.webp"
+              srcset="/assets/img/ebook/capa-livro.webp 640w,
+                      /assets/img/ebook/capa-livro-2x.webp 1000w"
+              sizes="(max-width:720px) 220px, 300px"
+              width="640" height="953"
+              loading="lazy" decoding="async"
+              alt="Capa do livro Constelação Familiar: Desfaça os padrões que se repetem na sua família"
+            >
+            <div class="book-cta-copy">
+              <p class="eyebrow" style="margin-bottom:6px">Aprofunde o caminho</p>
+              <h2 style="text-align:left">Constelação Familiar</h2>
+              <p style="margin:12px 0 8px;text-align:left">O ebook que expande as 7 perguntas em uma jornada completa de autoconhecimento — para dinheiro, relacionamentos e saúde.</p>
+              <p class="book-price">R$ 19,90</p>
+              <a
+                class="btn btn-primary"
+                href="https://www.amazon.com.br/dp/B0HJ6GWXQ2"
+                target="_blank" rel="noopener nofollow"
+                style="max-width:320px;margin:16px 0 0"
+              >
+                Conhecer o livro na Amazon
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== FOOTER (mesmo da home) ===== -->
+  <footer class="site-footer" style="background:var(--marrom);color:rgba(245,240,232,.85)">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="logo" href="/" style="display:inline-flex;align-items:center;gap:10px">
+          <img src="/assets/img/logo-symbol.webp" alt="" width="40" height="40">
+          <span style="font-family:var(--font-display);font-weight:600;font-size:1.3rem;color:#fff">Integra Sistêmica</span>
+        </a>
+        <p>Conteúdo de reflexão, educação e autoconhecimento sobre constelação familiar e sistêmica.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Explorar</h4>
+        <a href="/blog/">Blog</a>
+        <a href="/ebook/">Guia das 7 Perguntas</a>
+        <a href="/constelacao-organizacional/">Constelação Organizacional</a>
+        <a href="/retiros/">Retiros</a>
+        <a href="/eventos/">Eventos</a>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <a href="/termos-de-uso/">Termos de Uso</a>
+        <a href="/politica-de-privacidade/">Política de Privacidade</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contato</h4>
+        <a href="mailto:contato@integrasistemica.com.br">contato@integrasistemica.com.br</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Integra Sistêmica — Todos os direitos reservados.</span>
+      <span>Conteúdo de reflexão. Não substitui acompanhamento profissional.</span>
+    </div>
+  </footer>
+
+  <!-- ===== SCRIPT DE CAPTURA ===== -->
+  <script>
+    // Edge function captura-guia: grava lead + devolve links assinados (validade 7 dias)
+    const SUPABASE_URL = "https://rxuntxclstgtdzguknod.supabase.co";
+
+    document.getElementById('capture-form').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const email = document.getElementById('email').value.trim();
+      const optin = document.getElementById('optin').checked;
+      const msg   = document.getElementById('msg');
+      const btn   = document.getElementById('submit-btn');
+
+      btn.disabled = true; btn.textContent = 'Enviando…';
+      msg.className = 'msg';
+
+      // Validação de formato antes de ir ao servidor
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        msg.className = 'msg err';
+        msg.textContent = 'Digite um e-mail válido para receber o guia.';
+        btn.disabled = false; btn.textContent = 'Quero receber o guia';
+        return;
+      }
+
+      try {
+        const res = await fetch(SUPABASE_URL + '/functions/v1/captura-guia', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, consent_marketing: optin, fonte: 'ebook-slug' })
+        });
+
+        const out = await res.json().catch(() => ({}));
+
+        if (res.ok && out.success) {
+          msg.className = 'msg ok';
+          msg.innerHTML = '<strong>Seu guia está pronto!</strong> Links válidos por 7 dias:' +
+            '<div class="download-links">' +
+            '<a href="' + (out.links && out.links.guia || '') + '" target="_blank" rel="noopener" class="btn btn-terracota">Baixar Guia de Aplicação das 7 Perguntas (PDF)</a>' +
+            '<a href="' + (out.links && out.links.checklist || '') + '" target="_blank" rel="noopener" class="btn btn-salvia" style="background:var(--salvia);color:#fff">Baixar Checklist das 7 Perguntas (PDF)</a>' +
+            '</div>';
+          document.getElementById('capture-form').style.display = 'none';
+        } else {
+          // Mensagem de erro honesta e acionável
+          msg.className = 'msg err';
+          msg.textContent = out.error || 'Não foi possível processar. Verifique o e-mail e tente novamente.';
+          btn.disabled = false; btn.textContent = 'Quero receber o guia';
+        }
+      } catch (err) {
+        // Erro de rede — honesto, não silencioso
+        msg.className = 'msg err';
+        msg.textContent = 'Erro de conexão. Verifique sua internet e tente novamente em instantes.';
+        btn.disabled = false; btn.textContent = 'Quero receber o guia';
+      }
+    });
+  </script>
+
+  <!-- Motion scroll-trigger (shared) -->
+  <script src="/assets/js/motion.js"></script>
+</body>
+</html>

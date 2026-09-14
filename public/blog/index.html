@@ -33,15 +33,21 @@
 <script type="application/ld+json">[{"@type": "Organization", "@id": "https://integrasistemica.com.br/#organization", "name": "Integra Sistêmica", "url": "https://integrasistemica.com.br/", "logo": "https://integrasistemica.com.br/assets/img/logo-symbol.webp", "email": "contato@integrasistemica.com.br", "sameAs": []}, {"@type": "WebSite", "@id": "https://integrasistemica.com.br/#website", "url": "https://integrasistemica.com.br/", "name": "Integra Sistêmica", "publisher": {"@id": "https://integrasistemica.com.br/#organization"}, "inLanguage": "pt-BR"}, {"@type": "WebPage", "@id": "https://integrasistemica.com.br/blog/index.html#webpage", "url": "https://integrasistemica.com.br/blog/index.html", "name": "Blog — Integra Sistêmica", "isPartOf": {"@id": "https://integrasistemica.com.br/#website"}, "about": {"@id": "https://integrasistemica.com.br/#organization"}, "inLanguage": "pt-BR"}]</script>
 </head>
 <body>
-<header class="site-header">
-  <div class="container header-inner" style="display:flex;align-items:center;justify-content:space-between;padding:16px 0;flex-wrap:wrap;gap:10px">
-    <a class="logo" href="/"><img src="/assets/img/logo-symbol.webp" alt="" width="40" height="40"> <span>Integra Sistêmica</span></a>
-    <nav class="nav" aria-label="Navegação principal">
-      <a href="/blog/">Blog</a>
-      <a href="/constelacao-organizacional/">Organizacional</a>
-      <a href="/retiros/">Retiros</a>
-      <a href="/eventos/">Eventos</a>
-      <a href="https://ebook.integrasistemica.com.br/" class="btn btn-primary" style="padding:10px 20px">Começar por aqui</a>
+<header class="site-header" data-shell>
+  <div class="container header-inner">
+    <a class="logo" href="/" aria-label="Integra Sistêmica — início">
+      <img src="/assets/img/logo-symbol.webp" alt="" width="40" height="40">
+      <span>Integra Sistêmica</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="main-nav">
+      <span class="nav-toggle-bar" aria-hidden="true"></span>
+    </button>
+    <nav id="main-nav" class="nav" aria-label="Navegação principal">
+      <a href="/blog/" aria-current="page" data-active-if="/blog/">Blog</a>
+      <a href="/constelacao-organizacional/" data-active-if="/constelacao-organizacional/">Organizacional</a>
+      <a href="/retiros/" data-active-if="/retiros/">Retiros</a>
+      <a href="/eventos/" data-active-if="/eventos/">Eventos</a>
+      <a class="nav-cta btn btn-primary" href="/ebook/" data-active-if="/ebook/">Começar por aqui</a>
     </nav>
   </div>
 </header>
@@ -54,8 +60,42 @@
     Nesta etapa de conscientização, publicaremos conteúdo para aprofundar a jornada antes do lançamento do livro.
   </p>
 
-  <div class="vert-grid" id="posts" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;margin-top:48px">
-    <!-- Posts surgirão aqui; cada um usa .card .reveal -->
+  <div class="vert-grid" id="posts" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;margin-top:48px">
+    <article class="card reveal" style="display:flex;flex-direction:column;justify-content:space-between;text-decoration:none;">
+      <div>
+        <span class="eyebrow" style="color:var(--terracota-deep);font-size:0.75rem;">Constelação Sistêmica · Conceito</span>
+        <h3 style="margin:10px 0 12px;font-size:1.35rem;line-height:1.25;"><a href="/blog/o-que-e-constelacao-familiar/" style="color:var(--marrom);text-decoration:none;">O que é constelação familiar e como funciona</a></h3>
+        <p style="color:var(--ink-muted);font-size:0.95rem;line-height:1.6;margin-bottom:20px;">Uma forma de observar os padrões que se repetem nas famílias — reflexão sóbria e honesta, sem promessa de cura e sem diagnóstico.</p>
+      </div>
+      <div style="display:flex;align-items:center;justify-content:space-between;padding-top:16px;border-top:1px solid var(--creme-deep);font-family:var(--font-ui);font-size:0.85rem;color:var(--ink-muted);">
+        <span>Por Thiago Carvalho</span>
+        <a href="/blog/o-que-e-constelacao-familiar/" style="color:var(--terracota-deep);font-weight:600;display:inline-flex;align-items:center;gap:4px;">Ler artigo →</a>
+      </div>
+    </article>
+
+    <article class="card reveal reveal-delay-1" style="display:flex;flex-direction:column;justify-content:space-between;text-decoration:none;">
+      <div>
+        <span class="eyebrow" style="color:var(--terracota-deep);font-size:0.75rem;">Espelho · Relacionamentos</span>
+        <h3 style="margin:10px 0 12px;font-size:1.35rem;line-height:1.25;"><a href="/blog/por-que-repito-os-mesmos-erros-nos-relacionamentos/" style="color:var(--marrom);text-decoration:none;">Por que repito os mesmos erros nos meus relacionamentos?</a></h3>
+        <p style="color:var(--ink-muted);font-size:0.95rem;line-height:1.6;margin-bottom:20px;">O problema quase nunca é falta de sorte. Na visão sistêmica, relacionamentos revelam mapas emocionais herdados — e olhar para eles traz clareza.</p>
+      </div>
+      <div style="display:flex;align-items:center;justify-content:space-between;padding-top:16px;border-top:1px solid var(--creme-deep);font-family:var(--font-ui);font-size:0.85rem;color:var(--ink-muted);">
+        <span>Por Thiago Carvalho</span>
+        <a href="/blog/por-que-repito-os-mesmos-erros-nos-relacionamentos/" style="color:var(--terracota-deep);font-weight:600;display:inline-flex;align-items:center;gap:4px;">Ler artigo →</a>
+      </div>
+    </article>
+
+    <article class="card reveal reveal-delay-2" style="display:flex;flex-direction:column;justify-content:space-between;text-decoration:none;">
+      <div>
+        <span class="eyebrow" style="color:var(--terracota-deep);font-size:0.75rem;">Padrões Familiares · Origem</span>
+        <h3 style="margin:10px 0 12px;font-size:1.35rem;line-height:1.25;"><a href="/blog/padroes-familiares-como-identificar-os-que-voce-herdou/" style="color:var(--marrom);text-decoration:none;">Padrões familiares: como identificar os que você herdou</a></h3>
+        <p style="color:var(--ink-muted);font-size:0.95rem;line-height:1.6;margin-bottom:20px;">Um convite a olhar, sem culpa e sem promessas, para os aprendizados que se repetem na sua história — com um exercício seguro para começar.</p>
+      </div>
+      <div style="display:flex;align-items:center;justify-content:space-between;padding-top:16px;border-top:1px solid var(--creme-deep);font-family:var(--font-ui);font-size:0.85rem;color:var(--ink-muted);">
+        <span>Por Thiago Carvalho</span>
+        <a href="/blog/padroes-familiares-como-identificar-os-que-voce-herdou/" style="color:var(--terracota-deep);font-weight:600;display:inline-flex;align-items:center;gap:4px;">Ler artigo →</a>
+      </div>
+    </article>
   </div>
 
   <!-- CTA fixo ao guia (degrau #1) — bloco idêntico em todos os artigos -->
@@ -63,33 +103,36 @@
     <p class="eyebrow" style="color:var(--terracota-deep)">Guia gratuito · 7 perguntas sistêmicas</p>
     <h2 style="margin-bottom:12px">7 perguntas para reconhecer o padrão — grátis</h2>
     <p class="body-lg" style="color:var(--ink-muted);max-width:560px;margin:0 auto 20px">Sete perguntas, uma manhã. Sem cobrança. Comece a olhar para a sua história com clareza.</p>
-    <a class="btn btn-terracota" href="https://ebook.integrasistemica.com.br/">Começar por aqui</a>
+    <a class="btn btn-terracota" href="/ebook/">Começar por aqui</a>
   </div>
 </main>
 
-<footer class="site-footer" style="background:var(--marrom);color:rgba(245,240,232,.85)">
+<footer class="site-footer" data-shell role="contentinfo">
   <div class="footer-grid">
     <div class="footer-brand">
-      <a class="logo" href="/" style="display:inline-flex;align-items:center;gap:10px"><img src="/assets/img/logo-symbol.webp" alt="" width="40" height="40"><span style="font-family:var(--font-display);font-weight:600;font-size:1.3rem;color:#fff">Integra Sistêmica</span></a>
+      <a class="logo" href="/" aria-label="Integra Sistêmica — início">
+        <img src="/assets/img/logo-symbol.webp" alt="" width="40" height="40">
+        <span>Integra Sistêmica</span>
+      </a>
       <p>Conteúdo de reflexão, educação e autoconhecimento sobre constelação familiar e sistêmica. Uma forma de olhar para os padrões que se repetem.</p>
     </div>
-    <div class="footer-col">
+    <div class="footer-col" aria-label="Navegação">
       <h4>Explorar</h4>
       <a href="/blog/">Blog</a>
-      <a href="https://ebook.integrasistemica.com.br/">Guia das 7 Perguntas</a>
       <a href="/constelacao-organizacional/">Constelação Organizacional</a>
       <a href="/retiros/">Retiros</a>
       <a href="/eventos/">Eventos</a>
-      <a href="/ebook/">E-book & Bônus</a>
+      <a href="/ebook/">Guia das 7 Perguntas</a>
     </div>
-    <div class="footer-col">
+    <div class="footer-col" aria-label="Institucional">
+      <h4>Institucional</h4>
+      <a href="mailto:contato@integrasistemica.com.br">contato@integrasistemica.com.br</a>
+      <a href="/ebook/">E-book &amp; Bônus</a>
+    </div>
+    <div class="footer-col" aria-label="Legal">
       <h4>Legal</h4>
       <a href="/termos-de-uso/">Termos de Uso</a>
       <a href="/politica-de-privacidade/">Política de Privacidade</a>
-    </div>
-    <div class="footer-col">
-      <h4>Contato</h4>
-      <a href="mailto:contato@integrasistemica.com.br">contato@integrasistemica.com.br</a>
     </div>
   </div>
   <div class="footer-bottom">
@@ -99,5 +142,6 @@
 </footer>
 
 <script src="/assets/js/motion.js"></script>
+  <script src="/assets/js/shell.js"></script>
 </body>
 </html>
