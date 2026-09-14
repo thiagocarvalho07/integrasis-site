@@ -232,30 +232,36 @@ h3,.h3{font-family:var(--font-display);font-size:1.6rem;font-weight:600;line-hei
   .footer-brand p{display:none}
 }
 @media(max-width:620px){
-  .site-footer{padding:24px var(--pad-x) 16px}
+  .site-footer{padding:20px var(--pad-x) 14px}
   .footer-grid{
     grid-template-columns:1fr 1fr;
-    gap:16px 20px;
+    gap:14px 16px;
   }
   .footer-brand{
     grid-column:1/-1;
-    padding-bottom:12px;
-    border-bottom:1px solid rgba(245,240,232,.22);
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding-bottom:8px;
+    border-bottom:1px solid rgba(245,240,232,.18);
   }
-  .site-footer .logo img{width:32px;height:32px}
-  .site-footer .logo span{font-size:1.05rem}
-  .footer-col h4{margin-bottom:6px;font-size:.72rem}
-  .footer-col a{margin-bottom:3px;font-size:.84rem;line-height:1.38}
-  .footer-col[aria-label="Institucional"]{grid-column:1/-1}
-  .footer-col[aria-label="Institucional"] a{display:inline-block;margin:0 16px 3px 0}
+  .site-footer .logo img{width:28px;height:28px}
+  .site-footer .logo span{font-size:.98rem;font-weight:600}
+  .footer-col h4{margin-bottom:4px;font-size:.7rem;letter-spacing:.06em}
+  .footer-col a{margin-bottom:2px;font-size:.82rem;line-height:1.35}
+  .footer-col[aria-label="Institucional"]{grid-column:1/-1;margin-top:2px;padding-top:8px;border-top:1px solid rgba(245,240,232,.1)}
+  .footer-col[aria-label="Institucional"] h4{display:inline-block;margin:0 12px 0 0;font-size:.68rem}
+  .footer-col[aria-label="Institucional"] a{display:inline-block;margin:0 14px 0 0;font-size:.8rem}
   .footer-bottom{
-    margin-top:16px;
-    padding-top:12px;
-    font-size:.72rem;
-    line-height:1.4;
-    gap:3px;
+    margin-top:12px;
+    padding-top:8px;
+    font-size:.7rem;
+    line-height:1.35;
+    gap:2px;
+    color:rgba(245,240,232,.7);
   }
 }
+
 
 /* --- 9. MENU MOBILE ACESSÍVEL (hambúrguer CSS + drawer) --- */
 /* Botão visível somente ≤620px; escondido no desktop (.nav-toggle{display:none} acima) */
