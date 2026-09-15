@@ -77,15 +77,26 @@
     }
     .bullets {
       list-style: none;
-      margin-top: 16px;
+      margin-top: 18px;
       display: grid;
-      gap: 10px;
+      gap: 14px;
     }
     .bullets li {
       display: flex;
       gap: 12px;
       align-items: flex-start;
-      font-size: 1.02rem;
+      font-size: 1.05rem;
+      line-height: 1.5;
+      color: var(--ink);
+    }
+    .bullets li strong {
+      color: var(--marrom);
+      font-weight: 600;
+    }
+    .bullets li em {
+      color: var(--terracota-deep);
+      font-style: normal;
+      font-weight: 500;
     }
     .bullets li::before {
       content: "";
@@ -94,7 +105,7 @@
       height: 9px;
       border-radius: 50%;
       background: var(--terracota);
-      margin-top: 9px;
+      margin-top: 7px;
     }
 
     /* --- Formulário --- */
@@ -304,17 +315,17 @@
         <div class="ebook-card">
           <div class="ebook-offer">
 
-            <!-- Capa oficial do Guia e Livro em alta definição -->
+            <!-- Capa oficial exclusiva do Guia das 7 Perguntas -->
             <img
               class="ebook-cover"
-              src="/assets/img/ebook/capa-livro.webp"
-              srcset="/assets/img/ebook/capa-livro.webp 640w,
-                      /assets/img/ebook/capa-livro-2x.webp 1000w"
+              src="/assets/img/ebook/capa-guia-7-perguntas.webp"
+              srcset="/assets/img/ebook/capa-guia-7-perguntas.webp 640w,
+                      /assets/img/ebook/capa-guia-7-perguntas-2x.webp 1000w"
               sizes="(max-width: 620px) 180px, 240px"
               width="640" height="953"
-              alt="Capa do livro Constelação Familiar: Desfaça os padrões que se repetem na sua família, por Thiago Carvalho"
+              alt="Capa do Guia de Aplicação das 7 Perguntas Sistêmicas — Integra Sistêmica"
               loading="eager" fetchpriority="high"
-              style="width:100%;max-width:240px;height:auto;aspect-ratio:640/953;border-radius:var(--r-md);box-shadow:0 18px 40px rgba(46,59,46,.25);display:block;margin:0 auto;"
+              style="width:100%;max-width:240px;height:auto;aspect-ratio:640/953;border-radius:var(--r-md);box-shadow:0 18px 40px rgba(46,59,46,.22);display:block;margin:0 auto;"
             >
 
             <!-- Bullets do que o leitor recebe -->
