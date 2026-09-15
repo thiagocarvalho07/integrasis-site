@@ -90,6 +90,7 @@ h3,.h3{font-family:var(--font-display);font-size:1.6rem;font-weight:600;line-hei
   font-family:var(--font-ui);font-size:.95rem;font-weight:600;letter-spacing:.02em;
   padding:12px 26px;border-radius:var(--r-pill);line-height:1;
   transition:background-color var(--dur-fast) var(--ease-out),
+             color var(--dur-fast) var(--ease-out),
              transform var(--dur-fast) var(--ease-out),
              box-shadow var(--dur-fast) var(--ease-out);
   min-height:44px;text-decoration:none;
@@ -109,12 +110,14 @@ h3,.h3{font-family:var(--font-display);font-size:1.6rem;font-weight:600;line-hei
 }
 .btn-secondary{
   background:transparent;
-  color:var(--marrom) !important;
+  color:var(--marrom);
   box-shadow:inset 0 0 0 1.5px var(--marrom);
 }
 .btn-secondary:hover{
   background:var(--creme-deep);
-  color:var(--marrom) !important;
+  color:var(--marrom);
+  transform:translateY(-1px);
+  box-shadow:inset 0 0 0 1.5px var(--marrom);
   opacity:1 !important;
 }
 .btn-terracota{
@@ -124,6 +127,27 @@ h3,.h3{font-family:var(--font-display);font-size:1.6rem;font-weight:600;line-hei
 .btn-terracota:hover{
   background:var(--terracota-deep);
   color:#FFFFFF !important;
+  transform:translateY(-1px);
+  opacity:1 !important;
+}
+
+/* Botões Secundários em Fundos Escuros (Hero, CTA Dark, etc.) */
+.hero .btn-secondary,
+.cta-final .btn-secondary,
+.dark-bg .btn-secondary,
+.btn-secondary-light{
+  background:rgba(245,240,232,0.12) !important;
+  color:var(--creme) !important;
+  box-shadow:inset 0 0 0 1.5px var(--creme) !important;
+}
+.hero .btn-secondary:hover,
+.cta-final .btn-secondary:hover,
+.dark-bg .btn-secondary:hover,
+.btn-secondary-light:hover{
+  background:var(--creme) !important;
+  color:var(--marrom) !important;
+  box-shadow:0 4px 14px rgba(0,0,0,0.35) !important;
+  transform:translateY(-1px);
   opacity:1 !important;
 }
 
