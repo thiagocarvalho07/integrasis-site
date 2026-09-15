@@ -10,13 +10,13 @@
   /* Cores */
   --marrom:#2E3B2E;
   --salvia:#7A8B6F;
-  --salvia-deep:#5C6B52;
+  --salvia-deep:#4A5940;
   --terracota:#C67B5C;
-  --terracota-deep:#A85F43;
+  --terracota-deep:#8F472B; /* Contraste reforçado para WCAG AA/AAA */
   --creme:#F5F0E8;
   --creme-deep:#E9E2D5;
-  --ink:#3A3A38;
-  --ink-muted:#6B6B66;
+  --ink:#2C2C2A;
+  --ink-muted:#50504C; /* Contraste reforçado (> 5.5:1 no creme-deep) */
   --surface:#FFFFFF;
   --focus:oklch(0.55 0.08 240);
 
@@ -217,7 +217,8 @@ h3,.h3{font-family:var(--font-display);font-size:1.6rem;font-weight:600;line-hei
   font-size: .84rem;
   line-height: 1.5;
 }
-.footer-col h4{
+.footer-col h4,
+.footer-col .footer-title{
   margin-bottom: 10px;
   color: var(--terracota-deep);
   font-family: var(--font-ui);

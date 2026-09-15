@@ -4,3 +4,5 @@ User-agent: *
 Allow: /
 
 Sitemap: https://integrasistemica.com.br/sitemap.xml
+# LLMs and AI discovery
+# https://integrasistemica.com.br/llms.txt
