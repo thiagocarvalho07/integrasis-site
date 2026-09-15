@@ -31,16 +31,24 @@
   <meta name="twitter:description" content="Como a Integra Sistêmica trata seus dados pessoais, em conformidade com a LGPD.">
   <meta name="twitter:url" content="https://integrasistemica.com.br/politica-de-privacidade/index.html">
 <style>
-  .legal{max-width:780px;margin:0 auto;padding:64px var(--pad-x) 32px}
-  .legal h1{font-family:var(--font-display);font-size:2.6rem;line-height:1.1;color:var(--marrom);margin-bottom:12px;text-wrap:balance}
-  .legal .updated{font-family:var(--font-ui);font-size:.85rem;color:var(--ink-muted);margin-bottom:40px}
-  .legal h2{font-family:var(--font-display);font-size:1.5rem;color:var(--marrom);margin:32px 0 12px}
-  .legal p,.legal li{font-family:var(--font-body);font-size:1.05rem;line-height:1.7;color:var(--ink);margin-bottom:14px}
+  .legal{max-width:780px;margin:0 auto;padding:64px var(--pad-x,24px) 32px}
+  .legal h1{font-family:var(--font-display,Georgia,serif);font-size:2.6rem;line-height:1.1;color:#3B2B1F;margin-bottom:12px;text-wrap:balance}
+  .legal .updated{font-family:var(--font-ui,system-ui,sans-serif);font-size:.85rem;color:#50504C;margin-bottom:40px}
+  .legal h2{font-family:var(--font-display,Georgia,serif);font-size:1.5rem;color:#3B2B1F;margin:32px 0 12px}
+  .legal p,.legal li{font-family:var(--font-body,Georgia,serif);font-size:1.05rem;line-height:1.7;color:#2C2C2A;margin-bottom:14px}
   .legal ul{padding-left:24px}
-  .legal a{color:var(--terracota-deep)}
-  .legal table{width:100%;border-collapse:collapse;margin:14px 0;font-family:var(--font-ui);font-size:.9rem}
-  .legal td,.legal th{border:1px solid var(--creme-deep);padding:10px 12px;text-align:left;vertical-align:top}
-  .legal th{background:var(--creme);font-weight:600}
+  .legal a{color:#8F472B}
+  /* scroll horizontal seguro em mobile */
+  .legal .table-wrap{width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch;margin:14px 0;border-radius:6px;border:1px solid #E5DED2}
+  .legal table{width:100%;min-width:540px;border-collapse:collapse;font-family:var(--font-ui,system-ui,sans-serif);font-size:.9rem}
+  .legal td,.legal th{border:1px solid #E5DED2;padding:10px 12px;text-align:left;vertical-align:top;color:#2C2C2A}
+  .legal th{background:#F5F0E8;font-weight:600;color:#3B2B1F}
+  @media(max-width:620px){
+    .legal{padding:40px 20px 32px}
+    .legal h1{font-size:1.9rem}
+    .legal h2{font-size:1.25rem}
+    .legal p,.legal li{font-size:1rem}
+  }
 </style>
 <script type="application/ld+json">[{"@type": "Organization", "@id": "https://integrasistemica.com.br/#organization", "name": "Integra Sistêmica", "url": "https://integrasistemica.com.br/", "logo": "https://integrasistemica.com.br/assets/img/logo-symbol.webp", "email": "contato@integrasistemica.com.br", "sameAs": []}, {"@type": "WebSite", "@id": "https://integrasistemica.com.br/#website", "url": "https://integrasistemica.com.br/", "name": "Integra Sistêmica", "publisher": {"@id": "https://integrasistemica.com.br/#organization"}, "inLanguage": "pt-BR"}, {"@type": "WebPage", "@id": "https://integrasistemica.com.br/politica-de-privacidade/index.html#webpage", "url": "https://integrasistemica.com.br/politica-de-privacidade/index.html", "name": "Política de Privacidade — Integra Sistêmica", "isPartOf": {"@id": "https://integrasistemica.com.br/#website"}, "about": {"@id": "https://integrasistemica.com.br/#organization"}, "inLanguage": "pt-BR"}]</script>
 </head>
@@ -72,12 +80,14 @@
   <p>Este site é operado pela <strong>Integra Sistêmica</strong>, marca de conteúdos de reflexão, educação e autoconhecimento sobre constelação familiar e sistêmica. Esta política explica como tratamos seus dados pessoais, em conformidade com a <strong>LGPD — Lei nº 13.709/2018</strong>.</p>
 
   <h2>2. Dados que coletamos e para quê</h2>
+  <div class="table-wrap">
   <table>
     <tr><th>Dado</th><th>Finalidade</th><th>Base legal (LGPD)</th></tr>
     <tr><td>E-mail</td><td>Enviar materiais gratuitos, newsletter e conteúdos que você solicitou</td><td>Consentimento (art. 7º, I) e/ou execução do serviço (art. 7º, V)</td></tr>
     <tr><td>E-mail + código de resgate</td><td>Liberar o download dos bônus adquiridos</td><td>Execução do serviço (art. 7º, V)</td></tr>
     <tr><td>Dados de navegação (anonimizados)</td><td>Entender como o conteúdo é usado e melhorar a experiência</td><td>Legítimo interesse (art. 7º, IX)</td></tr>
   </table>
+  </div>
 
   <h2>2.1 Processadores de dados</h2>
   <p>Usamos provedores de infraestrutura que tratam os dados apenas em nosso nome, sob nossos termos, e não vendem seus dados:</p>
