@@ -230,27 +230,34 @@ h3,.h3{font-family:var(--font-display);font-size:1.6rem;font-weight:600;line-hei
 }
 .footer-col a{
   display: block;
-  margin-bottom: 6px;
+  padding: 6px 0;
+  margin-bottom: 2px;
   color: var(--marrom);
   font-family: var(--font-ui);
-  font-size: .88rem;
+  font-size: .92rem;
   line-height: 1.45;
   font-weight: 500;
   overflow-wrap: anywhere;
+  min-height: 36px;
+  display: flex;
+  align-items: center;
 }
 .footer-bottom{
   max-width: var(--container);
   margin: 28px auto 0;
   padding-top: 16px;
   border-top: 1px solid rgba(46,59,46,0.12);
-  color: var(--ink-muted);
+  color: var(--ink);
   font-family: var(--font-ui);
-  font-size: .78rem;
+  font-size: .82rem;
   line-height: 1.45;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 8px 24px;
+}
+.footer-bottom span{
+  color: var(--ink);
 }
 .footer-bottom a{
   color: var(--terracota-deep);
@@ -278,17 +285,18 @@ h3,.h3{font-family:var(--font-display);font-size:1.6rem;font-weight:600;line-hei
   .site-footer .logo img{width:28px;height:28px}
   .site-footer .logo span{font-size:.98rem;font-weight:600;color:var(--marrom)}
   .footer-col h4{margin-bottom:6px;font-size:.72rem;letter-spacing:.06em}
-  .footer-col a{margin-bottom:4px;font-size:.84rem;line-height:1.4}
+  .footer-col a{margin-bottom:2px;padding:6px 0;font-size:.88rem;line-height:1.4;min-height:36px;display:flex;align-items:center}
   .footer-col[aria-label="Institucional"]{grid-column:1/-1;margin-top:2px;padding-top:8px;border-top:1px solid rgba(46,59,46,0.1)}
-  .footer-col[aria-label="Institucional"] h4{display:inline-block;margin:0 12px 0 0;font-size:.7rem}
-  .footer-col[aria-label="Institucional"] a{display:inline-block;margin:0 14px 0 0;font-size:.82rem}
+  .footer-col[aria-label="Institucional"] h4,
+  .footer-col[aria-label="Institucional"] .footer-title{display:inline-block;margin:0 12px 0 0;font-size:.7rem}
+  .footer-col[aria-label="Institucional"] a{display:inline-flex;margin:0 14px 0 0;font-size:.84rem}
   .footer-bottom{
     margin-top:14px;
     padding-top:10px;
-    font-size:.72rem;
+    font-size:.76rem;
     line-height:1.4;
     gap:4px;
-    color:var(--ink-muted);
+    color:var(--ink);
   }
 }
 
