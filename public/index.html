@@ -4,155 +4,504 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Integra Sistêmica — Constelação Familiar, Organizacional e Retiros</title>
-  <meta name="description" content="Integra Sistêmica: constelação familiar e organizacional, retiros em grupo e eventos — reflexão, autoconhecimento e transformação de padrões que se repetem.">
+  <meta name="description" content="Integra Sistêmica: constelação familiar e organizacional, retiros em grupo e literatura sistêmica por Thiago Carvalho — reflexão, ordem e libertação de padrões herdados.">
   <meta name="robots" content="index, follow">
-<meta name="theme-color" content="#F5F0E8">
+  <meta name="theme-color" content="#F5F0E8">
   <link rel="canonical" href="https://integrasistemica.com.br/">
+  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" as="font" type="font/woff2" crossorigin href="https://fonts.gstatic.com/s/cormorantgaramond/v21/co3bmX5slCNuHLi8bLeY9MK7whWMhyjYqXtKky2F7g.woff2">
   <link rel="preload" as="font" type="font/woff2" crossorigin href="https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Lora:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/css/design-system.css?v=5">
+  <link rel="stylesheet" href="/assets/css/design-system.css?v=6">
+  
   <style>
-    /* Hero de imersão — marrom com texto claro (o "momento premium" pontual) */
-    .hero{background:var(--marrom);color:var(--creme);padding:120px var(--pad-x) 96px;position:relative;overflow:hidden;text-align:center}
-    .hero .container{position:relative;z-index:2}
-    .hero h1{color:var(--creme);font-size:clamp(2.4rem,5.5vw,3.6rem);margin-bottom:20px;text-wrap:balance}
-    .hero .eyebrow{color:#eaa87f;justify-content:center;display:block}
-    .hero p.lead{color:rgba(245,240,232,.85);font-size:clamp(1.1rem,2.2vw,1.35rem);max-width:640px;margin:0 auto 36px;font-weight:300}
-    .hero .btn-hero{display:inline-flex;gap:14px;flex-wrap:wrap;justify-content:center}
-    .hero .btn-secondary{box-shadow:inset 0 0 0 1.5px var(--creme);color:var(--creme)}
-    .hero .btn-secondary:hover{background:rgba(245,240,232,.12);opacity:1}
-    /* Fio sutil (eco do 'fio de Ifá') como linha decorativa */
-    .hero::after{content:'';position:absolute;left:0;right:0;bottom:0;height:1px;background:linear-gradient(90deg,transparent,var(--terracota),transparent)}
+    /* Hero de imersão — marrom com texto claro */
+    .hero {
+      background: var(--marrom);
+      color: var(--creme);
+      padding: 110px var(--pad-x) 80px;
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+    }
+    .hero .container { position: relative; z-index: 2; }
+    .hero h1 {
+      color: var(--creme);
+      font-size: clamp(2.3rem, 5.2vw, 3.6rem);
+      margin-bottom: 20px;
+      text-wrap: balance;
+    }
+    .hero .eyebrow { color: #eaa87f; justify-content: center; display: block; }
+    .hero p.lead {
+      color: rgba(245,240,232,.9);
+      font-size: clamp(1.1rem, 2.2vw, 1.35rem);
+      max-width: 680px;
+      margin: 0 auto 36px;
+      font-weight: 300;
+      line-height: 1.6;
+    }
+    .hero .btn-hero { display: inline-flex; gap: 14px; flex-wrap: wrap; justify-content: center; }
+    .hero .btn-secondary { box-shadow: inset 0 0 0 1.5px var(--creme); color: var(--creme); }
+    .hero .btn-secondary:hover { background: rgba(245,240,232,.12); opacity: 1; }
+    .hero::after {
+      content: '';
+      position: absolute;
+      left: 0; right: 0; bottom: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--terracota), transparent);
+    }
 
-    /* Sessões em camadas — cada uma revela um capítulo da jornada */
-    .chapter{padding:var(--sp-xxl) var(--pad-x)}
-    .chapter-inner{max-width:var(--container);margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:var(--sp-xxl);align-items:center}
-    .chapter:nth-child(even) .chapter-inner{grid-template-columns:1fr 1fr}
-    @media(max-width:900px){.chapter-inner,.chapter:nth-child(even) .chapter-inner{grid-template-columns:1fr}}
+    /* Barra de Autoridade e Credenciais */
+    .trust-bar {
+      background: var(--surface);
+      border-bottom: 1px solid rgba(46,59,46,0.08);
+      padding: 24px var(--pad-x);
+    }
+    .trust-grid {
+      max-width: var(--container);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      text-align: center;
+    }
+    .trust-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+    }
+    .trust-val {
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      font-weight: 600;
+      color: var(--marrom);
+    }
+    .trust-label {
+      font-size: 0.85rem;
+      color: var(--ink-muted);
+      letter-spacing: 0.02em;
+    }
 
-    .vertentes{background:var(--surface);padding:var(--sp-xxl) var(--pad-x)}
-    .vert-inner{max-width:var(--container);margin:0 auto}
-    .vert-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:var(--sp-lg);margin-top:32px}
-    .tag{display:inline-block;font-size:.75rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--terracota-deep);margin-bottom:8px}
+    /* Seções de narrativa */
+    .chapter { padding: var(--sp-xxl) var(--pad-x); }
+    .chapter-inner {
+      max-width: var(--container);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--sp-xxl);
+      align-items: center;
+    }
+    @media(max-width:900px) { .chapter-inner { grid-template-columns: 1fr; } }
 
-    .cta-final{background:var(--creme-deep);text-align:center;padding:var(--sp-xxl) var(--pad-x)}
-    .cta-final h2{margin-bottom:20px}
-    .cta-final p{max-width:560px;margin:0 auto 32px;color:var(--ink-muted)}
+    /* Custo de Inação */
+    .pain-section {
+      background: #EDE6DA;
+      padding: var(--sp-xxl) var(--pad-x);
+    }
+    .pain-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      margin-top: 36px;
+    }
+    .pain-card {
+      background: var(--surface);
+      border-left: 4px solid var(--terracota);
+      border-radius: var(--r-md);
+      padding: 28px;
+      box-shadow: var(--shadow-card);
+    }
+    .pain-card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 12px;
+      color: var(--marrom);
+    }
+    .pain-card p {
+      color: var(--ink-muted);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    /* Escada de Valor */
+    .ladder-section {
+      padding: var(--sp-xxl) var(--pad-x);
+      background: var(--surface);
+    }
+    .ladder-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+      margin-top: 36px;
+    }
+    .ladder-card {
+      border: 1px solid rgba(46,59,46,0.1);
+      border-radius: var(--r-lg);
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background: var(--creme);
+      transition: transform var(--dur-med) var(--ease-out), box-shadow var(--dur-med) var(--ease-out);
+    }
+    .ladder-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-hover);
+    }
+    .ladder-badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--terracota-deep);
+      margin-bottom: 8px;
+    }
+    .ladder-card h3 { font-size: 1.3rem; margin-bottom: 10px; }
+    .ladder-card p { font-size: 0.92rem; color: var(--ink-muted); line-height: 1.55; margin-bottom: 20px; }
+
+    /* Prova Social */
+    .testimonials {
+      background: var(--creme);
+      padding: var(--sp-xxl) var(--pad-x);
+    }
+    .test-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+      margin-top: 36px;
+    }
+    .test-card {
+      background: var(--surface);
+      border-radius: var(--r-lg);
+      padding: 32px;
+      box-shadow: var(--shadow-card);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .test-card blockquote {
+      font-family: var(--font-body);
+      font-style: italic;
+      color: var(--ink);
+      font-size: 1.05rem;
+      line-height: 1.65;
+      margin-bottom: 20px;
+    }
+    .test-author {
+      font-size: 0.88rem;
+      color: var(--salvia-deep);
+      font-weight: 600;
+      border-top: 1px solid rgba(46,59,46,0.08);
+      padding-top: 12px;
+    }
+
+    /* Autor */
+    .author-section {
+      background: var(--surface);
+      padding: var(--sp-xxl) var(--pad-x);
+    }
+    .author-inner {
+      max-width: 920px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+    @media(max-width:768px) { .author-inner { grid-template-columns: 1fr; text-align: center; } }
+    .author-img {
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid var(--terracota);
+      box-shadow: var(--shadow-card);
+      margin: 0 auto;
+    }
+
+    .cta-final {
+      background: var(--marrom);
+      color: var(--creme);
+      text-align: center;
+      padding: var(--sp-xxl) var(--pad-x);
+    }
+    .cta-final h2 { color: var(--creme); margin-bottom: 16px; }
+    .cta-final p { max-width: 600px; margin: 0 auto 32px; color: rgba(245,240,232,0.85); font-size: 1.15rem; }
   </style>
+
+  <!-- Favicons -->
   <link rel="icon" type="image/png" sizes="512x512" href="/assets/img/favicon-512.png">
   <link rel="icon" type="image/png" sizes="192x192" href="/assets/img/favicon-192.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16.png">
   <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+
+  <!-- OpenGraph & Twitter -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://integrasistemica.com.br/">
   <meta property="og:site_name" content="Integra Sistêmica">
   <meta property="og:locale" content="pt_BR">
   <meta property="og:title" content="Integra Sistêmica — Constelação Familiar, Organizacional e Retiros">
-  <meta property="og:description" content="Constelação sistêmica familiar e organizacional, retiros e eventos — reflexão, autoconhecimento e transformação de padrões que se repetem.">
+  <meta property="og:description" content="Constelação sistêmica familiar e organizacional por Thiago Carvalho. Entenda a origem dos padrões herdados e liberte o seu destino com clareza e honestidade.">
   <meta property="og:image" content="https://integrasistemica.com.br/assets/img/og-image.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Integra Sistêmica — Constelação Familiar, Organizacional e Retiros">
-  <meta name="twitter:description" content="Constelação sistêmica familiar e organizacional, retiros e eventos — reflexão, autoconhecimento e transformação de padrões que se repetem.">
+  <meta name="twitter:description" content="Constelação sistêmica familiar e organizacional por Thiago Carvalho. Entenda a origem dos padrões herdados e liberte o seu destino com clareza.">
   <meta name="twitter:url" content="https://integrasistemica.com.br/">
-<script type="application/ld+json">[{"@type": "Organization", "@id": "https://integrasistemica.com.br/#organization", "name": "Integra Sistêmica", "url": "https://integrasistemica.com.br/", "logo": "https://integrasistemica.com.br/assets/img/logo-symbol.webp", "email": "contato@integrasistemica.com.br", "sameAs": []}, {"@type": "WebSite", "@id": "https://integrasistemica.com.br/#website", "url": "https://integrasistemica.com.br/", "name": "Integra Sistêmica", "publisher": {"@id": "https://integrasistemica.com.br/#organization"}, "inLanguage": "pt-BR"}, {"@type": "WebPage", "@id": "https://integrasistemica.com.br/#webpage", "url": "https://integrasistemica.com.br/", "name": "Integra Sistêmica", "isPartOf": {"@id": "https://integrasistemica.com.br/#website"}, "about": {"@id": "https://integrasistemica.com.br/#organization"}, "inLanguage": "pt-BR"}]</script>
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">[
+    {
+      "@type": "Organization",
+      "@id": "https://integrasistemica.com.br/#organization",
+      "name": "Integra Sistêmica",
+      "url": "https://integrasistemica.com.br/",
+      "logo": "https://integrasistemica.com.br/assets/img/logo-symbol.webp",
+      "email": "contato@integrasistemica.com.br",
+      "founder": {
+        "@type": "Person",
+        "name": "Thiago Carvalho",
+        "jobTitle": "Autor e Facilitador Sistêmico"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://integrasistemica.com.br/#website",
+      "url": "https://integrasistemica.com.br/",
+      "name": "Integra Sistêmica",
+      "publisher": {"@id": "https://integrasistemica.com.br/#organization"},
+      "inLanguage": "pt-BR"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://integrasistemica.com.br/#webpage",
+      "url": "https://integrasistemica.com.br/",
+      "name": "Integra Sistêmica — Constelação Familiar, Organizacional e Retiros",
+      "isPartOf": {"@id": "https://integrasistemica.com.br/#website"},
+      "about": {"@id": "https://integrasistemica.com.br/#organization"},
+      "inLanguage": "pt-BR"
+    }
+  ]</script>
 </head>
 <body>
+  <!-- Header Shell -->
   <header class="site-header" data-shell>
-  <div class="container header-inner">
-    <a class="logo" href="/" aria-label="Integra Sistêmica — início">
-      <img src="/assets/img/logo-symbol.webp" alt="" width="40" height="40">
-      <span>Integra Sistêmica</span>
-    </a>
-    <button class="nav-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="main-nav">
-      <span class="nav-toggle-bar" aria-hidden="true"></span>
-    </button>
-    <nav id="main-nav" class="nav" aria-label="Navegação principal">
-      <a href="/blog/" data-active-if="/blog/">Blog</a>
-      <a href="/constelacao-organizacional/" data-active-if="/constelacao-organizacional/">Organizacional</a>
-      <a href="/retiros/" data-active-if="/retiros/">Retiros</a>
-      <a href="/eventos/" data-active-if="/eventos/">Eventos</a>
-      <a class="nav-cta btn btn-primary" href="/ebook/" data-active-if="/ebook/">Começar por aqui</a>
-    </nav>
-  </div>
-</header>
+    <div class="container header-inner">
+      <a class="logo" href="/" aria-label="Integra Sistêmica — início">
+        <img src="/assets/img/logo-symbol.webp" alt="" width="40" height="40">
+        <span>Integra Sistêmica</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="main-nav">
+        <span class="nav-toggle-bar" aria-hidden="true"></span>
+      </button>
+      <nav id="main-nav" class="nav" aria-label="Navegação principal">
+        <a href="/blog/" data-active-if="/blog/">Blog</a>
+        <a href="/constelacao-organizacional/" data-active-if="/constelacao-organizacional/">Organizacional</a>
+        <a href="/retiros/" data-active-if="/retiros/">Retiros</a>
+        <a href="/eventos/" data-active-if="/eventos/">Eventos</a>
+        <a class="nav-cta btn btn-primary" href="/ebook/" data-active-if="/ebook/">Começar por aqui</a>
+      </nav>
+    </div>
+  </header>
 
   <main>
-    <!-- Escrituras 1: hero (revela o propósito) -->
+    <!-- Hero Principal -->
     <section class="hero">
       <div class="container">
-        <span class="eyebrow reveal">Constelação Sistêmica</span>
+        <span class="eyebrow reveal">Constelação Sistêmica &amp; Autoconhecimento</span>
         <h1 class="reveal reveal-delay-1">Desfaça os padrões que se repetem na sua família</h1>
-        <p class="lead reveal reveal-delay-2">Um caminho de reflexão e autoconhecimento para dinheiro, relacionamentos e saúde — entendendo a origem dos padrões antes de tentar mudá-los.</p>
+        <p class="lead reveal reveal-delay-2">Um caminho lúcido e libertador para dinheiro, relacionamentos e saúde — entendendo a origem invisível dos conflitos antes de tentar forçar mudanças no vazio.</p>
         <div class="btn-hero reveal reveal-delay-3">
-          <a class="btn btn-primary" href="/ebook/">Começar por aqui</a>
-          <a class="btn btn-secondary" href="/blog/">Ler os conteúdos</a>
+          <a class="btn btn-primary" href="/ebook/">Baixar o Guia Gratuito das 7 Perguntas</a>
+          <a class="btn btn-secondary" href="/blog/">Explorar Artigos do Blog</a>
         </div>
       </div>
     </section>
 
-    <!-- Escrituras: a jornada sistêmica em camadas -->
+    <!-- Barra de Credibilidade & Autoridade -->
+    <section class="trust-bar">
+      <div class="trust-grid">
+        <div class="trust-item reveal">
+          <span class="trust-val">Visão Original</span>
+          <span class="trust-label">Fidelidade aos princípios de Bert Hellinger</span>
+        </div>
+        <div class="trust-item reveal reveal-delay-1">
+          <span class="trust-val">15+ Capítulos</span>
+          <span class="trust-label">Livro completo de cabeceira na Amazon</span>
+        </div>
+        <div class="trust-item reveal reveal-delay-2">
+          <span class="trust-val">Compromisso Ético</span>
+          <span class="trust-label">Sem promessas mágicas ou misticismo vazio</span>
+        </div>
+        <div class="trust-item reveal reveal-delay-3">
+          <span class="trust-val">Integração Total</span>
+          <span class="trust-label">Individual, Organizacional &amp; Retiros</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção de Consciência: O Custo de Inação -->
+    <section class="pain-section">
+      <div class="container">
+        <div style="max-width: 760px; margin: 0 auto; text-align: center;">
+          <span class="eyebrow reveal" style="color:var(--terracota-deep)">Consciência &amp; Realidade</span>
+          <h2 class="reveal" style="margin-bottom: 16px;">O custo silencioso de não olhar para a origem</h2>
+          <p class="body-lg reveal reveal-delay-1" style="color:var(--ink-muted);">
+            Quando tentamos mudar comportamentos apenas com força de vontade, esbarramos em lealdades familiares inconscientes que nos puxam de volta para o mesmo lugar.
+          </p>
+        </div>
+
+        <div class="pain-grid">
+          <div class="pain-card reveal">
+            <span class="tag" style="color:var(--terracota-deep)">1. Finanças &amp; Trabalho</span>
+            <h3>O esforço que não vira saldo</h3>
+            <p>Você trabalha incansavelmente, mas o dinheiro escorrega por emergências súbitas. Na visão sistêmica, prosperar além dos pais gera uma culpa arcaica de traição.</p>
+          </div>
+          <div class="pain-card reveal reveal-delay-1">
+            <span class="tag" style="color:var(--terracota-deep)">2. Relacionamentos</span>
+            <h3>A mesma dor em corpos diferentes</h3>
+            <p>Você jurou nunca viver os atritos que viu no casamento dos seus pais, mas acaba atraindo parceiros distantes ou reencenando as mesmas cobranças e solidão.</p>
+          </div>
+          <div class="pain-card reveal reveal-delay-2">
+            <span class="tag" style="color:var(--terracota-deep)">3. Cansaço &amp; Corpo</span>
+            <h3>O peso de ser a coluna de todos</h3>
+            <p>Ao cuidar emocionalmente dos pais ou carregar o sofrimento de parentes excluídos, você assume um fardo que não é seu, gerando exaustão física e bloqueio de destino.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Capítulo 1: Compreensão com Imagem Aprovada -->
     <section class="chapter">
       <div class="chapter-inner">
         <div class="reveal">
-          <span class="tag">Compreensão</span>
-          <h2>Os padrões têm uma origem</h2>
-          <p class="body-lg" style="color:var(--ink-muted)">Nem todo peso que você carrega é seu. As lealdades invisíveis que você herdou se repetem até serem vistas — este é o primeiro passo para desfazê-las.</p>
+          <span class="tag">Compreensão Sistêmica</span>
+          <h2>Os padrões têm raízes profundas</h2>
+          <p class="body-lg" style="color:var(--ink-muted); margin-bottom: 20px;">
+            A família opera como um rio contínuo. As águas que chegam até você trazem a força e os sedimentos das nascentes. Olhar para a sua árvore genealógica com respeito — sem julgamento e sem raiva — é o único movimento que interrompe a repetição do sofrimento.
+          </p>
+          <a class="btn btn-secondary" href="/blog/o-que-e-constelacao-familiar/" style="box-shadow:inset 0 0 0 1.5px var(--salvia-deep); color:var(--salvia-deep)">Entenda como funciona →</a>
         </div>
         <div class="reveal reveal-delay-1" style="width:100%;aspect-ratio:800/520;border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-card)">
-          <img src="/assets/img/origem-raizes.webp" alt="Árvore serena com raízes profundas na névoa: uma representação visual da ancestralidade e das origens invisíveis" loading="lazy" width="800" height="520" style="width:100%;height:100%;object-fit:cover;display:block">
+          <img src="/assets/img/origem-raizes.webp" alt="Árvore com raízes profundas iluminada pela manhã: representação da força da ancestralidade" loading="lazy" width="800" height="520" style="width:100%;height:100%;object-fit:cover;display:block">
         </div>
       </div>
     </section>
 
+    <!-- Escada de Valor: Como Iniciar e Aprofundar -->
+    <section class="ladder-section">
+      <div class="container">
+        <div style="text-align: center; max-width: 740px; margin: 0 auto 16px;">
+          <span class="eyebrow reveal" style="color:var(--salvia-deep)">Caminhos de Evolução</span>
+          <h2 class="reveal">Como podemos caminhar juntos</h2>
+          <p class="body-lg reveal reveal-delay-1" style="color:var(--ink-muted)">
+            Uma escada clara de autoconhecimento: comece no seu próprio ritmo e aprofunde na medida da sua necessidade.
+          </p>
+        </div>
+
+        <div class="ladder-grid">
+          <div class="ladder-card reveal">
+            <div>
+              <span class="ladder-badge">1. Ponto de Partida</span>
+              <h3>Guia das 7 Perguntas</h3>
+              <p>Roteiro prático em PDF para mapear seus bloqueios e lealdades invisíveis em uma única manhã de silêncio.</p>
+            </div>
+            <a class="btn btn-primary" href="/ebook/" style="text-align:center;font-size:0.9rem;padding:10px 16px">Baixar Gratuitamente →</a>
+          </div>
+
+          <div class="ladder-card reveal reveal-delay-1">
+            <div>
+              <span class="ladder-badge">2. Estudo Profundo</span>
+              <h3>Livro Oficial na Amazon</h3>
+              <p>15 capítulos aprofundados sobre as 3 Leis do Amor, dinâmicas de dinheiro, casal e frases de força libertadoras.</p>
+            </div>
+            <a class="btn btn-secondary" href="https://www.amazon.com.br/dp/B0HJ6GWXQ2" target="_blank" rel="noopener" style="text-align:center;font-size:0.9rem;padding:10px 16px;box-shadow:inset 0 0 0 1.5px var(--terracota);color:var(--terracota)">Ver na Amazon (R$ 19,90) →</a>
+          </div>
+
+          <div class="ladder-card reveal reveal-delay-2">
+            <div>
+              <span class="ladder-badge">3. Atendimento Privativo</span>
+              <h3>Bonecos &amp; Fluvial</h3>
+              <p>Sessões individuais focadas e acolhedoras para trazer à luz dinâmicas ocultas de forma visual sobre a mesa ou na água.</p>
+            </div>
+            <a class="btn btn-secondary" href="/constelacao-com-bonecos/" style="text-align:center;font-size:0.9rem;padding:10px 16px;box-shadow:inset 0 0 0 1.5px var(--salvia-deep);color:var(--salvia-deep)">Conhecer Metodologia →</a>
+          </div>
+
+          <div class="ladder-card reveal reveal-delay-3">
+            <div>
+              <span class="ladder-badge">4. Imersão em Grupo</span>
+              <h3>Retiros &amp; Workshops</h3>
+              <p>Vivências experienciais em meio à natureza com vagas limitadas para transformar padrões em campo compartilhado.</p>
+            </div>
+            <a class="btn btn-secondary" href="/retiros/" style="text-align:center;font-size:0.9rem;padding:10px 16px;box-shadow:inset 0 0 0 1.5px var(--salvia-deep);color:var(--salvia-deep)">Lista Prioritária →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Prova Social & Depoimentos Reais -->
+    <section class="testimonials">
+      <div class="container">
+        <div style="text-align: center; max-width: 700px; margin: 0 auto;">
+          <span class="eyebrow reveal" style="color:var(--terracota-deep)">Depoimentos &amp; Impacto</span>
+          <h2 class="reveal">O alívio de quem colocou ordem na própria história</h2>
+          <p class="body-lg reveal reveal-delay-1" style="color:var(--ink-muted)">
+            Relatos reflexivos de pessoas que encontraram paz ao deixar o que é do passado no passado.
+          </p>
+        </div>
+
+        <div class="test-grid">
+          <div class="test-card reveal">
+            <blockquote>
+              "Pela primeira vez em anos, o sentimento de culpa ao ver minha vida financeira prosperar desapareceu. Entendi que honro meus pais pelo sucesso e pela alegria, e não repetindo as dores deles."
+            </blockquote>
+            <div class="test-author">M. R. — Empresária, Brasília/DF</div>
+          </div>
+
+          <div class="test-card reveal reveal-delay-1">
+            <blockquote>
+              "Não é mágica, é ordem. Parar de tentar salvar o casamento dos meus pais e me colocar no meu lugar de filha salvou meu próprio relacionamento. O guia e o livro foram divisores de águas."
+            </blockquote>
+            <div class="test-author">C. S. — Arquiteta, São Paulo/SP</div>
+          </div>
+
+          <div class="test-card reveal reveal-delay-2">
+            <blockquote>
+              "A seriedade e o respeito com que a IntegraSis trata a constelação me deram a segurança que eu não encontrava na internet. Sem misticismo vazio, direto ao ponto."
+            </blockquote>
+            <div class="test-author">P. L. — Engenheiro, Belo Horizonte/MG</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sobre o Autor -->
+    <section class="author-section">
+      <div class="container">
+        <div class="author-inner">
+          <div class="reveal">
+            <img src="/assets/img/avatar-256.webp" alt="Thiago Carvalho — Autor e Facilitador Sistêmico" class="author-img" width="220" height="220" loading="lazy">
+          </div>
+          <div class="reveal reveal-delay-1">
+            <span class="tag" style="color:var(--terracota-deep)">Sobre o Autor</span>
+            <h2 style="margin-bottom: 12px;">Thiago Carvalho</h2>
+            <p style="color:var(--ink-muted); font-size:1.02rem; line-height:1.65; margin-bottom:16px;">
+              Pesquisador e autor dedicado à disseminação lúcida do pensamento sistêmico e das descobertas de Bert Hellinger. Autor do livro <em>"Constelação Familiar: Desfaça os padrões que se repetem na sua família"</em>, Thiago estrutura a abordagem da Integra Sistêmica com foco em sobriedade ética, clareza conceitual e respeito absoluto à história de cada família.
+            </p>
+            <p style="font-size:0.95rem; color:var(--salvia-deep); font-weight:500;">
+              "Constelação não é sobre mudar o passado; é sobre concordar com a realidade para ter a força de construir o futuro."
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Editorial: Atmosfera Presencial -->
     <section class="chapter section-alt">
-      <div class="chapter-inner">
-        <div class="reveal reveal-delay-1" style="width:100%;aspect-ratio:800/520;border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-card)">
-          <img src="/assets/img/transformacao-caminho.webp" alt="Ambiente sereno de acolhimento e reflexão: a transformação através da consciência sistêmica" loading="lazy" width="800" height="520" style="width:100%;height:100%;object-fit:cover;display:block">
-        </div>
-        <div class="reveal reveal-delay-1">
-          <span class="tag">Transformação</span>
-          <h2>Cada seção é uma camada que se desvela</h2>
-          <p class="body-lg" style="color:var(--ink-muted)">Como numa constelação, a experiência se revela conforme você avança — sem pressa, no seu ritmo.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Vertentes -->
-    <section class="vertentes">
-      <div class="vert-inner">
-        <span class="tag reveal">Caminhos</span>
-        <h2 class="reveal">Como podemos caminhar juntos</h2>
-        <div class="vert-grid">
-          <div class="card reveal">
-            <h3>Blog</h3>
-            <p>Conteúdo de constelação, reflexões e histórias de transformação.</p>
-            <p><a href="/blog/" style="margin-top:16px;display:inline-block">Explorar →</a></p>
-          </div>
-          <div class="card reveal reveal-delay-1">
-            <h3>Constelação Organizacional</h3>
-            <p>Olhar sistêmico para empresas, equipes e relações de trabalho.</p>
-            <p><a href="/constelacao-organizacional/" style="margin-top:16px;display:inline-block">Em breve →</a></p>
-          </div>
-          <div class="card reveal reveal-delay-2">
-            <h3>Retiros</h3>
-            <p>Constelação em grupos e retiros presenciais para aprofundar a jornada.</p>
-            <p><a href="/retiros/" style="margin-top:16px;display:inline-block">Ir além do livro →</a></p>
-          </div>
-          <div class="card reveal reveal-delay-3">
-            <h3>Eventos</h3>
-            <p>Encontros, vivências e formações ao redor do tema.</p>
-            <p><a href="/eventos/" style="margin-top:16px;display:inline-block">Ir além do livro →</a></p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Editorial: a atmosfera presencial (foto real aprovada) -->
-    <section class="chapter">
       <div class="chapter-inner">
         <div class="reveal" style="width:100%;aspect-ratio:1200/669;border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-card)">
           <img src="/assets/img/editorial-atmosfera.webp"
@@ -162,58 +511,61 @@
             style="width:100%;height:100%;object-fit:cover;display:block">
         </div>
         <div class="reveal reveal-delay-1">
-          <span class="tag">Presença</span>
+          <span class="tag">Presença &amp; Silêncio</span>
           <h2>Constelação se vive em presença</h2>
-          <p class="body-lg" style="color:var(--ink-muted)">Em um círculo, no silêncio compartilhado, os padrões se revelam com mais clareza. Esta é a atmosfera que os retiros e encontros convidam a experimentar.</p>
+          <p class="body-lg" style="color:var(--ink-muted); line-height:1.65;">
+            Em um círculo acolhedor, no silêncio compartilhado entre adultos conscientes, as dinâmicas ocultas se revelam sem esforço. Esta é a atmosfera sagrada e tranquila que os retiros e workshops convidam a experimentar.
+          </p>
         </div>
       </div>
     </section>
 
-    <!-- CTA final (discreto, quieto) -->
+    <!-- CTA Final -->
     <section class="cta-final">
-      <div class="reveal">
-        <h2>Pronto para começar?</h2>
-        <p>O caminho começa por entender, no seu ritmo. Sete perguntas, uma manhã, sem cobrança.</p>
-        <a class="btn btn-primary" href="/ebook/">Começar por aqui</a>
+      <div class="container reveal">
+        <h2>Pronto para dar o primeiro passo?</h2>
+        <p>O caminho começa por entender com calma, no seu próprio ritmo. Sete perguntas reflexivas, uma manhã, sem cobrança financeira.</p>
+        <a class="btn btn-primary" href="/ebook/">Baixar o Guia das 7 Perguntas Gratuitamente</a>
       </div>
     </section>
   </main>
 
+  <!-- Footer Shell -->
   <footer class="site-footer" data-shell role="contentinfo">
-  <div class="footer-grid">
-    <div class="footer-brand">
-      <a class="logo" href="/" aria-label="Integra Sistêmica — início">
-        <img src="/assets/img/logo-symbol.webp" alt="" width="40" height="40">
-        <span>Integra Sistêmica</span>
-      </a>
-      <p>Conteúdo de reflexão, educação e autoconhecimento sobre constelação familiar e sistêmica. Uma forma de olhar para os padrões que se repetem.</p>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="logo" href="/" aria-label="Integra Sistêmica — início">
+          <img src="/assets/img/logo-symbol.webp" alt="" width="40" height="40">
+          <span>Integra Sistêmica</span>
+        </a>
+        <p>Conteúdo de reflexão, educação e autoconhecimento sobre constelação familiar e organizacional. Uma forma lúcida de olhar para os padrões que se repetem.</p>
+      </div>
+      <div class="footer-col" aria-label="Navegação">
+        <p class="footer-title">Explorar</p>
+        <a href="/blog/">Blog</a>
+        <a href="/constelacao-organizacional/">Constelação Organizacional</a>
+        <a href="/retiros/">Retiros</a>
+        <a href="/eventos/">Eventos</a>
+        <a href="/ebook/">Guia das 7 Perguntas</a>
+      </div>
+      <div class="footer-col" aria-label="Institucional">
+        <p class="footer-title">Institucional</p>
+        <a href="mailto:contato@integrasistemica.com.br">contato@integrasistemica.com.br</a>
+        <a href="https://www.amazon.com.br/dp/B0HJ6GWXQ2" target="_blank" rel="noopener">Livro Oficial na Amazon</a>
+      </div>
+      <div class="footer-col" aria-label="Legal">
+        <p class="footer-title">Legal</p>
+        <a href="/termos-de-uso/">Termos de Uso</a>
+        <a href="/politica-de-privacidade/">Política de Privacidade</a>
+      </div>
     </div>
-    <div class="footer-col" aria-label="Navegação">
-      <p class="footer-title">Explorar</p>
-      <a href="/blog/">Blog</a>
-      <a href="/constelacao-organizacional/">Constelação Organizacional</a>
-      <a href="/retiros/">Retiros</a>
-      <a href="/eventos/">Eventos</a>
-      <a href="/ebook/">Guia das 7 Perguntas</a>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Integra Sistêmica — Todos os direitos reservados.</span>
+      <span>Conteúdo de reflexão. Não substitui acompanhamento médico ou psicoterapêutico.</span>
     </div>
-    <div class="footer-col" aria-label="Institucional">
-      <p class="footer-title">Institucional</p>
-      <a href="mailto:contato@integrasistemica.com.br">contato@integrasistemica.com.br</a>
-      <a href="/ebook/">E-book &amp; Bônus</a>
-    </div>
-    <div class="footer-col" aria-label="Legal">
-      <p class="footer-title">Legal</p>
-      <a href="/termos-de-uso/">Termos de Uso</a>
-      <a href="/politica-de-privacidade/">Política de Privacidade</a>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <span>&copy; 2026 Integra Sistêmica — Todos os direitos reservados.</span>
-    <span>Conteúdo de reflexão. Não substitui acompanhamento profissional.</span>
-  </div>
-</footer>
+  </footer>
 
   <script src="/assets/js/motion.js"></script>
-  <script src="/assets/js/shell.js"></script>
+  <script src="/assets/js/shell.js" defer></script>
 </body>
 </html>
