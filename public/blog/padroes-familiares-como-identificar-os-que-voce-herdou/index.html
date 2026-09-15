@@ -33,7 +33,7 @@
 <script type="application/ld+json">[{"@type": "Organization", "@id": "https://integrasistemica.com.br/#organization", "name": "Integra Sistêmica", "url": "https://integrasistemica.com.br/", "logo": "https://integrasistemica.com.br/assets/img/logo-symbol.webp", "email": "contato@integrasistemica.com.br", "sameAs": []}, {"@type": "WebSite", "@id": "https://integrasistemica.com.br/#website", "url": "https://integrasistemica.com.br/", "name": "Integra Sistêmica", "publisher": {"@id": "https://integrasistemica.com.br/#organization"}, "inLanguage": "pt-BR"}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Início", "item": "https://integrasistemica.com.br/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://integrasistemica.com.br/blog/"}, {"@type": "ListItem", "position": 3, "name": "Padrões familiares: como identificar os que você herdou", "item": "https://integrasistemica.com.br/blog/padroes-familiares-como-identificar-os-que-voce-herdou/"}]}, {"@type": "Article", "@id": "https://integrasistemica.com.br/blog/padroes-familiares-como-identificar-os-que-voce-herdou/#article", "headline": "Padrões familiares: como identificar os que você herdou", "description": "Uma forma de observar os padrões familiares que se repetem e um exercício seguro para identificar os que você carrega, sem culpa e sem promessa de cura.", "image": "https://integrasistemica.com.br/assets/img/og-image.jpg", "author": {"@id": "https://integrasistemica.com.br/#organization"}, "publisher": {"@id": "https://integrasistemica.com.br/#organization"}, "datePublished": "2026-09-13T00:00:00-03:00", "dateModified": "2026-09-13T00:00:00-03:00", "mainEntityOfPage": "https://integrasistemica.com.br/blog/padroes-familiares-como-identificar-os-que-voce-herdou/", "inLanguage": "pt-BR"}]</script>
 <style>
   /* Estilo editorial específico do artigo (usa apenas tokens do design system) */
-  .article-body{max-width:720px;margin:0 auto;padding-top:8px}
+  .article-body{max-width:880px;margin:0 auto;padding-top:8px}
   .article-body p,.article-body li{font-family:var(--font-body);font-size:1.1rem;line-height:1.75;color:var(--ink)}
   .article-body p{margin:0 0 1.4rem}
   .article-body h2{font-family:var(--font-display);font-size:1.9rem;font-weight:600;color:var(--marrom);margin:2.6rem 0 1rem;letter-spacing:-.01em;text-wrap:balance}
@@ -54,15 +54,21 @@
 </style>
 </head>
 <body>
-<header class="site-header">
-  <div class="container header-inner" style="display:flex;align-items:center;justify-content:space-between;padding:16px 0;flex-wrap:wrap;gap:10px">
-    <a class="logo" href="/"><img src="/assets/img/logo-symbol.webp" alt="" width="40" height="40"> <span>Integra Sistêmica</span></a>
-    <nav class="nav" aria-label="Navegação principal">
-      <a href="/blog/">Blog</a>
-      <a href="/constelacao-organizacional/">Organizacional</a>
-      <a href="/retiros/">Retiros</a>
-      <a href="/eventos/">Eventos</a>
-      <a href="/ebook/" class="btn btn-primary" style="padding:10px 20px">Começar por aqui</a>
+<header class="site-header" data-shell>
+  <div class="container header-inner">
+    <a class="logo" href="/" aria-label="Integra Sistêmica — início">
+      <img src="/assets/img/logo-symbol.webp" alt="" width="40" height="40">
+      <span>Integra Sistêmica</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="main-nav">
+      <span class="nav-toggle-bar" aria-hidden="true"></span>
+    </button>
+    <nav id="main-nav" class="nav" aria-label="Navegação principal">
+      <a href="/blog/" data-active-if="/blog/">Blog</a>
+      <a href="/constelacao-organizacional/" data-active-if="/constelacao-organizacional/">Organizacional</a>
+      <a href="/retiros/" data-active-if="/retiros/">Retiros</a>
+      <a href="/eventos/" data-active-if="/eventos/">Eventos</a>
+      <a class="nav-cta btn btn-primary" href="/ebook/" data-active-if="/ebook/">Começar por aqui</a>
     </nav>
   </div>
 </header>
@@ -213,26 +219,29 @@
 <footer class="site-footer" data-shell role="contentinfo">
   <div class="footer-grid">
     <div class="footer-brand">
-      <a class="logo" href="/" style="display:inline-flex;align-items:center;gap:10px"><img src="/assets/img/logo-symbol.webp" alt="" width="40" height="40"><span>Integra Sistêmica</span></a>
+      <a class="logo" href="/" aria-label="Integra Sistêmica — início">
+        <img src="/assets/img/logo-symbol.webp" alt="" width="40" height="40">
+        <span>Integra Sistêmica</span>
+      </a>
       <p>Conteúdo de reflexão, educação e autoconhecimento sobre constelação familiar e sistêmica. Uma forma de olhar para os padrões que se repetem.</p>
     </div>
-    <div class="footer-col">
+    <div class="footer-col" aria-label="Navegação">
       <p class="footer-title">Explorar</p>
       <a href="/blog/">Blog</a>
-      <a href="/ebook/">Guia das 7 Perguntas</a>
       <a href="/constelacao-organizacional/">Constelação Organizacional</a>
       <a href="/retiros/">Retiros</a>
       <a href="/eventos/">Eventos</a>
+      <a href="/ebook/">Guia das 7 Perguntas</a>
+    </div>
+    <div class="footer-col" aria-label="Institucional">
+      <p class="footer-title">Institucional</p>
+      <a href="mailto:contato@integrasistemica.com.br">contato@integrasistemica.com.br</a>
       <a href="/ebook/">E-book &amp; Bônus</a>
     </div>
-    <div class="footer-col">
+    <div class="footer-col" aria-label="Legal">
       <p class="footer-title">Legal</p>
       <a href="/termos-de-uso/">Termos de Uso</a>
       <a href="/politica-de-privacidade/">Política de Privacidade</a>
-    </div>
-    <div class="footer-col">
-      <p class="footer-title">Contato</p>
-      <a href="mailto:contato@integrasistemica.com.br">contato@integrasistemica.com.br</a>
     </div>
   </div>
   <div class="footer-bottom">
@@ -242,5 +251,7 @@
 </footer>
 
 <script src="/assets/js/motion.js"></script>
+  <script src="/assets/js/motion.js"></script>
+  <script src="/assets/js/shell.js"></script>
 </body>
 </html>

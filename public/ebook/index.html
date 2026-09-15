@@ -41,7 +41,7 @@
   <!-- Estilos locais da landing /ebook/ — extends do design-system; nenhum hex solto /amarelo/âmbar -->
   <style>
     /* --- Contêiner estreito para landing de captura --- */
-    .ebook-container { max-width: 760px; margin: 0 auto; padding: 0 var(--pad-x); }
+    .ebook-container { max-width: 1040px; margin: 0 auto; padding: 0 var(--pad-x); }
 
     /* --- Hero de captura --- */
     .ebook-hero {
@@ -49,7 +49,7 @@
       color: var(--creme);
       padding: 72px var(--pad-x);
     }
-    .ebook-hero .container { max-width: 760px; }
+    .ebook-hero .container { max-width: 1040px; }
     .ebook-hero h1 { color: var(--creme); max-width: 680px; margin: 0 auto 18px; font-size: clamp(2rem, 4.5vw, 2.9rem); }
     .ebook-hero .eyebrow { color: var(--terracota); margin-bottom: 16px; }
     .ebook-hero .body-lg { color: rgba(245,240,232,.9); max-width: 600px; margin: 0 auto 8px; }
@@ -65,8 +65,8 @@
     }
     .ebook-offer {
       display: grid;
-      grid-template-columns: 200px 1fr;
-      gap: 32px;
+      grid-template-columns: 280px 1fr;
+      gap: 48px;
       align-items: start;
     }
     .ebook-cover {
@@ -189,8 +189,7 @@
       gap: 36px;
       align-items: center;
       text-align: left;
-      max-width: 720px;
-      margin: 0 auto;
+      max-width: 1040px; margin: 0 auto;
     }
     .book-cta-cover {
       width: 100%;
@@ -268,25 +267,28 @@
 <body>
 
   <!-- ===== HEADER (mesmo da home — consistência de marca) ===== -->
-  <header class="site-header">
-    <div class="container header-inner" style="display:flex;align-items:center;justify-content:space-between;padding:16px 0;flex-wrap:wrap;gap:10px">
-      <a class="logo" href="/">
-        <img src="/assets/img/logo-symbol.webp" alt="" width="40" height="40">
-        <span>Integra Sistêmica</span>
-      </a>
-      <nav class="nav" aria-label="Navegação principal">
-        <a href="/blog/">Blog</a>
-        <a href="/constelacao-organizacional/">Organizacional</a>
-        <a href="/retiros/">Retiros</a>
-        <a href="/eventos/">Eventos</a>
-        <a href="/ebook/" class="btn btn-primary" style="padding:10px 20px" aria-current="page">Começar por aqui</a>
-      </nav>
-    </div>
-  </header>
+  <header class="site-header" data-shell>
+  <div class="container header-inner">
+    <a class="logo" href="/" aria-label="Integra Sistêmica — início">
+      <img src="/assets/img/logo-symbol.webp" alt="" width="40" height="40">
+      <span>Integra Sistêmica</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="main-nav">
+      <span class="nav-toggle-bar" aria-hidden="true"></span>
+    </button>
+    <nav id="main-nav" class="nav" aria-label="Navegação principal">
+      <a href="/blog/" data-active-if="/blog/">Blog</a>
+      <a href="/constelacao-organizacional/" data-active-if="/constelacao-organizacional/">Organizacional</a>
+      <a href="/retiros/" data-active-if="/retiros/">Retiros</a>
+      <a href="/eventos/" data-active-if="/eventos/">Eventos</a>
+      <a class="nav-cta btn btn-primary" href="/ebook/" data-active-if="/ebook/">Começar por aqui</a>
+    </nav>
+  </div>
+</header>
 
   <!-- ===== HERO DE CAPTURA ===== -->
   <header class="ebook-hero">
-    <div class="container" style="max-width:760px;text-align:center">
+    <div class="container" style="max-width:1040px;text-align:center">
       <p class="eyebrow">Guia gratuito · 7 perguntas sistêmicas</p>
       <h1>As 7 perguntas que desfazem os padrões repetidos na sua família</h1>
       <p class="body-lg" style="color:rgba(245,240,232,.9);max-width:600px;margin:0 auto">
@@ -430,37 +432,38 @@
 
   <!-- ===== FOOTER (mesmo da home) ===== -->
   <footer class="site-footer" data-shell role="contentinfo">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <a class="logo" href="/" style="display:inline-flex;align-items:center;gap:10px">
-          <img src="/assets/img/logo-symbol.webp" alt="" width="40" height="40">
-          <span>Integra Sistêmica</span>
-        </a>
-        <p>Conteúdo de reflexão, educação e autoconhecimento sobre constelação familiar e sistêmica.</p>
-      </div>
-      <div class="footer-col">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a class="logo" href="/" aria-label="Integra Sistêmica — início">
+        <img src="/assets/img/logo-symbol.webp" alt="" width="40" height="40">
+        <span>Integra Sistêmica</span>
+      </a>
+      <p>Conteúdo de reflexão, educação e autoconhecimento sobre constelação familiar e sistêmica. Uma forma de olhar para os padrões que se repetem.</p>
+    </div>
+    <div class="footer-col" aria-label="Navegação">
       <p class="footer-title">Explorar</p>
-        <a href="/blog/">Blog</a>
-        <a href="/ebook/">Guia das 7 Perguntas</a>
-        <a href="/constelacao-organizacional/">Constelação Organizacional</a>
-        <a href="/retiros/">Retiros</a>
-        <a href="/eventos/">Eventos</a>
-      </div>
-      <div class="footer-col">
+      <a href="/blog/">Blog</a>
+      <a href="/constelacao-organizacional/">Constelação Organizacional</a>
+      <a href="/retiros/">Retiros</a>
+      <a href="/eventos/">Eventos</a>
+      <a href="/ebook/">Guia das 7 Perguntas</a>
+    </div>
+    <div class="footer-col" aria-label="Institucional">
+      <p class="footer-title">Institucional</p>
+      <a href="mailto:contato@integrasistemica.com.br">contato@integrasistemica.com.br</a>
+      <a href="/ebook/">E-book &amp; Bônus</a>
+    </div>
+    <div class="footer-col" aria-label="Legal">
       <p class="footer-title">Legal</p>
-        <a href="/termos-de-uso/">Termos de Uso</a>
-        <a href="/politica-de-privacidade/">Política de Privacidade</a>
-      </div>
-      <div class="footer-col">
-      <p class="footer-title">Contato</p>
-        <a href="mailto:contato@integrasistemica.com.br">contato@integrasistemica.com.br</a>
-      </div>
+      <a href="/termos-de-uso/">Termos de Uso</a>
+      <a href="/politica-de-privacidade/">Política de Privacidade</a>
     </div>
-    <div class="footer-bottom">
-      <span>&copy; 2026 Integra Sistêmica — Todos os direitos reservados.</span>
-      <span>Conteúdo de reflexão. Não substitui acompanhamento profissional.</span>
-    </div>
-  </footer>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 Integra Sistêmica — Todos os direitos reservados.</span>
+    <span>Conteúdo de reflexão. Não substitui acompanhamento profissional.</span>
+  </div>
+</footer>
 
   <!-- ===== SCRIPT DE CAPTURA ===== -->
   <script>
@@ -514,5 +517,7 @@
 
   <!-- Motion scroll-trigger (shared) -->
   <script src="/assets/js/motion.js"></script>
+  <script src="/assets/js/motion.js"></script>
+  <script src="/assets/js/shell.js"></script>
 </body>
 </html>

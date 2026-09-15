@@ -87,18 +87,45 @@ h3,.h3{font-family:var(--font-display);font-size:1.6rem;font-weight:600;line-hei
 /* Botões */
 .btn{
   display:inline-flex;align-items:center;justify-content:center;gap:.5rem;
-  font-family:var(--font-ui);font-size:.95rem;font-weight:500;letter-spacing:.02em;
-  padding:14px 28px;border-radius:var(--r-pill);line-height:1;
+  font-family:var(--font-ui);font-size:.95rem;font-weight:600;letter-spacing:.02em;
+  padding:12px 26px;border-radius:var(--r-pill);line-height:1;
   transition:background-color var(--dur-fast) var(--ease-out),
-             color var(--dur-fast) var(--ease-out);
+             transform var(--dur-fast) var(--ease-out),
+             box-shadow var(--dur-fast) var(--ease-out);
   min-height:44px;text-decoration:none;
+  cursor:pointer;border:none;
 }
-.btn-primary{background:var(--marrom);color:var(--surface)}
-.btn-primary:hover{background:var(--salvia-deep);color:var(--surface);opacity:1}
-.btn-secondary{background:transparent;color:var(--marrom);box-shadow:inset 0 0 0 1.5px var(--marrom)}
-.btn-secondary:hover{background:var(--creme-deep);opacity:1}
-.btn-terracota{background:var(--terracota);color:var(--surface)}
-.btn-terracota:hover{background:var(--terracota-deep);color:var(--surface);opacity:1}
+.btn-primary{
+  background:var(--terracota);
+  color:#FFFFFF !important;
+  box-shadow:0 2px 8px rgba(198,123,92,0.25);
+}
+.btn-primary:hover{
+  background:var(--terracota-deep);
+  color:#FFFFFF !important;
+  transform:translateY(-1px);
+  box-shadow:0 4px 12px rgba(143,71,43,0.3);
+  opacity:1 !important;
+}
+.btn-secondary{
+  background:transparent;
+  color:var(--marrom) !important;
+  box-shadow:inset 0 0 0 1.5px var(--marrom);
+}
+.btn-secondary:hover{
+  background:var(--creme-deep);
+  color:var(--marrom) !important;
+  opacity:1 !important;
+}
+.btn-terracota{
+  background:var(--terracota);
+  color:#FFFFFF !important;
+}
+.btn-terracota:hover{
+  background:var(--terracota-deep);
+  color:#FFFFFF !important;
+  opacity:1 !important;
+}
 
 /* Cards */
 .card{
@@ -112,22 +139,40 @@ h3,.h3{font-family:var(--font-display);font-size:1.6rem;font-weight:600;line-hei
 /* Navegação (glass flutuante) */
 .site-header{
   position:sticky;top:0;z-index:50;
-  background:rgba(245,240,232,.82);
+  background:rgba(245,240,232,.92);
   backdrop-filter:saturate(150%) blur(12px);
   -webkit-backdrop-filter:saturate(150%) blur(12px);
   border-bottom:1px solid var(--creme-deep);
 }
-.header-inner{display:flex;align-items:center;justify-content:space-between;padding:16px 0;flex-wrap:wrap;gap:10px}
+.header-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 0;gap:16px}
 .logo{display:inline-flex;align-items:center;gap:10px;text-decoration:none}
 .logo img{width:40px;height:40px;border-radius:50%;object-fit:cover;flex-shrink:0}
-.logo span{font-family:var(--font-display);font-weight:600;font-size:1.3rem;color:var(--marrom);line-height:1}
-.nav{display:flex;align-items:center;gap:var(--sp-lg)}
-.nav a{font-family:var(--font-ui);font-weight:500;color:var(--marrom);font-size:.95rem}
-.nav a:hover{color:var(--terracota-deep);opacity:1}
-/* CTA do nav — menor, quiet-luxury (escada "Começar por aqui" única) */
-.nav .btn,.nav .btn-primary{padding:10px 20px}
-/* Estado ativo (aria-current) — sublinhado terracota + peso reforçado (CTA não sublinha) */
-.nav a[aria-current="page"]{color:var(--terracota-deep);font-weight:600}
+.logo span{font-family:var(--font-display);font-weight:600;font-size:1.35rem;color:var(--marrom);line-height:1}
+.nav{display:flex;align-items:center;gap:24px}
+.nav a:not(.btn){
+  font-family:var(--font-ui);
+  font-weight:500;
+  color:var(--marrom);
+  font-size:.95rem;
+  transition:color .2s var(--ease-out);
+}
+.nav a:not(.btn):hover{color:var(--terracota-deep);opacity:1}
+/* CTA do nav — botão Terracota nítido com texto branco puro */
+.nav .btn,.nav .btn-primary,.nav .nav-cta{
+  padding:10px 22px;
+  background:var(--terracota) !important;
+  color:#FFFFFF !important;
+  font-weight:600 !important;
+  text-decoration:none !important;
+  border-radius:var(--r-pill);
+}
+.nav .btn:hover,.nav .btn-primary:hover,.nav .nav-cta:hover{
+  background:var(--terracota-deep) !important;
+  color:#FFFFFF !important;
+  transform:translateY(-1px);
+}
+/* Estado ativo (aria-current) */
+.nav a[aria-current="page"]:not(.btn):not(.nav-cta){color:var(--terracota-deep);font-weight:600}
 .nav a[aria-current="page"]:not(.btn):not(.nav-cta)::after{content:"";display:block;height:2px;width:100%;background:var(--terracota)}
 /* Botão hambúrguer — escondido no desktop */
 .nav-toggle{display:none}
