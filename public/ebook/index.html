@@ -502,7 +502,7 @@
       try {
         // Grava o lead no banco Supabase (REST direto + Edge Function)
         const leadPayload = JSON.stringify({ email: email, consent_marketing: optin, fonte: 'ebook-slug', created_at: new Date().toISOString() });
-        const headers = { 'Content-Type': 'application/json', 'apikey': 'eyJhbG...2Af8', 'Authorization': 'Bearer eyJhbG...2Af8', 'Prefer': 'return=minimal' };
+        const headers = { 'Content-Type': 'application/json', 'apikey': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJ4dW50eGNsc3RndGR6Z3Vrbm9kIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODg0NTUwNzgsImV4cCI6MjEwNDAzMTA3OH0.5QB2YzOJU4jG_2__-_7peG7zevUwAeEhVq6JtKV2Af8', 'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJ4dW50eGNsc3RndGR6Z3Vrbm9kIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODg0NTUwNzgsImV4cCI6MjEwNDAzMTA3OH0.5QB2YzOJU4jG_2__-_7peG7zevUwAeEhVq6JtKV2Af8', 'Prefer': 'return=minimal' };
         
         fetch(SUPABASE_URL + '/rest/v1/leads', { method: 'POST', headers: headers, body: leadPayload }).catch(() => {});
         fetch(SUPABASE_URL + '/functions/v1/captura-guia', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: leadPayload }).catch(() => {});
