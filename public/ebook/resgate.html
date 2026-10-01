@@ -100,8 +100,6 @@
 </main>
 
 <script>
-  const SUPABASE_URL = "https://rxuntxclstgtdzguknod.supabase.co";
-
   document.getElementById('bonus-form').addEventListener('submit', async function(e){
     e.preventDefault();
     const email = document.getElementById('email').value.trim();
@@ -113,7 +111,7 @@
     msg.className = 'msg';
 
     try {
-      const res = await fetch(SUPABASE_URL + '/functions/v1/resgatar-bonus', {
+      const res = await fetch('/api/resgatar-bonus', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, code, consent_marketing: optin })

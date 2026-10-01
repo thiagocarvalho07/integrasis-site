@@ -478,9 +478,6 @@
 
   <!-- ===== SCRIPT DE CAPTURA ===== -->
   <script>
-    // Edge function captura-guia: grava lead + devolve links assinados (validade 7 dias)
-    const SUPABASE_URL = "https://rxuntxclstgtdzguknod.supabase.co";
-
     document.getElementById('capture-form').addEventListener('submit', async function(e) {
       e.preventDefault();
       const email = document.getElementById('email').value.trim();
@@ -500,12 +497,9 @@
       }
 
       try {
-        // Grava o lead no banco Supabase (REST direto + Edge Function)
-        const leadPayload = JSON.stringify({ email: email, consent_marketing: optin, fonte: 'ebook-slug', created_at: new Date().toISOString() });
-        const headers = { 'Content-Type': 'application/json', 'apikey': 'sb_publishable_VSm_cu7ddA6jSr1W84XQqw_r5Kpd2Ag', 'Authorization': 'Bearer sb_publishable_VSm_cu7ddA6jSr1W84XQqw_r5Kpd2Ag', 'Prefer': 'return=minimal' };
-        
-        fetch(SUPABASE_URL + '/rest/v1/leads', { method: 'POST', headers: headers, body: leadPayload }).catch(() => {});
-        fetch(SUPABASE_URL + '/functions/v1/captura-guia', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: leadPayload }).catch(() => {});
+        // Grava o lead no banco Cloudflare D1
+        const leadPayload = JSON.stringify({ email: email, consent_marketing: optin, origem: 'ebook' });
+        fetch('/api/leads', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: leadPayload }).catch(() => {});
 
         // Libera imediatamente os links de download direto na tela
         msg.className = 'msg ok';

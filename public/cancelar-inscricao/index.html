@@ -167,13 +167,10 @@
       var motivo = document.getElementById('motivo').value;
 
       var payload = { email: email, motivo: motivo || null };
-      fetch('https://rxuntxclstgtdzguknod.supabase.co/rest/v1/email_suppressions', {
+      fetch('/api/cancelar', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json',
-          'apikey': 'sb_publishable_VSm_cu7ddA6jSr1W84XQqw_r5Kpd2Ag',
-          'Authorization': 'Bearer sb_publishable_VSm_cu7ddA6jSr1W84XQqw_r5Kpd2Ag',
-          'Prefer': 'return=minimal'
+          'Content-Type': 'application/json'
         },
         body: JSON.stringify(payload)
       })

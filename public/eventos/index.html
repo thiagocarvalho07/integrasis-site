@@ -140,9 +140,9 @@
         return;
       }
       btn.disabled = true; btn.textContent = 'Enviando...';
-      fetch('https://rxuntxclstgtdzguknod.supabase.co/rest/v1/leads', {
+      fetch('/api/leads', {
         method: 'POST',
-        headers: { 'Content-Type':'application/json', 'apikey': 'sb_publishable_VSm_cu7ddA6jSr1W84XQqw_r5Kpd2Ag', 'Authorization': 'Bearer sb_publishable_VSm_cu7ddA6jSr1W84XQqw_r5Kpd2Ag', 'Prefer': 'return=minimal' },
+        headers: { 'Content-Type':'application/json' },
         body: JSON.stringify({ email: v, origem: 'waitlist-eventos' })
       })
       .then(function(){
