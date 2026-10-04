@@ -101,6 +101,7 @@ def scan_text(path: Path) -> list[str]:
     except Exception:
         return problems
 
+    text = re.sub(r'data:image/[^;]+;base64,[a-zA-Z0-9+/=]+', '', text)
     lower = text.lower()
     for kw in GOLD_NAMES:
         if kw in lower:

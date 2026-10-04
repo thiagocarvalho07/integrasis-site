@@ -1,7 +1,7 @@
 // Endpoint GET /api/click — Rastreamento de Cliques em E-mails com Cloudflare D1
 export async function onRequestGet({ request, env }) {
   const urlObj = new URL(request.url);
-  const targetUrl = urlObj.searchParams.get('url') || 'https://integrasistemica.com.br';
+  let targetUrl = urlObj.searchParams.get('url') || 'https://integrasistemica.com.br';
   const email = (urlObj.searchParams.get('email') || '').trim().toLowerCase();
   const campaign = (urlObj.searchParams.get('c') || '').trim();
   const token = (urlObj.searchParams.get('t') || '').trim();
@@ -22,6 +22,17 @@ export async function onRequestGet({ request, env }) {
     } catch (e) {
       // Ignora erro para garantir redirecionamento do usuário
     }
+  }
+
+  // Se o destino for o domínio do IntegraSis, repassa o e-mail para a telemetria do artigo
+  if (email && (targetUrl.startsWith('/') || targetUrl.includes('integrasistemica.com.br'))) {
+    try {
+      const destUrl = new URL(targetUrl, 'https://integrasistemica.com.br');
+      if (!destUrl.searchParams.has('email')) {
+        destUrl.searchParams.set('email', email);
+      }
+      targetUrl = destUrl.toString();
+    } catch (e) {}
   }
 
   // Redireciona imediatamente para o destino
