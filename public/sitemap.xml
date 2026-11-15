@@ -180,4 +180,28 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-<url><loc>https://integrasistemica.com.br/guia/</loc><lastmod>2026-11-15</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url></urlset>
+  <url>
+    <loc>https://integrasistemica.com.br/guia/</loc>
+    <lastmod>2026-11-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://integrasistemica.com.br/blog/a-sindrome-do-salvador-na-familia-por-que-voce-se-sente-responsavel-por-todos/</loc>
+    <lastmod>2026-11-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://integrasistemica.com.br/blog/o-desequilibrio-entre-dar-e-receber-por-que-quem-doa-demais-e-abandonado/</loc>
+    <lastmod>2026-11-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://integrasistemica.com.br/blog/o-medo-de-superar-os-pais-a-culpa-inconsciente-que-bloqueia-sua-vida/</loc>
+    <lastmod>2026-11-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+</urlset>
