@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <title>Santuário de Áudios Sistêmicos • IntegraSis</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png">
+  <style>
+    :root {
+      --bg: #1C1715;
+      --card-bg: #27201D;
+      --border: #3D332E;
+      --salvia: #7A9580;
+      --terracota: #D18870;
+      --creme: #F7F4EE;
+      --text-muted: #A89B91;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: var(--bg);
+      color: var(--creme);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.5;
+      padding: 16px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    .container {
+      max-width: 480px;
+      width: 100%;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 24px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+    }
+    .header {
+      text-align: center;
+      margin-bottom: 24px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 16px;
+    }
+    .brand {
+      font-family: Georgia, serif;
+      font-size: 17px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--salvia);
+      font-weight: bold;
+    }
+    h1 {
+      font-family: Georgia, serif;
+      font-size: 20px;
+      margin: 8px 0 4px;
+      color: var(--creme);
+    }
+    p.sub {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+    /* Tela de Bloqueio por CPF */
+    #authSection {
+      text-align: center;
+      padding: 10px 0;
+    }
+    .lock-icon {
+      font-size: 36px;
+      margin-bottom: 12px;
+    }
+    .cpf-input {
+      width: 100%;
+      padding: 14px;
+      background: #181412;
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      color: #FFF;
+      font-size: 18px;
+      text-align: center;
+      letter-spacing: 2px;
+      outline: none;
+      margin: 16px 0;
+    }
+    .cpf-input:focus {
+      border-color: var(--salvia);
+    }
+    .btn-enter {
+      width: 100%;
+      background: var(--salvia);
+      color: #FFF;
+      border: none;
+      padding: 14px;
+      font-size: 15px;
+      font-weight: bold;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+    /* Player List */
+    #playerSection {
+      display: none;
+    }
+    .track-card {
+      background: #1E1917;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 14px;
+      margin-bottom: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .track-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--creme);
+    }
+    .track-desc {
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+    audio {
+      width: 100%;
+      height: 36px;
+      border-radius: 8px;
+      outline: none;
+    }
+    .sleep-box {
+      background: #181412;
+      border-radius: 8px;
+      padding: 10px;
+      font-size: 11px;
+      color: var(--text-muted);
+      text-align: center;
+      margin-top: 16px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="header">
+      <div class="brand">Integra Sistêmica</div>
+      <h1>Caderno de Áudios Guiados</h1>
+      <p class="sub">Vozes Terapêuticas & Frequências de Reconciliação</p>
+    </div>
+
+    <!-- Tela de Acesso Seguro por CPF -->
+    <div id="authSection">
+      <div class="lock-icon">🔒</div>
+      <p style="font-size: 14px; color: var(--creme);">Espaço exclusivo para leitores do livro.</p>
+      <p style="font-size: 12px; color: var(--text-muted); margin-top: 4px;">Digite o seu CPF para liberar o seu acesso:</p>
+
+      <form id="formCpf">
+        <input type="tel" id="inputCpf" class="cpf-input" placeholder="000.000.000-00" maxlength="14" required autofocus>
+        <button type="submit" class="btn-enter" id="btnAuth">Acessar Minhas Meditações →</button>
+      </form>
+      <p id="authError" style="color: var(--terracota); font-size: 12px; margin-top: 10px; display: none;"></p>
+    </div>
+
+    <!-- Player de Áudio PWA -->
+    <div id="playerSection">
+      <div class="track-card">
+        <div class="track-title">Faixa 1: Tomando o Seu Verdadeiro Lugar</div>
+        <div class="track-desc">Voz profunda e serena (Antônio) com harmonia de piano suave.</div>
+        <audio controls preload="none">
+          <source src="/assets/audio_samples/Antonio_Deep_Warm_Calm.mp3" type="audio/mpeg">
+        </audio>
+      </div>
+
+      <div class="track-card">
+        <div class="track-title">Faixa 2: Acolhimento e Paz Interior</div>
+        <div class="track-desc">Tom aveludado e afetuoso (Marcus) para desacelerar o pensamento.</div>
+        <audio controls preload="none">
+          <source src="/assets/audio_samples/MarcusAlemao_Gentle_Warm.mp3" type="audio/mpeg">
+        </audio>
+      </div>
+
+      <div class="track-card">
+        <div class="track-title">Faixa 3: Devolvendo o Peso aos Antepassados</div>
+        <div class="track-desc">Condução reflexiva profunda (Diego) para relaxamento antes de dormir.</div>
+        <audio controls preload="none">
+          <source src="/assets/audio_samples/Diego_Narrator_Calm.mp3" type="audio/mpeg">
+        </audio>
+      </div>
+
+      <div class="sleep-box">
+        🌙 <em>Dica de descanso:</em> Você pode apagar a tela do celular. O áudio continuará tocando suavemente em segundo plano.
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const form = document.getElementById('formCpf');
+    const input = document.getElementById('inputCpf');
+    const authSec = document.getElementById('authSection');
+    const playerSec = document.getElementById('playerSection');
+    const err = document.getElementById('authError');
+
+    // Máscara de CPF
+    input.addEventListener('input', (e) => {
+      let v = e.target.value.replace(/\D/g, '');
+      if (v.length > 11) v = v.substring(0, 11);
+      if (v.length > 9) v = v.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, '$1.$2.$3-$4');
+      else if (v.length > 6) v = v.replace(/(\d{3})(\d{3})(\d{3})/, '$1.$2.$3');
+      else if (v.length > 3) v = v.replace(/(\d{3})(\d{3})/, '$1.$2');
+      e.target.value = v;
+    });
+
+    // Auto-login se já tiver validado
+    if (localStorage.getItem('integrasis_audio_auth')) {
+      authSec.style.display = 'none';
+      playerSec.style.display = 'block';
+    }
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      err.style.display = 'none';
+      const cpf = input.value;
+
+      try {
+        const resp = await fetch('/api/auth-audios', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ cpf })
+        });
+        const data = await resp.json();
+
+        if (data.success) {
+          localStorage.setItem('integrasis_audio_auth', data.token);
+          authSec.style.display = 'none';
+          playerSec.style.display = 'block';
+        } else {
+          err.innerText = data.error || 'CPF não autorizado.';
+          err.style.display = 'block';
+        }
+      } catch (e) {
+        err.innerText = 'Erro ao verificar acesso. Tente novamente.';
+        err.style.display = 'block';
+      }
+    });
+  </script>
+</body>
+</html>

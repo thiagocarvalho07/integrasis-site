@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <meta name="googlebot" content="noindex, nofollow">
+  <title>Acesso Concluído com Sucesso • Integra Sistêmica</title>
+  <link rel="canonical" href="https://integrasistemica.com.br/checkout/sucesso.html">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png">
+  <script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+  <style>
+    :root {
+      --creme: #F7F4EE;
+      --marrom: #2D221E;
+      --terracota: #B8735C;
+      --salvia: #607364;
+      --card-bg: #FFFFFF;
+      --border: #E8E2D8;
+      --text-muted: #6B5847;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: var(--creme);
+      color: var(--marrom);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.5;
+      padding: 16px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    .success-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      max-width: 520px;
+      width: 100%;
+      padding: 28px;
+      box-shadow: 0 4px 20px rgba(45, 34, 30, 0.06);
+      text-align: center;
+    }
+    .check-icon {
+      width: 64px;
+      height: 64px;
+      background: #EBF0EB;
+      color: var(--salvia);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+      margin: 0 auto 16px;
+    }
+    h1 {
+      font-family: Georgia, serif;
+      font-size: 22px;
+      color: var(--marrom);
+      margin-bottom: 8px;
+    }
+    p.lead {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+    }
+    .license-badge {
+      background: #FAF8F5;
+      border: 1px dashed var(--terracota);
+      border-radius: 10px;
+      padding: 12px;
+      font-size: 12px;
+      color: var(--marrom);
+      margin-bottom: 24px;
+      text-align: left;
+    }
+    .download-section {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+    .btn-download {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 18px;
+      background: #FFF;
+      border: 1.5px solid var(--salvia);
+      border-radius: 10px;
+      text-decoration: none;
+      color: var(--marrom);
+      font-weight: 600;
+      font-size: 14px;
+      transition: background 0.2s, transform 0.1s;
+      cursor: pointer;
+    }
+    .btn-download:hover {
+      background: #F4F7F4;
+    }
+    .btn-download.primary {
+      background: var(--salvia);
+      color: #FFF;
+      border-color: var(--salvia);
+    }
+    .btn-download.primary:hover {
+      background: #4F6153;
+    }
+    .support-box {
+      border-top: 1px solid var(--border);
+      padding-top: 16px;
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+    .btn-whatsapp {
+      display: inline-block;
+      margin-top: 8px;
+      color: var(--salvia);
+      font-weight: bold;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="success-card">
+    <div class="check-icon">✓</div>
+    <h1>Seu Acesso Está Liberado!</h1>
+    <p class="lead">
+      Obrigado por confiar em nosso trabalho. Seus materiais foram emitidos com registro individual de autenticidade.
+    </p>
+
+    <div class="license-badge" id="licenseBox">
+      <div><strong>Titular do Exemplar:</strong> <span id="userName">Carregando...</span></div>
+      <div><strong>Documento / CPF:</strong> <span id="userCpf">Carregando...</span></div>
+      <div><strong>E-mail Registrado:</strong> <span id="userEmail">Carregando...</span></div>
+      <div style="font-size: 10.5px; color: var(--terracota); margin-top: 4px;">
+        🔒 Exemplar protegido por marca d'água pericial contra pirataria e vazamentos.
+      </div>
+    </div>
+
+    <div class="download-section">
+      <button class="btn-download primary" id="btnDownloadBook" type="button">
+        <span>📖 Baixar E-book Completo Personalizado (PDF)</span>
+        <span>↓</span>
+      </button>
+
+      <a class="btn-download" id="btnDownloadEpub" href="/ebook/Constelacao-Familiar-Thiago-Carvalho.epub" download="Constelacao-Familiar-Thiago-Carvalho.epub">
+        <span>📱 Baixar E-book Formato EPUB (Kindle / Apple Books)</span>
+        <span>↓</span>
+      </a>
+
+      <button class="btn-download" id="btnDownloadGuia" type="button">
+        <span>📋 Bônus 1: Guia das 7 Perguntas Sistêmicas (PDF)</span>
+        <span>↓</span>
+      </button>
+
+      <button class="btn-download" id="btnDownloadChecklist" type="button">
+        <span>🌳 Bônus 2: Checklist & Genograma (PDF)</span>
+        <span>↓</span>
+      </button>
+    </div>
+
+    <div class="support-box">
+      Uma cópia completa dos seus links de acesso também foi enviada para o seu e-mail.<br>
+      Precisa de ajuda ou suporte imediato?<br>
+      <a href="https://wa.me/5561998138418?text=Ol%C3%A1%2C%20tudo%20bem%3F%20Acabei%20de%20adquirir%20o%20e-book%20Constela%C3%A7%C3%A3o%20Familiar%20e%20gostaria%20de%20suporte." class="btn-whatsapp" target="_blank">Falar com Thiago Carvalho via WhatsApp →</a>
+    </div>
+  </div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const nome = params.get('nome') || 'Leitor IntegraSis';
+    const email = params.get('email') || 'seu@email.com';
+    let rawCpf = params.get('cpf') || '000.000.000-00';
+    
+    // Mascaramento de CPF para privacidade conforme LGPD (***.456.789-**)
+    let maskedCpf = rawCpf;
+    if (rawCpf.length >= 11) {
+      const clean = rawCpf.replace(/\D/g, '');
+      if (clean.length === 11) {
+        maskedCpf = `***.${clean.substr(3,3)}.${clean.substr(6,3)}-**`;
+      }
+    }
+
+    document.getElementById('userName').innerText = nome;
+    document.getElementById('userCpf').innerText = maskedCpf;
+    document.getElementById('userEmail').innerText = email;
+
+    // Função para download com carimbo pericial via Edge Function (/api/download-stamped-pdf)
+    async function downloadStampedFile(fileType, fallbackUrl, outputName, event) {
+      const btn = event.currentTarget;
+      const originalText = btn.innerHTML;
+      btn.innerHTML = '<span>⏳ Personalizando seu exemplar...</span><span>...</span>';
+      btn.style.pointerEvents = 'none';
+
+      const edgeUrl = `/api/download-stamped-pdf?file=${fileType}&nome=${encodeURIComponent(nome)}&cpf=${encodeURIComponent(rawCpf)}&email=${encodeURIComponent(email)}`;
+
+      try {
+        // Tenta baixar direto via Edge Function
+        const resp = await fetch(edgeUrl);
+        if (resp.ok) {
+          const blob = await resp.blob();
+          const link = document.createElement('a');
+          link.href = URL.createObjectURL(blob);
+          link.download = outputName;
+          document.body.appendChild(link);
+          link.click();
+          document.body.removeChild(link);
+
+          btn.innerHTML = '<span>✓ Download Concluído!</span><span>✓</span>';
+          setTimeout(() => {
+            btn.innerHTML = originalText;
+            btn.style.pointerEvents = 'auto';
+          }, 3000);
+          return;
+        }
+        throw new Error('Falha na resposta do servidor edge');
+      } catch (e) {
+        // Fallback para estampar no navegador via pdf-lib
+        try {
+          const existingPdfBytes = await fetch(fallbackUrl).then(res => res.arrayBuffer());
+          const pdfDoc = await PDFLib.PDFDocument.load(existingPdfBytes);
+          const helveticaFont = await pdfDoc.embedFont(PDFLib.StandardFonts.Helvetica);
+          const pages = pdfDoc.getPages();
+
+          const stampText = `Exemplar licenciado exclusivamente para ${nome} • CPF: ${maskedCpf} • E-mail: ${email} • IntegraSis © 2026`;
+
+          for (const page of pages) {
+            const { width, height } = page.getSize();
+            page.drawText(stampText, {
+              x: 34,
+              y: 12,
+              size: 6.5,
+              font: helveticaFont,
+              color: PDFLib.rgb(0.42, 0.35, 0.28),
+              opacity: 0.85
+            });
+          }
+
+          const pdfBytes = await pdfDoc.save();
+          const blob = new Blob([pdfBytes], { type: 'application/pdf' });
+          const link = document.createElement('a');
+          link.href = URL.createObjectURL(blob);
+          link.download = outputName;
+          link.click();
+
+          btn.innerHTML = '<span>✓ Download Concluído!</span><span>✓</span>';
+          setTimeout(() => {
+            btn.innerHTML = originalText;
+            btn.style.pointerEvents = 'auto';
+          }, 3000);
+        } catch (err) {
+          window.open(fallbackUrl, '_blank');
+          btn.innerHTML = originalText;
+          btn.style.pointerEvents = 'auto';
+        }
+      }
+    }
+
+    document.getElementById('btnDownloadBook').addEventListener('click', (e) => {
+      downloadStampedFile('book', '/ebook/Constelacao-Familiar-Thiago-Carvalho.pdf', 'Ebook-Constelacao-Familiar-Thiago-Carvalho.pdf', e);
+    });
+
+    document.getElementById('btnDownloadGuia').addEventListener('click', (e) => {
+      downloadStampedFile('guia', '/ebook/Guia-7-Perguntas-Sistemicas.pdf', 'Guia-7-Perguntas-Sistemicas.pdf', e);
+    });
+
+    document.getElementById('btnDownloadChecklist').addEventListener('click', (e) => {
+      downloadStampedFile('checklist', '/ebook/checklist-7-perguntas.pdf', 'Checklist-Arvore-Familiar-Personalizado.pdf', e);
+    });
+  </script>
+</body>
+</html>

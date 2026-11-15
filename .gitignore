@@ -1,9 +1,16 @@
 # Cache local do Wrangler (nunca subir)
 .wrangler/
 
+# Dependencies
+node_modules/
+
 # Worktrees e rascunhos de assets
 .worktrees/
 _assets_src/
+
+# Python
+__pycache__/
+*.pyc
 
 # macOS
 .DS_Store

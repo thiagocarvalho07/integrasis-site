@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='utf-8'?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://integrasistemica.com.br/</loc>
@@ -8,7 +8,7 @@
   </url>
   <url>
     <loc>https://integrasistemica.com.br/blog/</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -74,19 +74,19 @@
   </url>
   <url>
     <loc>https://integrasistemica.com.br/blog/filho-parentificado-os-sinais-de-que-voce-cuidou-dos-seus-pais/</loc>
-    <lastmod>2026-11-11</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://integrasistemica.com.br/blog/lealdades-invisiveis-por-que-sabotamos-o-sucesso-profissional/</loc>
-    <lastmod>2026-11-11</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://integrasistemica.com.br/blog/as-3-ordens-do-amor-as-leis-invisiveis-que-governam-as-familias/</loc>
-    <lastmod>2026-11-11</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -98,19 +98,19 @@
   </url>
   <url>
     <loc>https://integrasistemica.com.br/blog/o-peso-de-carregar-segredos-de-familia-as-consequencias-invisiveis/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://integrasistemica.com.br/blog/divorcio-sob-a-otica-sistemica-como-proteger-o-lugar-dos-filhos/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://integrasistemica.com.br/blog/heranca-emocional-por-que-repetimos-o-fracasso-financeiro-dos-pais/</loc>
-    <lastmod>2026-11-14</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -119,12 +119,6 @@
     <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
-  </url>
-  <url>
-    <loc>https://integrasistemica.com.br/ebook/politica-privacidade.html</loc>
-    <lastmod>2026-09-15</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
   </url>
   <url>
     <loc>https://integrasistemica.com.br/politica-de-privacidade/</loc>
@@ -144,4 +138,46 @@
     <changefreq>yearly</changefreq>
     <priority>0.2</priority>
   </url>
-</urlset>
+  <url>
+    <loc>https://integrasistemica.com.br/blog/autoconhecimento-nao-e-luxo-e-o-trabalho-de-uma-vida-inteira/</loc>
+    <lastmod>2026-11-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://integrasistemica.com.br/blog/constelacao-nao-resolve-nada-por-isso-pode-te-ajudar/</loc>
+    <lastmod>2026-11-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://integrasistemica.com.br/blog/nao-e-heranca-e-o-jeito-que-aprendi-a-mar/</loc>
+    <lastmod>2026-11-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://integrasistemica.com.br/blog/ninguem-corta-laco-laco-se-entende/</loc>
+    <lastmod>2026-11-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://integrasistemica.com.br/blog/o-que-aconteceu-com-voce-nao-te-define-mas-pode-te-explicar/</loc>
+    <lastmod>2026-11-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://integrasistemica.com.br/blog/o-que-uma-constelacao-faz-e-reorganizar-o-que-ja-e-seu/</loc>
+    <lastmod>2026-11-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://integrasistemica.com.br/blog/perdao-sem-cobranca-o-que-sobra-quando-a-gente-para-de-exigir/</loc>
+    <lastmod>2026-11-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+<url><loc>https://integrasistemica.com.br/guia/</loc><lastmod>2026-11-15</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url></urlset>

@@ -1,0 +1,49 @@
+{
+  "$schema": "https://hermes-agent.nousresearch.com/schemas/environment-manifest.v1.json",
+  "project_name": "integrasis-site",
+  "version": "1.0.0",
+  "description": "Site institucional e landing page oficial da IntegraSis.",
+  "runtimes": {
+    "node": {
+      "required": true,
+      "minimum_version": "22.0.0",
+      "preferred_manager": "pnpm"
+    },
+    "python": {
+      "required": false,
+      "minimum_version": "3.14.0"
+    }
+  },
+  "networking": {
+    "reserved_ports": [
+      3000
+    ],
+    "bind_host": "0.0.0.0",
+    "tailscale_exposed": true
+  },
+  "branch_policy": {
+    "main_branch": "main",
+    "protected_branches": [
+      "main"
+    ],
+    "direct_push_allowed": false,
+    "require_clean_manifest": true
+  },
+  "environment_variables": {
+    "required": [],
+    "optional": [],
+    "prohibited_in_git": [
+      ".env",
+      "*_KEY",
+      "*_SECRET"
+    ]
+  },
+  "hygiene_rules": {
+    "clean_cache_paths": [
+      ".next/cache",
+      "node_modules/.cache"
+    ],
+    "anti_pollution_enforced": true,
+    "ewo_compliance_required": true
+  }
+}

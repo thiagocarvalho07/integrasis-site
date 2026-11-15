@@ -1,6 +1,16 @@
 # Integra Sistêmica — robots.txt
 # Site estático servido por Cloudflare Pages (integrasistemica.com.br)
+
+# Bloqueio de rastreamento da Amazon (Blindagem KDP Select)
+User-agent: Amazonbot
+Disallow: /
+
 User-agent: *
+Disallow: /checkout/
+Disallow: /audios/
+Disallow: /api/create-checkout-session
+Disallow: /api/download-stamped-pdf
+Disallow: /api/auth-audios
 Allow: /
 
 Sitemap: https://integrasistemica.com.br/sitemap.xml
