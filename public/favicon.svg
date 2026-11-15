@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <style>
+      :root {
+        --bg-disc: #F7F4EE;
+        --border-color: #2D221E;
+        --sage-color: #2E3E2E;
+        --terracotta-color: #B85D3E;
+        --center-hole: #F7F4EE;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --border-color: #4A5D4E;
+        }
+      }
+      .bg { fill: #F7F4EE; }
+      .border { fill: none; stroke: #2D221E; stroke-width: 16; }
+      .sage { fill: #2E3E2E; }
+      .terracotta-line { stroke: #B85D3E; stroke-width: 22; stroke-linecap: round; }
+      .terracotta-node { fill: #B85D3E; }
+      .hole { fill: #F7F4EE; }
+    </style>
+  </defs>
+  <!-- Background disc -->
+  <circle cx="256" cy="256" r="248" class="bg"/>
+  <circle cx="256" cy="256" r="238" class="border"/>
+
+  <!-- Upper Canopy (Copa Sistêmica - Ancestralidade e Expansão) -->
+  <!-- Outer sweeping branches -->
+  <path d="M 234 200 C 195 150 140 125 75 142 C 60 146 80 126 115 112 C 175 90 228 120 242 172 Z" class="sage"/>
+  <path d="M 278 200 C 317 150 372 125 437 142 C 452 146 432 126 397 112 C 337 90 284 120 270 172 Z" class="sage"/>
+
+  <!-- Mid upper branches -->
+  <path d="M 230 160 C 205 105 160 70 105 68 C 145 56 200 78 235 125 Z" class="sage"/>
+  <path d="M 282 160 C 307 105 352 70 407 68 C 367 56 312 78 277 125 Z" class="sage"/>
+
+  <!-- Topmost foliage / crown apex -->
+  <path d="M 256 46 C 238 78 240 115 256 132 C 272 115 274 78 256 46 Z" class="sage"/>
+  <path d="M 215 72 C 196 98 205 125 224 130 C 232 110 230 88 215 72 Z" class="sage"/>
+  <path d="M 297 72 C 316 98 307 125 288 130 C 280 110 282 88 297 72 Z" class="sage"/>
+
+  <!-- Central Trunk (Flanks) -->
+  <path d="M 232 256 C 232 292 210 332 175 365 C 210 348 230 315 238 280 L 238 232 C 230 197 210 164 175 147 C 210 180 232 220 232 256 Z" class="sage"/>
+  <path d="M 280 256 C 280 292 302 332 337 365 C 302 348 282 315 274 280 L 274 232 C 282 197 302 164 337 147 C 302 180 280 220 280 256 Z" class="sage"/>
+
+  <!-- Lower Roots (Raízes Profundas - Aterramento e Origem) -->
+  <!-- Outer sweeping roots -->
+  <path d="M 234 312 C 195 362 140 387 75 370 C 60 366 80 386 115 400 C 175 422 228 392 242 340 Z" class="sage"/>
+  <path d="M 278 312 C 317 362 372 387 437 370 C 452 366 432 386 397 400 C 337 422 284 392 270 340 Z" class="sage"/>
+
+  <!-- Mid lower roots -->
+  <path d="M 230 352 C 205 407 160 442 105 444 C 145 456 200 434 235 387 Z" class="sage"/>
+  <path d="M 282 352 C 307 407 352 442 407 444 C 367 456 312 434 277 387 Z" class="sage"/>
+
+  <!-- Bottom anchor roots -->
+  <path d="M 256 466 C 238 434 240 397 256 380 C 272 397 274 434 256 466 Z" class="sage"/>
+  <path d="M 215 440 C 196 414 205 387 224 382 C 232 402 230 424 215 440 Z" class="sage"/>
+  <path d="M 297 440 C 316 414 307 387 288 382 C 280 402 282 424 297 440 Z" class="sage"/>
+
+  <!-- Fio Terracota Ancestral (Vertical Spine & Unbroken Line of Life) -->
+  <line x1="256" y1="65" x2="256" y2="447" class="terracotta-line"/>
+  <circle cx="256" cy="115" r="20" class="terracotta-node"/>
+  <circle cx="256" cy="180" r="24" class="terracotta-node"/>
+  <circle cx="256" cy="256" r="32" class="terracotta-node"/>
+  <circle cx="256" cy="332" r="24" class="terracotta-node"/>
+  <circle cx="256" cy="397" r="20" class="terracotta-node"/>
+  <!-- Central node open ring: Linen/Cream -->
+  <circle cx="256" cy="256" r="15" class="hole"/>
+</svg>
