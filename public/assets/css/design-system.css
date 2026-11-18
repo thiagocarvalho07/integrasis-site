@@ -424,3 +424,179 @@ h3,.h3{font-family:var(--font-display);font-size:1.6rem;font-weight:600;line-hei
 @media(max-width:620px) and (prefers-reduced-motion:reduce){
   .nav-toggle-bar,.nav-toggle-bar::before,.nav-toggle-bar::after{transition:none}
 }
+
+/* --- 10. TABELAS DE COMPARAÇÃO & MICRO-CTA EDITORIAL --- */
+.table-container {
+  width: 100%;
+  margin: 2.5rem 0 2rem;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border-radius: var(--r-lg, 12px);
+  border: 1px solid var(--creme-deep, #E8E2D8);
+  box-shadow: var(--shadow-card, 0 2px 8px rgba(46,59,46,0.04));
+  background: var(--surface, #FAF7F2);
+}
+
+.comparison-table, .tabela-comparativa {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  text-align: left;
+}
+
+.comparison-table thead, .tabela-comparativa thead {
+  background: var(--creme, #F4F0E8);
+  border-bottom: 2px solid var(--creme-deep, #E8E2D8);
+}
+
+.comparison-table th, .tabela-comparativa th {
+  padding: 16px 20px;
+  font-family: var(--font-display, 'Georgia', serif);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--marrom, #2E3B2E);
+}
+
+.comparison-table td, .tabela-comparativa td {
+  padding: 14px 20px;
+  border-bottom: 1px solid var(--creme-deep, #E8E2D8);
+  color: var(--ink, #3A3A38);
+  vertical-align: top;
+}
+
+.comparison-table tbody tr:last-child td,
+.tabela-comparativa tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Micro-CTA Quiet Luxury */
+.micro-cta {
+  background: #FAF7F2;
+  border: 1px solid #E8E2D8;
+  border-left: 4px solid #607364;
+  border-radius: 8px;
+  padding: 22px 26px;
+  margin: 2.5rem 0;
+  box-shadow: 0 2px 8px rgba(46, 59, 46, 0.03);
+}
+
+.micro-cta-title {
+  font-family: 'Georgia', serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--marrom, #2E3B2E);
+  line-height: 1.4;
+  margin-bottom: 8px;
+}
+
+.micro-cta-text {
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--ink, #3A3A38);
+  margin: 0 0 16px 0;
+}
+
+.micro-cta-btn {
+  display: inline-block;
+  background: #607364;
+  color: #F7F4EE;
+  padding: 10px 22px;
+  border-radius: 6px;
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.micro-cta-btn:hover {
+  background: #506153;
+  color: #FFFFFF;
+}
+
+/* Mobile responsive collapse for comparison tables (Viewports <= 640px) */
+@media (max-width: 640px) {
+  .table-container,
+  div[style*="overflow-x"] {
+    overflow-x: visible !important;
+    width: 100% !important;
+    margin: 1.5rem 0 !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+  table, .comparison-table, .tabela-comparativa {
+    display: block !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    border: none !important;
+    background: transparent !important;
+  }
+  table thead, .comparison-table thead, .tabela-comparativa thead {
+    display: none !important;
+  }
+  table tbody, .comparison-table tbody, .tabela-comparativa tbody {
+    display: block !important;
+    width: 100% !important;
+  }
+  table tr, .comparison-table tr, .tabela-comparativa tr {
+    display: flex !important;
+    flex-direction: column !important;
+    margin-bottom: 1.25rem !important;
+    border: 1px solid #E8E2D8 !important;
+    border-radius: 8px !important;
+    overflow: hidden !important;
+    background: #FAF7F2 !important;
+    box-shadow: 0 2px 6px rgba(46, 59, 46, 0.04) !important;
+  }
+  table td, .comparison-table td, .tabela-comparativa td {
+    display: block !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    padding: 12px 16px !important;
+    font-size: 0.95rem !important;
+    line-height: 1.5 !important;
+    border: none !important;
+    border-bottom: 1px solid #E8E2D8 !important;
+  }
+  table td:last-child, .comparison-table td:last-child, .tabela-comparativa td:last-child {
+    border-bottom: none !important;
+  }
+  table td[data-label]::before,
+  .comparison-table td[data-label]::before,
+  .tabela-comparativa td[data-label]::before {
+    content: attr(data-label);
+    display: block;
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 4px;
+    color: #A85F43;
+  }
+  table td[data-col="alivio"]::before,
+  table td[data-type="alivio"]::before,
+  .comparison-table td[data-col="alivio"]::before,
+  .tabela-comparativa td[data-col="alivio"]::before {
+    color: #5C6B52 !important;
+  }
+  table td[data-col="dimensao"]::before,
+  table td[data-type="dimensao"]::before,
+  .comparison-table td[data-col="dimensao"]::before,
+  .tabela-comparativa td[data-col="dimensao"]::before {
+    color: #2E3B2E !important;
+  }
+  .micro-cta {
+    padding: 16px 18px;
+    margin: 2rem 0;
+  }
+  .micro-cta-btn {
+    display: block;
+    text-align: center;
+    width: 100%;
+    padding: 12px 18px;
+  }
+}
+
