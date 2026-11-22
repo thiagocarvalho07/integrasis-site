@@ -13,15 +13,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Lora:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/assets/css/design-system.css?v=8">
   <!-- Favicons -->
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=2">
-  <link rel="icon" type="image/png" sizes="512x512" href="/assets/img/favicon-512.png?v=2">
-  <link rel="icon" type="image/png" sizes="192x192" href="/assets/img/favicon-192.png?v=2">
-  <link rel="icon" type="image/png" sizes="48x48" href="/assets/img/favicon-48.png?v=2">
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png?v=2">
-  <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16.png?v=2">
-  <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png?v=2">
-  <link rel="shortcut icon" href="/favicon.ico?v=2">
-  <link rel="manifest" href="/site.webmanifest?v=2">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=3">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/img/favicon-512.png?v=3">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/img/favicon-192.png?v=3">
+  <link rel="icon" type="image/png" sizes="48x48" href="/assets/img/favicon-48.png?v=3">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png?v=3">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16.png?v=3">
+  <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png?v=3">
+  <link rel="shortcut icon" href="/favicon.ico?v=3">
+  <link rel="manifest" href="/site.webmanifest?v=3">
 
   <!-- Open Graph / Redes Sociais -->
   <meta property="og:type" content="article">
@@ -277,8 +277,8 @@
       Observe o contraste entre a fidelidade cega e a libertação consciente pelo respeito às origens:
     </p>
 
-    <div style="overflow-x:auto; margin:2.5rem 0 2rem; border-radius:var(--r-lg); border:1px solid var(--creme-deep); box-shadow:var(--shadow-card); background:var(--surface);">
-      <table style="width:100%; border-collapse:collapse; min-width:540px; font-size:0.95rem; line-height:1.5;">
+    <div class="table-container">
+      <table class="comparison-table">
         <thead>
           <tr style="background:var(--creme); border-bottom:2px solid var(--creme-deep); text-align:left;">
             <th style="padding:16px 20px; font-family:var(--font-display); font-size:1.15rem; color:var(--marrom); width:28%;">Atitude</th>
@@ -287,30 +287,30 @@
           </tr>
         </thead>
         <tbody>
-          <tr style="border-bottom:1px solid var(--creme-deep);">
-            <td style="padding:14px 20px; font-weight:600; color:var(--marrom);">Sentimento diante do Sucesso</td>
-            <td style="padding:14px 20px; color:var(--ink);">Culpa paralisante, vergonha e urgência inconsciente de perder o que conquistou.</td>
-            <td style="padding:14px 20px; color:var(--ink);">Gratidão humilde, serenidade e responsabilidade pelo bom uso das conquistas.</td>
-          </tr>
-          <tr style="border-bottom:1px solid var(--creme-deep); background:rgba(245,240,232,0.4);">
-            <td style="padding:14px 20px; font-weight:600; color:var(--marrom);">Olhar para o Passado dos Pais</td>
-            <td style="padding:14px 20px; color:var(--ink);">Pena condescendente, julgamento ou tentativa vã de compensar a dor deles.</td>
-            <td style="padding:14px 20px; color:var(--ink);">Reverência ao destino e reconhecimento do esforço que permitiu a vida seguir.</td>
-          </tr>
-          <tr style="border-bottom:1px solid var(--creme-deep);">
-            <td style="padding:14px 20px; font-weight:600; color:var(--marrom);">Padrão Financeiro</td>
-            <td style="padding:14px 20px; color:var(--ink);">Oscilação perpétua entre picos de ganho e quedas abruptas de escassez.</td>
-            <td style="padding:14px 20px; color:var(--ink);">Construção gradual, retenção consciente e sustentabilidade material.</td>
-          </tr>
-          <tr style="border-bottom:1px solid var(--creme-deep); background:rgba(245,240,232,0.4);">
-            <td style="padding:14px 20px; font-weight:600; color:var(--marrom);">Relação com a Família</td>
-            <td style="padding:14px 20px; color:var(--ink);">Dependência afetiva, queixas mútuas e medo constante de rejeição.</td>
-            <td style="padding:14px 20px; color:var(--ink);">Presença afetuosa, respeito às diferenças e autonomia emocional madura.</td>
+          <tr>
+            <td data-label="Atitude" data-type="dimensao" style="padding:14px 20px; font-weight:600; color:var(--marrom);">Sentimento diante do Sucesso</td>
+            <td data-label="Na Lealdade Cega ao Sofrimento" data-type="emaranhado" style="padding:14px 20px; color:var(--ink);">Culpa paralisante, vergonha e urgência inconsciente de perder o que conquistou.</td>
+            <td data-label="Na Prosperidade com Má Consciência" data-type="alivio" style="padding:14px 20px; color:var(--ink);">Gratidão humilde, serenidade e responsabilidade pelo bom uso das conquistas.</td>
           </tr>
           <tr>
-            <td style="padding:14px 20px; font-weight:600; color:var(--marrom);">Legado para os Filhos</td>
-            <td style="padding:14px 20px; color:var(--ink);">Transmissão da mesma culpa e repetição do ciclo de carência na linhagem.</td>
-            <td style="padding:14px 20px; color:var(--ink);">Permissão interna para que as próximas gerações prosperem com liberdade.</td>
+            <td data-label="Atitude" data-type="dimensao" style="padding:14px 20px; font-weight:600; color:var(--marrom);">Olhar para o Passado dos Pais</td>
+            <td data-label="Na Lealdade Cega ao Sofrimento" data-type="emaranhado" style="padding:14px 20px; color:var(--ink);">Pena condescendente, julgamento ou tentativa vã de compensar a dor deles.</td>
+            <td data-label="Na Prosperidade com Má Consciência" data-type="alivio" style="padding:14px 20px; color:var(--ink);">Reverência ao destino e reconhecimento do esforço que permitiu a vida seguir.</td>
+          </tr>
+          <tr>
+            <td data-label="Atitude" data-type="dimensao" style="padding:14px 20px; font-weight:600; color:var(--marrom);">Padrão Financeiro</td>
+            <td data-label="Na Lealdade Cega ao Sofrimento" data-type="emaranhado" style="padding:14px 20px; color:var(--ink);">Oscilação perpétua entre picos de ganho e quedas abruptas de escassez.</td>
+            <td data-label="Na Prosperidade com Má Consciência" data-type="alivio" style="padding:14px 20px; color:var(--ink);">Construção gradual, retenção consciente e sustentabilidade material.</td>
+          </tr>
+          <tr>
+            <td data-label="Atitude" data-type="dimensao" style="padding:14px 20px; font-weight:600; color:var(--marrom);">Relação com a Família</td>
+            <td data-label="Na Lealdade Cega ao Sofrimento" data-type="emaranhado" style="padding:14px 20px; color:var(--ink);">Dependência afetiva, queixas mútuas e medo constante de rejeição.</td>
+            <td data-label="Na Prosperidade com Má Consciência" data-type="alivio" style="padding:14px 20px; color:var(--ink);">Presença afetuosa, respeito às diferenças e autonomia emocional madura.</td>
+          </tr>
+          <tr>
+            <td data-label="Atitude" data-type="dimensao" style="padding:14px 20px; font-weight:600; color:var(--marrom);">Legado para os Filhos</td>
+            <td data-label="Na Lealdade Cega ao Sofrimento" data-type="emaranhado" style="padding:14px 20px; color:var(--ink);">Transmissão da mesma culpa e repetição do ciclo de carência na linhagem.</td>
+            <td data-label="Na Prosperidade com Má Consciência" data-type="alivio" style="padding:14px 20px; color:var(--ink);">Permissão interna para que as próximas gerações prosperem com liberdade.</td>
           </tr>
         </tbody>
       </table>
