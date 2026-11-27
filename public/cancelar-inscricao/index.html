@@ -51,9 +51,12 @@
   .unsub-card h1{font-family:var(--font-display);font-size:2rem;line-height:1.15;color:var(--marrom);margin-bottom:12px;font-weight:600}
   .unsub-card .sub{font-family:var(--font-body);font-size:1.05rem;line-height:1.65;color:var(--ink-muted);margin-bottom:24px}
   .email-box{background:var(--creme);border:1px solid var(--creme-deep);border-radius:var(--r-md);padding:14px 18px;font-family:var(--font-ui);font-size:1rem;color:var(--marrom);margin-bottom:20px;word-break:break-all}
-  .motivo{text-align:left;margin-bottom:24px}
+  .motivo{text-align:left;margin-bottom:20px}
   .motivo label{display:block;font-family:var(--font-ui);font-size:0.9rem;color:var(--ink);margin-bottom:8px}
   .motivo select{width:100%;padding:12px 14px;border:1px solid var(--creme-deep);border-radius:var(--r-md);font-family:var(--font-ui);font-size:0.95rem;color:var(--ink);background:var(--surface)}
+  .confirm-check{display:flex;align-items:flex-start;gap:10px;text-align:left;margin-bottom:22px;padding:12px 14px;background:var(--creme);border:1px solid var(--creme-deep);border-radius:var(--r-md);font-family:var(--font-ui);font-size:0.9rem;line-height:1.45;color:var(--ink);cursor:pointer}
+  .confirm-check input{margin-top:3px;width:18px;height:18px;accent-color:var(--marrom);flex-shrink:0;cursor:pointer}
+  .hp-field{position:absolute;left:-9999px;width:1px;height:1px;opacity:0;pointer-events:none}
   .btn{width:100%;justify-content:center}
   .msg{margin-top:20px;font-family:var(--font-body);font-size:1rem;line-height:1.6;display:none}
   .msg.ok{color:#4a7a4a}
@@ -106,18 +109,30 @@
     <h1>Cancelar inscrição</h1>
     <p class="sub">Você pode deixar nossa lista de e-mails a qualquer momento, sem complicação — e voltar quando quiser.</p>
     <div class="email-box" id="emailBox" role="status" aria-live="polite">Carregando…</div>
-    <div class="motivo">
-      <label for="motivo">Motivo (opcional)</label>
-      <select id="motivo" name="motivo">
-        <option value="">Selecione um motivo…</option>
-        <option value="nao-interessado">Não tenho mais interesse no tema</option>
-        <option value="muitos-emails">Estou recebendo e-mails demais</option>
-        <option value="nao-solicitei">Não me lembro de ter me inscrito</option>
-        <option value="conteudo">O conteúdo não é para mim</option>
-        <option value="outro">Outro motivo</option>
-      </select>
-    </div>
-    <button class="btn btn-primary" id="btnCancelar" type="button">Confirmar cancelamento</button>
+    <form id="unsubForm" method="POST" action="/api/cancelar">
+      <input type="hidden" name="email" id="emailInput" value="">
+      <input type="hidden" name="confirm" value="1">
+      <div class="hp-field" aria-hidden="true">
+        <label for="website">Site</label>
+        <input type="text" id="website" name="website" tabindex="-1" autocomplete="off" value="">
+      </div>
+      <div class="motivo">
+        <label for="motivo">Motivo (opcional)</label>
+        <select id="motivo" name="motivo">
+          <option value="">Selecione um motivo…</option>
+          <option value="nao-interessado">Não tenho mais interesse no tema</option>
+          <option value="muitos-emails">Estou recebendo e-mails demais</option>
+          <option value="nao-solicitei">Não me lembro de ter me inscrito</option>
+          <option value="conteudo">O conteúdo não é para mim</option>
+          <option value="outro">Outro motivo</option>
+        </select>
+      </div>
+      <label class="confirm-check" for="confirmCheck">
+        <input type="checkbox" id="confirmCheck" name="confirm_human" value="1" required>
+        <span>Confirmo que desejo cancelar minha inscrição e parar de receber e-mails da Integra Sistêmica.</span>
+      </label>
+      <button class="btn btn-primary" id="btnCancelar" type="submit" disabled>Confirmar cancelamento</button>
+    </form>
     <div class="msg" id="msg" role="alert"></div>
   </div>
   <div class="unsub-foot">
@@ -164,16 +179,35 @@
 <script>
   (function(){
     var params = new URLSearchParams(window.location.search);
-    var email = (params.get('email') || '').trim();
+    var emailInput = document.getElementById('emailInput');
+    var email = (params.get('email') || (emailInput ? emailInput.value : '') || '').trim().toLowerCase();
     var emailBox = document.getElementById('emailBox');
+    var form = document.getElementById('unsubForm');
+    var confirmCheck = document.getElementById('confirmCheck');
     var btn = document.getElementById('btnCancelar');
     var msg = document.getElementById('msg');
+    var validEmail = Boolean(email && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email));
 
-    if (email && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    if (validEmail) {
       emailBox.textContent = email;
+      if (emailInput) emailInput.value = email;
     } else {
       emailBox.textContent = 'E-mail não identificado.';
+      if (confirmCheck) confirmCheck.disabled = true;
       btn.disabled = true;
+    }
+
+    function syncButtonState(e) {
+      if (e && e.isTrusted === false) {
+        if (confirmCheck) confirmCheck.checked = false;
+        btn.disabled = true;
+        return;
+      }
+      btn.disabled = !(validEmail && confirmCheck && confirmCheck.checked);
+    }
+
+    if (confirmCheck) {
+      confirmCheck.addEventListener('change', syncButtonState);
     }
 
     function showMsg(cls, text){
@@ -182,17 +216,30 @@
       msg.textContent = text;
     }
 
-    window.cancelar = function(){
-      if (!email) return;
+    window.cancelar = function(e){
+      if (e && e.preventDefault) e.preventDefault();
+      if (e && e.isTrusted === false) return;
+      if (!validEmail || !confirmCheck || !confirmCheck.checked) return;
+
+      var hp = document.getElementById('website');
+      if (hp && hp.value) return;
+
       btn.disabled = true;
       btn.textContent = 'Processando…';
       var motivo = document.getElementById('motivo').value;
 
-      var payload = { email: email, motivo: motivo || null };
+      var payload = {
+        email: email,
+        motivo: motivo || null,
+        confirm: '1',
+        confirm_human: '1',
+        website: hp ? hp.value : ''
+      };
       fetch('/api/cancelar', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
         },
         body: JSON.stringify(payload)
       })
@@ -200,19 +247,22 @@
         if (res.ok || res.status === 409) {
           showMsg('ok', 'Inscrição cancelada. Você não receberá mais nossos e-mails.');
           btn.style.display = 'none';
+          confirmCheck.disabled = true;
           emailBox.setAttribute('aria-busy', 'false');
         } else {
           throw new Error('HTTP ' + res.status);
         }
       })
-      .catch(function(err){
+      .catch(function(){
         showMsg('err', 'Ocorreu um erro ao cancelar. Tente novamente em instantes.');
-        btn.disabled = false;
+        btn.disabled = !(confirmCheck && confirmCheck.checked);
         btn.textContent = 'Confirmar cancelamento';
       });
     };
 
-    btn.addEventListener('click', window.cancelar);
+    if (form) {
+      form.addEventListener('submit', window.cancelar);
+    }
   })();
 </script>
 <script src="/assets/js/motion.js" defer></script>
